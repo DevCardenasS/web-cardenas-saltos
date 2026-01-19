@@ -10,21 +10,19 @@ export default function Home() {
         <title>Cárdenas Saltos | Inicio</title>
       </Head>
 
-      {/* HERO SECTION - AJUSTES DE ESPACIADO Y TAMAÑO PRECISOS */}
-      <section className="w-full bg-[#051d40] relative min-h-[700px] md:min-h-[600px] flex items-center overflow-hidden">
-        <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center relative px-6">
+      {/* HERO SECTION - DISTRIBUCIÓN MEJORADA */}
+      <section className="w-full bg-[#051d40] relative min-h-[600px] flex items-center overflow-hidden">
+        <div className="max-w-7xl mx-auto w-full grid md:grid-cols-2 items-center px-6 gap-8">
           
-          {/* TEXTO HERO */}
-          <div className="w-full md:w-1/2 py-12 md:py-20 z-20 text-left">
+          {/* BLOQUE DE TEXTO */}
+          <div className="py-12 md:py-20 z-20 text-left">
             <h1 className="text-white">
-              {/* Tamaño 3.2rem y margen inferior de 0.7rem */}
               <span 
                 className="block font-black tracking-tight mb-[0.7rem]" 
                 style={{ fontSize: '3.2rem' }}
               >
                 Nos importas,
               </span>
-              {/* Interlineado 0.9 */}
               <span 
                 className="block font-medium text-white/90"
                 style={{ fontSize: '3rem', lineHeight: '0.9' }}
@@ -42,33 +40,33 @@ export default function Home() {
             </div>
           </div>
 
-          {/* IMAGEN HERO */}
-          <div className="w-full md:w-1/2 md:absolute md:bottom-0 md:right-0 h-[450px] md:h-full flex items-end justify-end pointer-events-none z-10">
+          {/* BLOQUE DE IMAGEN */}
+          <div className="relative h-[400px] md:h-[600px] w-full flex items-end justify-end">
             <img 
                 src="/home/Cardenas-Saltos-Hero.jpg" 
                 alt="Abogada Cárdenas Saltos" 
-                className="h-full w-auto object-contain object-right-bottom md:translate-y-4" 
+                className="h-full w-auto object-contain object-right-bottom" 
             />
           </div>
         </div>
       </section>
 
-      {/* SECCIÓN EXPERIENCIA */}
+      {/* SECCIÓN EXPERIENCIA - RUTAS ACTUALIZADAS CON GUIONES */}
       <section className="w-full py-24 px-6 bg-white text-center">
         <h2 className="text-2xl font-medium text-[#051d40] mb-16">Nuestra experiencia nos avala</h2>
         <div className="max-w-6xl mx-auto flex flex-wrap justify-center items-center gap-16 md:gap-24 grayscale opacity-70">
           <img 
-            src="/home/asociacion de profesionales de gestion de riesgos Cardenas Saltos Abogados Ecuador.jpg" 
+            src="/home/asociacion-de-profesionales-de-gestion-de-riesgos-Cardenas-Saltos-Abogados-Ecuador.jpg" 
             className="h-20 md:h-24 object-contain" 
             alt="Asociación"
           />
           <img 
-            src="/home/leal-importaciones Cardenas Saltos Abogados Ecuador.jpg" 
+            src="/home/leal-importaciones-Cardenas-Saltos-Abogados-Ecuador.jpg" 
             className="h-16 md:h-20 object-contain" 
             alt="Leal"
           />
           <img 
-            src="/home/kunnaxport Cardenas Saltos Abogados ecuador.jpg" 
+            src="/home/kunnaxport-Cardenas-Saltos-Abogados-ecuador.jpg" 
             className="h-14 md:h-18 object-contain" 
             alt="Kunnaxport"
           />
@@ -93,7 +91,7 @@ export default function Home() {
           />
           <ServiceCard 
             title="Notarías" 
-            desc="Trámites legales rápidos sin ir a juicio. Resolvemos herencias (posesión efectiva), divorcios inmediatos y creación de empresas SAS en tiempo récord. Garantizamos seguridad jurídica en tus escrituras y promesas de compraventa de casas o carros, con total respaldo legal y agilidad en cada proceso."
+            desc="Trámites legales rápidos sin ir a juicio. Resolvemos herencias (posesión efectiva), divorcios inmediatos y creación de empresas SAS en tiempo récord. Garantizamos seguridad jurídica en tus escrituras y promesas de compraventa de casas o carros, con total respaldo legal y agilidad en cada paso."
             img="/home/home-ayudar-Cardenas-saltos-Abogados-derecho-notarial-notarias.png"
             phoneNumber={phoneNumber}
           />
@@ -106,10 +104,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* BANNER FINAL */}
+      {/* BANNER FINAL - LINE HEIGHT 0.7 */}
       <section className="w-full bg-[#ffbd4a] py-24">
         <div className="max-w-7xl mx-auto px-6 text-left">
-          <h2 className="text-[#051d40] text-5xl md:text-6xl leading-tight mb-10">
+          <h2 className="text-[#051d40] text-5xl md:text-6xl mb-10" style={{ lineHeight: '0.7' }}>
             <span className="block font-black">Estrategia legal</span>
             <span className="block font-normal">que genera resultados</span>
           </h2>
@@ -127,20 +125,12 @@ function ServiceCard({ title, desc, img, phoneNumber }) {
   return (
     <div className="bg-[#051d40] rounded-3xl overflow-hidden flex flex-col md:flex-row min-h-[350px] shadow-2xl group border border-white/5">
       <div className="md:w-1/2 h-64 md:h-auto overflow-hidden bg-[#051d40] order-first md:order-last">
-        <img 
-          src={img} 
-          alt={title} 
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-        />
+        <img src={img} alt={title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
       </div>
       <div className="p-8 md:w-1/2 text-white flex flex-col justify-between order-last md:order-first">
         <div>
-          <h3 className="text-xl font-medium mb-4 leading-tight tracking-tight text-[#ffbd4a]">
-            {title}
-          </h3>
-          <p className="text-[12px] text-gray-300 leading-relaxed mb-8 font-normal">
-            {desc}
-          </p>
+          <h3 className="text-xl font-medium mb-4 leading-tight tracking-tight text-[#ffbd4a]">{title}</h3>
+          <p className="text-[12px] text-gray-300 leading-relaxed mb-8 font-normal">{desc}</p>
         </div>
         <div className="flex flex-col sm:flex-row gap-3">
           <button className="border border-white/50 text-white px-5 py-2.5 text-[11px] rounded-full font-normal hover:bg-white hover:text-[#051d40] transition w-full sm:w-auto uppercase tracking-wider">

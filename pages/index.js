@@ -17,7 +17,6 @@ export default function Home() {
         <div className="w-full md:w-1/2 flex items-center justify-center md:justify-end px-6 md:pr-16 py-16">
           <div className="max-w-[550px] w-full text-left">
             <h1 className="text-white">
-              {/* Espaciado de 0rem entre frases */}
               <span 
                 className="block font-black tracking-tight" 
                 style={{ fontSize: '3.2rem', marginBottom: '0rem', lineHeight: '1' }}
@@ -42,7 +41,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* COLUMNA DERECHA: IMAGEN */}
+        {/* COLUMNA DERECHA: FOTO */}
         <div className="w-full md:w-1/2 relative bg-[#051d40]">
           <img 
               src="/home/Cardenas-Saltos-Hero.jpg" 
@@ -52,10 +51,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECCIÓN EXPERIENCIA - TÍTULO 2.25rem */}
+      {/* SECCIÓN EXPERIENCIA - TÍTULO CON INTERLINEADO CORREGIDO (COMO SERVICIOS) */}
       <section className="w-full py-24 px-6 bg-white text-center border-t border-gray-100">
         <h2 
-          className="font-medium text-[#051d40] mb-20"
+          className="font-medium text-[#051d40] mb-20 leading-tight"
           style={{ fontSize: '2.25rem' }}
         >
           Nuestra experiencia nos avala
@@ -81,7 +80,9 @@ export default function Home() {
 
       {/* SECCIÓN SERVICIOS */}
       <section className="w-full py-20 px-6 bg-[#f2f2f2]">
-        <h2 className="text-center text-4xl font-medium text-[#051d40] mb-16">¿En qué te podemos ayudar?</h2>
+        <h2 className="text-center text-4xl font-medium text-[#051d40] mb-16 leading-tight">
+          ¿En qué te podemos ayudar?
+        </h2>
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
           <ServiceCard 
             title="Derecho administrativo" 
@@ -110,12 +111,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* BANNER FINAL - INTERLINEADO 0.81rem */}
+      {/* BANNER FINAL - LINE HEIGHT 1REM */}
       <section className="w-full bg-[#ffbd4a] py-24">
         <div className="max-w-7xl mx-auto px-6 text-left">
           <h2 
             className="text-[#051d40] text-5xl md:text-6xl mb-12" 
-            style={{ lineHeight: '0.81rem' }}
+            style={{ lineHeight: '1rem' }}
           >
             <span className="block font-black">Estrategia legal</span>
             <span className="block font-normal">que genera resultados</span>

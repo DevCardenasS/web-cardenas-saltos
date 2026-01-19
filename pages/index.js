@@ -10,13 +10,14 @@ export default function Home() {
         <title>Cárdenas Saltos | Inicio</title>
       </Head>
 
-      {/* HERO SECTION - ESTRUCTURA 2 COLUMNAS PURA */}
+      {/* HERO SECTION - DISTRIBUCIÓN 50/50 CON ESPACIADO CORREGIDO */}
       <section className="w-full bg-[#051d40] flex flex-col md:flex-row items-stretch min-h-[600px] md:h-[85vh] overflow-hidden">
         
-        {/* COLUMNA IZQUIERDA: TEXTO (50%) */}
-        <div className="w-full md:w-1/2 flex items-center justify-center md:justify-end px-6 md:pr-12 py-16">
+        {/* COLUMNA IZQUIERDA: TEXTO */}
+        <div className="w-full md:w-1/2 flex items-center justify-center md:justify-end px-6 md:pr-16 py-16">
           <div className="max-w-[550px] w-full text-left">
             <h1 className="text-white">
+              {/* Espaciado de 0.7rem entre frases */}
               <span 
                 className="block font-black tracking-tight" 
                 style={{ fontSize: '3.2rem', marginBottom: '0.7rem', lineHeight: '1' }}
@@ -41,7 +42,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* COLUMNA DERECHA: FOTO QUE LLENA EL ESPACIO (50%) */}
+        {/* COLUMNA DERECHA: IMAGEN AJUSTADA AL TOTAL */}
         <div className="w-full md:w-1/2 relative bg-[#051d40]">
           <img 
               src="/home/Cardenas-Saltos-Hero.jpg" 
@@ -51,53 +52,54 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECCIÓN EXPERIENCIA - RUTAS JPG ACTUALIZADAS */}
-      <section className="w-full py-24 px-6 bg-white text-center">
-        <h2 className="text-2xl font-medium text-[#051d40] mb-16">Nuestra experiencia nos avala</h2>
-        <div className="max-w-6xl mx-auto flex flex-wrap justify-center items-center gap-16 md:gap-24 grayscale opacity-70">
+      {/* SECCIÓN EXPERIENCIA - RESPONSIVE VERTICAL Y LOGOS GRANDES */}
+      <section className="w-full py-24 px-6 bg-white text-center border-t border-gray-100">
+        <h2 className="text-2xl font-medium text-[#051d40] mb-20">Nuestra experiencia nos avala</h2>
+        {/* flex-col para móvil, flex-row para desktop */}
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-center items-center gap-20 md:gap-32 grayscale opacity-80">
           <img 
             src="/home/asociacion-de-profesionales-de-gestion-de-riesgos-Cardenas-Saltos-Abogados-Ecuador.jpg" 
-            className="h-20 md:h-24 object-contain" 
+            className="h-28 md:h-36 w-auto object-contain" 
             alt="Asociación"
           />
           <img 
             src="/home/leal-importaciones-Cardenas-Saltos-Abogados-Ecuador.jpg" 
-            className="h-16 md:h-20 object-contain" 
+            className="h-24 md:h-32 w-auto object-contain" 
             alt="Leal"
           />
           <img 
             src="/home/kunnaxport-Cardenas-Saltos-Abogados-ecuador.jpg" 
-            className="h-14 md:h-18 object-contain" 
+            className="h-20 md:h-28 w-auto object-contain" 
             alt="Kunnaxport"
           />
         </div>
       </section>
 
-      {/* SECCIÓN SERVICIOS - TÍTULOS AMARILLOS - BOTONES MEDIANOS */}
+      {/* SECCIÓN SERVICIOS */}
       <section className="w-full py-20 px-6 bg-[#f2f2f2]">
         <h2 className="text-center text-4xl font-medium text-[#051d40] mb-16">¿En qué te podemos ayudar?</h2>
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
           <ServiceCard 
             title="Derecho administrativo" 
-            desc="¿Problemas con el Estado? Te ayudamos a recuperar tu empleo, anular glosas de Contraloría, impugnar multas injustas y cobrar planillas del SERCOP..."
+            desc="¿Problemas con el Estado? Te ayudamos a recuperar tu empleo, anular glosas de Contraloría, impugnar multas injustas y cobrar planillas del SERCOP. Somos especialistas en recursos administrativos para revocar sanciones, frenar abusos de autoridad y proteger tu patrimonio con total seguridad legal."
             img="/home/home-ayudar-Cardenas-saltos-Abogados-derecho-administrativo.png"
             phoneNumber={phoneNumber}
           />
           <ServiceCard 
             title="Derecho constitucional" 
-            desc="Protegemos tus derechos con resultados reales. Recupera tu puesto de trabajo, limpia tu historial crediticio con Habeas Data o borra datos..."
+            desc="Protegemos tus derechos con resultados reales. Recupera tu puesto de trabajo, limpia tu historial crediticio con Habeas Data o borra datos que dañan tu reputación (Derecho al Olvido). Defensa urgente con medidas cautelares en menos de 48 horas para evitar daños inminentes a tu vida y bienes."
             img="/home/home-ayudar-Cardenas-saltos-Abogados-derecho-constitucional.png"
             phoneNumber={phoneNumber}
           />
           <ServiceCard 
             title="Notarías" 
-            desc="Trámites legales rápidos sin ir a juicio. Resolvemos herencias (posesión efectiva), divorcios inmediatos y creación de empresas SAS..."
+            desc="Trámites legales rápidos sin ir a juicio. Resolvemos herencias (posesión efectiva), divorcios inmediatos y creación de empresas SAS en tiempo récord. Garantizamos seguridad jurídica en tus escrituras y promesas de compraventa de casas o carros, con total respaldo legal y agilidad en cada proceso."
             img="/home/home-ayudar-Cardenas-saltos-Abogados-derecho-notarial-notarias.png"
             phoneNumber={phoneNumber}
           />
           <ServiceCard 
             title="Mediación" 
-            desc="Resuelve tus conflictos hoy mismo de forma económica y sin peleas. Acuerdos legales sobre pensiones de alimentos, visitas, tenencia..."
+            desc="Resuelve tus conflictos hoy mismo de forma económica y sin peleas. Acuerdos legales sobre pensiones de alimentos, visitas, tenencia, deudas bancarias y liquidaciones laborales. Evita juicios de años con un acta de mediación que tiene la misma fuerza de una sentencia y garantiza tu paz mental."
             img="/home/home-ayudar-Cardenas-saltos-Abogados-mediacion-pension-alimenticia.png"
             phoneNumber={phoneNumber}
           />
@@ -124,7 +126,6 @@ export default function Home() {
 function ServiceCard({ title, desc, img, phoneNumber }) {
   return (
     <div className="bg-[#051d40] rounded-3xl overflow-hidden flex flex-col md:flex-row min-h-[350px] shadow-2xl group border border-white/5">
-      {/* IMAGEN PRIMERO EN MÓVIL */}
       <div className="md:w-1/2 h-64 md:h-auto overflow-hidden bg-[#051d40] order-first md:order-last">
         <img src={img} alt={title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
       </div>
@@ -134,7 +135,6 @@ function ServiceCard({ title, desc, img, phoneNumber }) {
           <p className="text-[12px] text-gray-300 leading-relaxed mb-8 font-normal">{desc}</p>
         </div>
         <div className="flex flex-col sm:flex-row gap-3">
-          {/* BOTONES TAMAÑO EQUILIBRADO */}
           <button className="border border-white/50 text-white px-6 py-3 text-[11px] rounded-full font-normal hover:bg-white hover:text-[#051d40] transition w-full sm:w-auto uppercase tracking-wider">
             Ver más
           </button>

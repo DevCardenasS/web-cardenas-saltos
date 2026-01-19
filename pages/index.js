@@ -10,17 +10,17 @@ export default function Home() {
         <title>Cárdenas Saltos | Inicio</title>
       </Head>
 
-      {/* HERO SECTION - DISTRIBUCIÓN 50/50 CON ESPACIADO CORREGIDO */}
+      {/* HERO SECTION - ESPACIADO 0 REM */}
       <section className="w-full bg-[#051d40] flex flex-col md:flex-row items-stretch min-h-[600px] md:h-[85vh] overflow-hidden">
         
         {/* COLUMNA IZQUIERDA: TEXTO */}
         <div className="w-full md:w-1/2 flex items-center justify-center md:justify-end px-6 md:pr-16 py-16">
           <div className="max-w-[550px] w-full text-left">
             <h1 className="text-white">
-              {/* Espaciado de 0.7rem entre frases */}
+              {/* Espaciado de 0rem entre frases */}
               <span 
                 className="block font-black tracking-tight" 
-                style={{ fontSize: '3.2rem', marginBottom: '0.7rem', lineHeight: '1' }}
+                style={{ fontSize: '3.2rem', marginBottom: '0rem', lineHeight: '1' }}
               >
                 Nos importas,
               </span>
@@ -42,7 +42,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* COLUMNA DERECHA: IMAGEN AJUSTADA AL TOTAL */}
+        {/* COLUMNA DERECHA: IMAGEN */}
         <div className="w-full md:w-1/2 relative bg-[#051d40]">
           <img 
               src="/home/Cardenas-Saltos-Hero.jpg" 
@@ -52,10 +52,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECCIÓN EXPERIENCIA - RESPONSIVE VERTICAL Y LOGOS GRANDES */}
+      {/* SECCIÓN EXPERIENCIA - TÍTULO 2.25rem */}
       <section className="w-full py-24 px-6 bg-white text-center border-t border-gray-100">
-        <h2 className="text-2xl font-medium text-[#051d40] mb-20">Nuestra experiencia nos avala</h2>
-        {/* flex-col para móvil, flex-row para desktop */}
+        <h2 
+          className="font-medium text-[#051d40] mb-20"
+          style={{ fontSize: '2.25rem' }}
+        >
+          Nuestra experiencia nos avala
+        </h2>
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-center items-center gap-20 md:gap-32 grayscale opacity-80">
           <img 
             src="/home/asociacion-de-profesionales-de-gestion-de-riesgos-Cardenas-Saltos-Abogados-Ecuador.jpg" 
@@ -106,10 +110,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* BANNER FINAL - LINE HEIGHT 0.7 */}
+      {/* BANNER FINAL - INTERLINEADO 0.81rem */}
       <section className="w-full bg-[#ffbd4a] py-24">
         <div className="max-w-7xl mx-auto px-6 text-left">
-          <h2 className="text-[#051d40] text-5xl md:text-6xl mb-12" style={{ lineHeight: '0.7' }}>
+          <h2 
+            className="text-[#051d40] text-5xl md:text-6xl mb-12" 
+            style={{ lineHeight: '0.81rem' }}
+          >
             <span className="block font-black">Estrategia legal</span>
             <span className="block font-normal">que genera resultados</span>
           </h2>

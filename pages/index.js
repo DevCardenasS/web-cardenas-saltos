@@ -14,7 +14,7 @@ export default function Home() {
       <section className="bg-[#051d40] relative overflow-hidden min-h-[600px] flex items-center">
         <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center relative px-6">
           
-          {/* TEXTO CON PESOS EXACTOS: BLACK PARA EL INICIO, MEDIUM PARA EL RESTO */}
+          {/* TEXTO CON PESOS EXACTOS: GANTARI BLACK Y MEDIUM */}
           <div className="md:w-1/2 py-12 md:py-20 z-10 text-left">
             <h1 className="text-white leading-[1.1]">
               <span className="block text-6xl md:text-7xl font-black mb-2 tracking-tight">
@@ -35,7 +35,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* IMAGEN HERO (Ruta corregida) */}
+          {/* IMAGEN HERO */}
           <div className="md:w-1/2 flex justify-end self-end">
             <img 
                 src="/home/home-hero-Cardenas-saltos-Abogados-trabajemos-juntos.png" 
@@ -46,29 +46,29 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECCIÓN EXPERIENCIA (Rutas corregidas a carpeta /home/) */}
+      {/* SECCIÓN EXPERIENCIA (Rutas corregidas según tus nombres de GitHub) */}
       <section className="py-20 px-6 bg-white text-center">
         <h2 className="text-2xl font-bold text-[#051d40] mb-12">Nuestra experiencia nos avala</h2>
         <div className="max-w-5xl mx-auto flex flex-wrap justify-center items-center gap-10 grayscale opacity-60">
           <img 
-            src="/home/home-experiencia-Cardenas-saltos-Abogados-asociacion-de-profesionales-de-gestion-de-riesgo.png" 
+            src="/home/home-experiencia-Cardenas-saltos-Abogados-asociación-de-profesionales-de-gestiones-de-riesgo.png" 
             className="h-16 object-contain" 
             alt="Asociación"
           />
           <img 
-            src="/home/home-experiencia-Cardenas-saltos-Abogados-leal-asociados.png" 
+            src="/home/home-experiencia-Cardenas-Saltos-abogados-leal.png" 
             className="h-12 object-contain" 
             alt="Leal"
           />
           <img 
-            src="/home/home-experiencia-Cardenas-saltos-Abogados-kunak-export.png" 
+            src="/home/home-experiencia-Cardenas-saltos-Abogados-kunnaxport.png" 
             className="h-10 object-contain" 
             alt="Kunak"
           />
         </div>
       </section>
 
-      {/* SECCIÓN SERVICIOS (Rutas corregidas a carpeta /home/) */}
+      {/* SECCIÓN SERVICIOS */}
       <section className="py-20 px-6 bg-gray-50">
         <h2 className="text-center text-4xl font-bold text-[#051d40] mb-16 italic font-medium">¿En qué te podemos ayudar?</h2>
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
@@ -103,7 +103,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* BANNER FINAL (AMARILLO) */}
+      {/* BANNER FINAL */}
       <section className="bg-[#ffbd4a] py-24 text-center">
         <h2 className="text-[#051d40] text-5xl font-black mb-10 max-w-4xl mx-auto leading-tight">
           Estrategia legal <br /> que genera resultados
@@ -117,7 +117,7 @@ export default function Home() {
   );
 }
 
-// Sub-componente para las tarjetas de servicios para mantener el código limpio
+// Sub-componente para las tarjetas de servicios
 function ServiceCard({ title, desc, img, phoneNumber }) {
   return (
     <div className="bg-[#051d40] rounded-3xl overflow-hidden flex flex-col md:flex-row min-h-[300px] shadow-2xl group border border-white/5">
@@ -136,7 +136,7 @@ function ServiceCard({ title, desc, img, phoneNumber }) {
           </a>
         </div>
       </div>
-      <div className="md:w-1/2 overflow-hidden bg-cs-navy">
+      <div className="md:w-1/2 overflow-hidden bg-[#051d40]">
         <img src={img} alt={title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
       </div>
     </div>

@@ -10,9 +10,10 @@ export default function Home() {
         <title>Cárdenas Saltos | Inicio</title>
       </Head>
 
-      {/* HERO SECTION - CORREGIDO AIRE AZUL PEGANDO LA IMAGEN AL BORDE */}
-      <section className="w-full bg-[#051d40] relative overflow-hidden min-h-[600px] flex items-center">
+      {/* HERO SECTION - SOLUCIÓN AIRE AZUL */}
+      <section className="w-full bg-[#051d40] relative min-h-[600px] flex items-center overflow-hidden">
         <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center relative px-6">
+          
           <div className="md:w-1/2 py-12 md:py-20 z-10 text-left">
             <h1 className="text-white leading-[1.1]">
               <span className="block text-6xl md:text-7xl font-black mb-2 tracking-tight">
@@ -31,40 +32,41 @@ export default function Home() {
               </a>
             </div>
           </div>
-          {/* Imagen alineada a la derecha y al fondo para eliminar el espacio azul */}
-          <div className="md:w-1/2 flex justify-end items-end self-end h-full">
+
+          {/* IMAGEN HERO: Pegada al borde derecho y abajo para eliminar el espacio azul */}
+          <div className="md:w-1/2 absolute bottom-0 right-0 h-full flex items-end justify-end pointer-events-none">
             <img 
                 src="/home/home-hero-Cardenas-saltos-Abogados-trabajemos-juntos.png" 
                 alt="Abogada Cárdenas Saltos" 
-                className="w-full h-auto object-contain object-right-bottom max-h-[650px]" 
+                className="h-[90%] md:h-[110%] w-auto object-contain object-right-bottom translate-y-4" 
             />
           </div>
         </div>
       </section>
 
-      {/* SECCIÓN EXPERIENCIA - TÍTULO MEDIUM */}
-      <section className="w-full py-20 px-6 bg-white text-center">
-        <h2 className="text-2xl font-medium text-[#051d40] mb-12">Nuestra experiencia nos avala</h2>
-        <div className="max-w-5xl mx-auto flex flex-wrap justify-center items-center gap-10 grayscale opacity-60">
+      {/* SECCIÓN EXPERIENCIA: Logos más grandes y separados */}
+      <section className="w-full py-24 px-6 bg-white text-center">
+        <h2 className="text-2xl font-medium text-[#051d40] mb-16">Nuestra experiencia nos avala</h2>
+        <div className="max-w-6xl mx-auto flex flex-wrap justify-center items-center gap-16 md:gap-24 grayscale opacity-70">
           <img 
             src="/home/home-experiencia-Cardenas-saltos-Abogados-asociacion-de-profesionales-de-gestiones-de-riesgo.png" 
-            className="h-16 object-contain" 
+            className="h-20 md:h-24 object-contain" 
             alt="Asociación"
           />
           <img 
             src="/home/home-experiencia-Cardenas-Saltos-abogados-leal.png" 
-            className="h-12 object-contain" 
+            className="h-16 md:h-20 object-contain" 
             alt="Leal"
           />
           <img 
             src="/home/home-experiencia-Cardenas-saltos-Abogados-kunnaxport.png" 
-            className="h-10 object-contain" 
+            className="h-14 md:h-18 object-contain" 
             alt="Kunak"
           />
         </div>
       </section>
 
-      {/* SECCIÓN SERVICIOS - FONDO #f2f2f2 - TÍTULO NO CURSIVA */}
+      {/* SECCIÓN SERVICIOS: Rutas corregidas (sin tildes) */}
       <section className="w-full py-20 px-6 bg-[#f2f2f2]">
         <h2 className="text-center text-4xl font-medium text-[#051d40] mb-16">¿En qué te podemos ayudar?</h2>
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
@@ -86,20 +88,20 @@ export default function Home() {
           <ServiceCard 
             title="Notarías" 
             desc="Trámites legales rápidos sin ir a juicio. Resolvemos herencias (posesión efectiva), divorcios inmediatos y creación de empresas SAS en tiempo récord. Garantizamos seguridad jurídica en tus escrituras y promesas de compraventa de casas o carros, con total respaldo legal y agilidad en cada proceso."
-            img="/home/home-ayudar-Cardenas-saltos-Abogados-derecho-notarial-notarías.png"
+            img="/home/home-ayudar-Cardenas-saltos-Abogados-derecho-notarial-notarias.png"
             phoneNumber={phoneNumber}
           />
 
           <ServiceCard 
             title="Mediación" 
             desc="Resuelve tus conflictos hoy mismo de forma económica y sin peleas. Acuerdos legales sobre pensiones de alimentos, visitas, tenencia, deudas bancarias y liquidaciones laborales. Evita juicios de años con un acta de mediación que tiene la misma fuerza de una sentencia y garantiza tu paz mental."
-            img="/home/home-ayudar-Cardenas-saltos-Abogados-mediación-pension-alimenticia.png"
+            img="/home/home-ayudar-Cardenas-saltos-Abogados-mediacion-pension-alimenticia.png"
             phoneNumber={phoneNumber}
           />
         </div>
       </section>
 
-      {/* BANNER FINAL - ALINEADO IZQUIERDA - PESOS BLACK Y REGULAR */}
+      {/* BANNER FINAL */}
       <section className="w-full bg-[#ffbd4a] py-24">
         <div className="max-w-7xl mx-auto px-6 text-left">
           <h2 className="text-[#051d40] text-5xl md:text-6xl leading-tight mb-10">
@@ -116,14 +118,13 @@ export default function Home() {
   );
 }
 
-// Sub-componente ServiceCard con botones en Regular y títulos en Medium
 function ServiceCard({ title, desc, img, phoneNumber }) {
   return (
     <div className="bg-[#051d40] rounded-3xl overflow-hidden flex flex-col md:flex-row min-h-[350px] shadow-2xl group border border-white/5">
       <div className="p-8 md:w-1/2 text-white flex flex-col justify-between">
         <div>
           <h3 className="text-xl font-medium mb-4 uppercase leading-tight tracking-tight">{title}</h3>
-          <p className="text-[11px] text-gray-300 leading-relaxed mb-6 font-normal">
+          <p className="text-[11px] text-gray-300 leading-relaxed mb-6 font-normal italic">
             {desc}
           </p>
         </div>

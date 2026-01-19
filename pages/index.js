@@ -10,16 +10,17 @@ export default function Home() {
         <title>Cárdenas Saltos | Inicio</title>
       </Head>
 
-      {/* HERO SECTION - SOLUCIÓN AIRE AZUL */}
-      <section className="w-full bg-[#051d40] relative min-h-[600px] flex items-center overflow-hidden">
+      {/* HERO SECTION - CORREGIDO PARA MÓVIL (NO SUPERPUESTO) */}
+      <section className="w-full bg-[#051d40] relative min-h-[700px] md:min-h-[600px] flex items-center overflow-hidden">
         <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center relative px-6">
           
-          <div className="md:w-1/2 py-12 md:py-20 z-10 text-left">
+          {/* TEXTO HERO */}
+          <div className="w-full md:w-1/2 py-12 md:py-20 z-20 text-left">
             <h1 className="text-white leading-[1.1]">
-              <span className="block text-6xl md:text-7xl font-black mb-2 tracking-tight">
+              <span className="block text-5xl md:text-7xl font-black mb-2 tracking-tight">
                 Nos importas,
               </span>
-              <span className="block text-4xl md:text-5xl font-medium text-white/90">
+              <span className="block text-3xl md:text-5xl font-medium text-white/90">
                 por eso te ofrecemos <br />
                 las mejores soluciones <br />
                 legales
@@ -33,18 +34,18 @@ export default function Home() {
             </div>
           </div>
 
-          {/* IMAGEN HERO: Pegada al borde derecho y abajo para eliminar el espacio azul */}
-          <div className="md:w-1/2 absolute bottom-0 right-0 h-full flex items-end justify-end pointer-events-none">
+          {/* IMAGEN HERO: Ajustada para que en móvil baje y no tape el texto */}
+          <div className="w-full md:w-1/2 md:absolute md:bottom-0 md:right-0 h-[450px] md:h-full flex items-end justify-end pointer-events-none z-10">
             <img 
                 src="/home/home-hero-Cardenas-saltos-Abogados-trabajemos-juntos.png" 
                 alt="Abogada Cárdenas Saltos" 
-                className="h-[90%] md:h-[110%] w-auto object-contain object-right-bottom translate-y-4" 
+                className="h-full w-auto object-contain object-right-bottom md:translate-y-4" 
             />
           </div>
         </div>
       </section>
 
-      {/* SECCIÓN EXPERIENCIA: Logos más grandes y separados */}
+      {/* SECCIÓN EXPERIENCIA - LOGOS MÁS GRANDES Y SEPARADOS */}
       <section className="w-full py-24 px-6 bg-white text-center">
         <h2 className="text-2xl font-medium text-[#051d40] mb-16">Nuestra experiencia nos avala</h2>
         <div className="max-w-6xl mx-auto flex flex-wrap justify-center items-center gap-16 md:gap-24 grayscale opacity-70">
@@ -66,7 +67,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECCIÓN SERVICIOS: Rutas corregidas (sin tildes) */}
+      {/* SECCIÓN SERVICIOS - FONDO #f2f2f2 - SIN CURSIVAS */}
       <section className="w-full py-20 px-6 bg-[#f2f2f2]">
         <h2 className="text-center text-4xl font-medium text-[#051d40] mb-16">¿En qué te podemos ayudar?</h2>
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
@@ -101,7 +102,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* BANNER FINAL */}
+      {/* BANNER FINAL - ALINEADO IZQUIERDA */}
       <section className="w-full bg-[#ffbd4a] py-24">
         <div className="max-w-7xl mx-auto px-6 text-left">
           <h2 className="text-[#051d40] text-5xl md:text-6xl leading-tight mb-10">
@@ -118,28 +119,37 @@ export default function Home() {
   );
 }
 
+// COMPONENTE TARJETA CON ORDEN RESPONSIVE: FOTO -> TEXTO -> BOTONES
 function ServiceCard({ title, desc, img, phoneNumber }) {
   return (
     <div className="bg-[#051d40] rounded-3xl overflow-hidden flex flex-col md:flex-row min-h-[350px] shadow-2xl group border border-white/5">
-      <div className="p-8 md:w-1/2 text-white flex flex-col justify-between">
+      
+      {/* IMAGEN: Primero en móvil (order-first), después del texto en desktop (md:order-last) */}
+      <div className="md:w-1/2 h-64 md:h-auto overflow-hidden bg-[#051d40] order-first md:order-last">
+        <img 
+          src={img} 
+          alt={title} 
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+        />
+      </div>
+
+      {/* TEXTO Y BOTONES */}
+      <div className="p-8 md:w-1/2 text-white flex flex-col justify-between order-last md:order-first">
         <div>
           <h3 className="text-xl font-medium mb-4 uppercase leading-tight tracking-tight">{title}</h3>
-          <p className="text-[11px] text-gray-300 leading-relaxed mb-6 font-normal italic">
+          <p className="text-[12px] text-gray-300 leading-relaxed mb-8 font-normal">
             {desc}
           </p>
         </div>
-        <div className="flex gap-3">
-          <button className="border border-white/50 text-white px-4 py-2 text-[10px] rounded-full font-normal hover:bg-white hover:text-[#051d40] transition">
+        <div className="flex flex-col sm:flex-row gap-4">
+          <button className="border border-white/50 text-white px-8 py-3 text-[12px] rounded-full font-normal hover:bg-white hover:text-[#051d40] transition w-full sm:w-auto uppercase tracking-wider">
             Ver más
           </button>
           <a href={`https://wa.me/${phoneNumber}`} 
-             className="bg-[#ffbd4a] text-[#051d40] px-4 py-2 text-[10px] rounded-full font-normal hover:bg-white transition text-center">
+             className="bg-[#ffbd4a] text-[#051d40] px-8 py-3 text-[12px] rounded-full font-normal hover:bg-white transition text-center w-full sm:w-auto uppercase tracking-wider">
             Escríbenos
           </a>
         </div>
-      </div>
-      <div className="md:w-1/2 overflow-hidden bg-[#051d40]">
-        <img src={img} alt={title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
       </div>
     </div>
   );

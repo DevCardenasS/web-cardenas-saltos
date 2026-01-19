@@ -41,7 +41,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECCIÓN EXPERIENCIA - TÍTULO EN MEDIUM */}
+      {/* SECCIÓN EXPERIENCIA */}
       <section className="w-full py-20 px-6 bg-white text-center">
         <h2 className="text-2xl font-medium text-[#051d40] mb-12">Nuestra experiencia nos avala</h2>
         <div className="max-w-5xl mx-auto flex flex-wrap justify-center items-center gap-10 grayscale opacity-60">
@@ -63,35 +63,35 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECCIÓN SERVICIOS - TÍTULOS EN MEDIUM */}
-      <section className="w-full py-20 px-6 bg-gray-50">
+      {/* SECCIÓN SERVICIOS - COLOR DE FONDO #f2f2f2 */}
+      <section className="w-full py-20 px-6 bg-[#f2f2f2]">
         <h2 className="text-center text-4xl font-medium text-[#051d40] mb-16 italic">¿En qué te podemos ayudar?</h2>
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
           
           <ServiceCard 
             title="Derecho Administrativo" 
-            desc="¿Problemas con el Estado? Te ayudamos a recuperar tu empleo, eliminar glosas de Contraloría, impugnar multas injustas y proteger tu patrimonio con seguridad jurídica."
+            desc="¿Problemas con el Estado? Te ayudamos a recuperar tu empleo, anular glosas de Contraloría, impugnar multas injustas y cobrar planillas del SERCOP. Somos especialistas en recursos administrativos para revocar sanciones, frenar abusos de autoridad y proteger tu patrimonio con total seguridad legal."
             img="/home/servicio-home-derecho-administrativo-Cardenas-saltos-Abogados.png"
             phoneNumber={phoneNumber}
           />
 
           <ServiceCard 
             title="Derecho Constitucional" 
-            desc="Protegemos tus derechos con resultados reales. Recupera tu puesto de trabajo, limpia tu historial crediticio con Habeas Data y defiende tu reputación con medidas cautelares urgentes."
+            desc="Protegemos tus derechos con resultados reales. Recupera tu puesto de trabajo, limpia tu historial crediticio con Habeas Data o borra datos que dañan tu reputación (Derecho al Olvido). Defensa urgente con medidas cautelares en menos de 48 horas para evitar daños inminentes a tu vida y bienes."
             img="/home/servicio-home-derecho-constitucional-Cardenas-saltos-Abogados.png"
             phoneNumber={phoneNumber}
           />
 
           <ServiceCard 
             title="Notarías" 
-            desc="Trámites legales rápidos sin ir a juicio. Posesiones efectivas, divorcios inmediatos y creación de empresas SAS en tiempo récord garantizando agilidad en cada paso."
+            desc="Trámites legales rápidos sin ir a juicio. Resolvemos herencias (posesión efectiva), divorcios inmediatos y creación de empresas SAS en tiempo récord. Garantizamos seguridad jurídica en tus escrituras y promesas de compraventa de casas o carros, con total respaldo legal y agilidad en cada paso."
             img="/home/servicio-home-notarial-Cardenas-saltos-Abogados.png"
             phoneNumber={phoneNumber}
           />
 
           <ServiceCard 
             title="Mediación" 
-            desc="Resuelve tus conflictos hoy mismo de forma económica y sin peleas. Acuerdos legales sobre pensiones, deudas y liquidaciones laborales con acta de mediación definitiva."
+            desc="Resuelve tus conflictos hoy mismo de forma económica y sin peleas. Acuerdos legales sobre pensiones de alimentos, visitas, tenencia, deudas bancarias y liquidaciones laborales. Evita juicios de años con un acta de mediación que tiene la misma fuerza de una sentencia y garantiza tu paz mental."
             img="/home/servicio-home-mediacion-Cardenas-saltos-Abogados.png"
             phoneNumber={phoneNumber}
           />
@@ -117,16 +117,17 @@ function ServiceCard({ title, desc, img, phoneNumber }) {
     <div className="bg-[#051d40] rounded-3xl overflow-hidden flex flex-col md:flex-row min-h-[300px] shadow-2xl group border border-white/5">
       <div className="p-8 md:w-1/2 text-white flex flex-col justify-between">
         <div>
-          {/* TÍTULO DE TARJETA EN MEDIUM */}
           <h3 className="text-xl font-medium mb-4 uppercase leading-tight tracking-tight">{title}</h3>
-          <p className="text-[12px] text-gray-300 leading-relaxed mb-6 font-normal">{desc}</p>
+          <p className="text-[11px] text-gray-300 leading-relaxed mb-6 font-normal">
+            {desc}
+          </p>
         </div>
         <div className="flex gap-3">
           <button className="border border-white/50 text-white px-4 py-2 text-[10px] rounded-full font-normal hover:bg-white hover:text-[#051d40] transition">
             Ver más
           </button>
           <a href={`https://wa.me/${phoneNumber}`} 
-             className="bg-[#ffbd4a] text-[#051d40] px-4 py-2 text-[10px] rounded-full font-normal hover:bg-white transition text-center uppercase">
+             className="bg-[#ffbd4a] text-[#051d40] px-4 py-2 text-[10px] rounded-full font-normal hover:bg-white transition text-center">
             Escríbenos
           </a>
         </div>

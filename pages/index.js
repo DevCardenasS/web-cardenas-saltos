@@ -10,15 +10,25 @@ export default function Home() {
         <title>Cárdenas Saltos | Inicio</title>
       </Head>
 
-      {/* HERO SECTION */}
+      {/* HERO SECTION - AJUSTES DE ESPACIADO Y TAMAÑO PRECISOS */}
       <section className="w-full bg-[#051d40] relative min-h-[700px] md:min-h-[600px] flex items-center overflow-hidden">
         <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center relative px-6">
+          
+          {/* TEXTO HERO */}
           <div className="w-full md:w-1/2 py-12 md:py-20 z-20 text-left">
-            <h1 className="text-white leading-[1.1]">
-              <span className="block text-5xl md:text-7xl font-black mb-2 tracking-tight">
+            <h1 className="text-white">
+              {/* Tamaño 3.2rem y margen inferior de 0.7rem */}
+              <span 
+                className="block font-black tracking-tight mb-[0.7rem]" 
+                style={{ fontSize: '3.2rem' }}
+              >
                 Nos importas,
               </span>
-              <span className="block text-3xl md:text-5xl font-medium text-white/90">
+              {/* Interlineado 0.9 */}
+              <span 
+                className="block font-medium text-white/90"
+                style={{ fontSize: '3rem', lineHeight: '0.9' }}
+              >
                 por eso te ofrecemos <br />
                 las mejores soluciones <br />
                 legales
@@ -31,6 +41,8 @@ export default function Home() {
               </a>
             </div>
           </div>
+
+          {/* IMAGEN HERO */}
           <div className="w-full md:w-1/2 md:absolute md:bottom-0 md:right-0 h-[450px] md:h-full flex items-end justify-end pointer-events-none z-10">
             <img 
                 src="/home/Cardenas-Saltos-Hero.jpg" 
@@ -41,7 +53,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECCIÓN EXPERIENCIA - NUEVAS RUTAS JPG */}
+      {/* SECCIÓN EXPERIENCIA */}
       <section className="w-full py-24 px-6 bg-white text-center">
         <h2 className="text-2xl font-medium text-[#051d40] mb-16">Nuestra experiencia nos avala</h2>
         <div className="max-w-6xl mx-auto flex flex-wrap justify-center items-center gap-16 md:gap-24 grayscale opacity-70">

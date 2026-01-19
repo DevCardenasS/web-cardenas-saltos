@@ -1,103 +1,185 @@
 import React from 'react';
-import { ArrowRight, MessageCircle } from 'lucide-react';
 import Head from 'next/head';
 
 export default function Home() {
   const phoneNumber = "5939984851296";
 
-  // Nombres de tus archivos en la carpeta /public/home/
-  // AJUSTA LOS NOMBRES EXACTOS SI SON DIFERENTES (ej: .png o .jpg)
-  const imgAbogada = "public/home/home-hero-Cardenas-saltos-Abogados-trabajemos-juntos.png"; 
-  const imgEdificio = "/home/edificio.jpg"; 
-  const logoLeal = "public/home/home-experiencia-Cardenas-Saltos-abogados-leal.png";
-  const logoAsoc = "/home/logo-asociacion.png";
+  // Rutas exactas según tu PDF y estructura de Git
+  const imgHero = "/home/home-hero-Cardenas-saltos-Abogados-trabajemos-juntos.png";
+  const logoBlanco = "/Logos/CS-logo-blanco-pequeño.png";
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white font-['Gantari']">
       <Head>
-        <title>Cárdenas Saltos | Soluciones Legales</title>
+        <title>Cárdenas Saltos Abogados</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <link href="https://fonts.googleapis.com/css2?family=Gantari:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
       </Head>
 
-      {/* SECCIÓN HERO - DISEÑO PIXEL PERFECT DEL PDF */}
-      <section className="relative flex flex-col md:flex-row min-h-[90vh] items-stretch">
-        
-        {/* Lado Izquierdo: Contenido */}
-        <div className="md:w-1/2 flex flex-col justify-center px-8 md:px-20 py-16 bg-white">
-          <h1 className="text-5xl md:text-[85px] font-serif leading-[0.9] text-cs-navy mb-8">
-            Nos importas, <br />
-            <span className="text-4xl md:text-5xl font-light italic text-gray-400 block my-4">por eso te ofrecemos</span>
-            las mejores <br />
-            soluciones <br />
-            <span className="font-bold italic">legales</span>
-          </h1>
+      {/* HERO SECTION - AZUL OSCURO CON IMAGEN INTEGRADA */}
+      <section className="bg-cs-navy relative overflow-hidden">
+        {/* Navbar interno del Hero (según diseño) */}
+        <nav className="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center relative z-20">
+          <img src={logoBlanco} alt="Logo" className="h-12" />
+          <div className="hidden lg:flex gap-6 text-[11px] font-medium uppercase tracking-widest text-white/90">
+            <a href="/" className="hover:text-cs-gold transition">Inicio</a>
+            <a href="/nosotros" className="hover:text-cs-gold transition">Nosotros</a>
+            <a href="/administrativo" className="hover:text-cs-gold transition">Derecho administrativo</a>
+            <a href="/constitucional" className="hover:text-cs-gold transition">Derecho constitucional</a>
+            <a href="/notarial" className="hover:text-cs-gold transition">Notarial</a>
+            <a href="/mediacion" className="hover:text-cs-gold transition">Mediación</a>
+            <a href={`https://wa.me/${phoneNumber}`} className="border border-white px-4 py-2 hover:bg-white hover:text-cs-navy transition">Consulta gratis</a>
+          </div>
+        </nav>
 
-          <div className="flex flex-col gap-10">
-            <a href={`https://wa.me/${phoneNumber}`} 
-               className="self-start inline-flex items-center gap-4 bg-cs-gold text-cs-navy px-10 py-5 font-bold text-xs uppercase tracking-[0.3em] hover:bg-cs-navy hover:text-white transition-all shadow-xl">
-              Consulta gratis <ArrowRight size={16} />
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center relative">
+          <div className="md:w-1/2 px-6 py-20 z-10">
+            <h1 className="text-white text-5xl md:text-6xl font-bold leading-tight mb-8">
+              Nos importas, <br />
+              <span className="font-light">por eso te ofrecemos <br />
+              las mejores soluciones <br />
+              legales</span>
+            </h1>
+            <a href={`https://wa.me/${phoneNumber}`} className="inline-block bg-cs-gold text-cs-navy px-8 py-3 rounded-full font-bold text-sm uppercase tracking-wider hover:bg-white transition">
+              Consulta gratis
             </a>
+          </div>
+          
+          <div className="md:w-1/2 h-full flex justify-end">
+            <img 
+              src={imgHero} 
+              alt="Abogada Cárdenas Saltos" 
+              className="w-full h-full object-contain object-bottom max-h-[700px]"
+            />
+          </div>
+        </div>
+      </section>
 
-            {/* Logos de Respaldo */}
-            <div className="pt-10 border-t border-gray-100">
-              <p className="text-[10px] font-bold tracking-widest uppercase text-gray-400 mb-4">Nuestra experiencia nos avala</p>
-              <div className="flex items-center gap-8 grayscale opacity-70">
-                <img src={logoLeal} alt="Leal" className="h-10 object-contain" onError={(e) => e.target.style.display='none'} />
-                <div className="h-10 w-[1px] bg-gray-200"></div>
-                <img src={logoAsoc} alt="Asociación" className="h-12 object-contain" onError={(e) => e.target.style.display='none'} />
-                {/* Fallback si no cargan las imágenes todavía */}
-                <span className="text-xl font-serif italic font-bold text-cs-navy">Leal</span>
+      {/* SECCIÓN EXPERIENCIA */}
+      <section className="py-20 px-6 bg-white text-center">
+        <h2 className="text-3xl font-bold text-cs-navy mb-16">Nuestra experiencia nos avala</h2>
+        <div className="max-w-5xl mx-auto flex flex-wrap justify-center items-center gap-12 grayscale opacity-80">
+          <img src="/home/home-experiencia-Cardenas-saltos-Abogados-asociacion-de-profesionales-de-gestion-de-riesgo.png" className="h-20" alt="Asociación" />
+          <img src="/home/home-experiencia-Cardenas-saltos-Abogados-leal-asociados.png" className="h-16" alt="Leal" />
+          <img src="/home/home-experiencia-Cardenas-saltos-Abogados-kunak-export.png" className="h-14" alt="Kunak" />
+        </div>
+      </section>
+
+      {/* SECCIÓN SERVICIOS (TARJETAS AZULES) */}
+      <section className="py-20 px-6 bg-gray-50">
+        <h2 className="text-center text-4xl font-bold text-cs-navy mb-20 italic">¿En qué te podemos ayudar?</h2>
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+          
+          {/* Tarjeta 1 - Administrativo */}
+          <div className="bg-cs-navy rounded-3xl overflow-hidden flex flex-col md:flex-row shadow-2xl">
+            <div className="p-8 md:w-1/2 text-white flex flex-col justify-between">
+              <div>
+                <h3 className="text-xl font-bold mb-4">Derecho <br/> Administrativo</h3>
+                <p className="text-xs text-gray-300 leading-relaxed mb-6">
+                  Problemas con el Estado? Te ayudamos a recuperar tu empleo, eliminar glosas de Contraloría, impugnar multas injustas y proteger tu patrimonio con seguridad jurídica.
+                </p>
+              </div>
+              <div className="flex gap-4">
+                <button className="border border-white/50 text-white px-4 py-2 text-[10px] rounded-full hover:bg-white hover:text-cs-navy transition">Ver más</button>
+                <button className="bg-cs-gold text-cs-navy px-4 py-2 text-[10px] rounded-full font-bold hover:bg-white transition">Escríbenos</button>
               </div>
             </div>
+            <div className="md:w-1/2 h-64 md:h-auto overflow-hidden">
+              <img src="/home/servicio-home-derecho-administrativo-Cardenas-saltos-Abogados.png" className="w-full h-full object-cover" alt="Administrativo" />
+            </div>
           </div>
-        </div>
 
-        {/* Lado Derecho: Imagen de Marca */}
-        <div className="md:w-1/2 relative overflow-hidden bg-gray-50">
-          <img 
-            src={imgAbogada} 
-            alt="Abogada Cárdenas Saltos" 
-            className="w-full h-full object-cover"
-            onError={(e) => {e.target.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2000'}}
-          />
-          {/* Badge 10+ Años */}
-          <div className="absolute bottom-10 left-0 bg-white p-10 shadow-2xl border-l-[12px] border-cs-gold">
-            <p className="text-6xl font-serif font-bold text-cs-navy leading-none">10+</p>
-            <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-gray-400 mt-2">Años de <br/>experiencia</p>
-          </div>
-        </div>
-      </section>
-
-      {/* SECCIÓN SERVICIOS - CUADRÍCULA LIMPIA */}
-      <section className="bg-[#fcfcfc] py-24 px-8 md:px-20 border-t border-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-serif italic text-cs-navy mb-20 text-center">¿En qué te podemos ayudar?</h2>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {services.map((s, i) => (
-              <div key={i} className="bg-white p-12 border border-gray-100 hover:shadow-2xl transition-all duration-500 group relative">
-                <div className="h-1 w-0 bg-cs-gold absolute top-0 left-0 group-hover:w-full transition-all duration-500"></div>
-                <h3 className="text-xl font-bold text-cs-navy mb-6 leading-tight uppercase tracking-tighter">{s.title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed mb-10 h-24 overflow-hidden">{s.desc}</p>
-                <a href={`https://wa.me/${phoneNumber}`} className="text-[10px] font-black uppercase tracking-[0.2em] text-cs-navy border-b-2 border-cs-gold pb-1 hover:text-cs-gold transition">
-                  Escríbenos
-                </a>
+          {/* Tarjeta 2 - Constitucional */}
+          <div className="bg-cs-navy rounded-3xl overflow-hidden flex flex-col md:flex-row shadow-2xl">
+            <div className="p-8 md:w-1/2 text-white flex flex-col justify-between">
+              <div>
+                <h3 className="text-xl font-bold mb-4">Derecho <br/> Constitucional</h3>
+                <p className="text-xs text-gray-300 leading-relaxed mb-6">
+                  Protegemos tus derechos con resultados reales. Recupera tu puesto de trabajo, limpia tu historial crediticio con Habeas Data y defiende tu reputación con medidas cautelares urgentes.
+                </p>
               </div>
-            ))}
+              <div className="flex gap-4">
+                <button className="border border-white/50 text-white px-4 py-2 text-[10px] rounded-full hover:bg-white hover:text-cs-navy transition">Ver más</button>
+                <button className="bg-cs-gold text-cs-navy px-4 py-2 text-[10px] rounded-full font-bold hover:bg-white transition">Escríbenos</button>
+              </div>
+            </div>
+            <div className="md:w-1/2 h-64 md:h-auto overflow-hidden">
+              <img src="/home/servicio-home-derecho-constitucional-Cardenas-saltos-Abogados.png" className="w-full h-full object-cover" alt="Constitucional" />
+            </div>
           </div>
+
+          {/* Tarjeta 3 - Notarial */}
+          <div className="bg-cs-navy rounded-3xl overflow-hidden flex flex-col md:flex-row shadow-2xl">
+            <div className="p-8 md:w-1/2 text-white flex flex-col justify-between">
+              <div>
+                <h3 className="text-xl font-bold mb-4">Notarias</h3>
+                <p className="text-xs text-gray-300 leading-relaxed mb-6">
+                  Trámites legales rápidos sin ir a juicio. Posesiones efectivas, divorcios inmediatos y creación de empresas SAS en tiempo récord garantizando agilidad en cada paso.
+                </p>
+              </div>
+              <div className="flex gap-4">
+                <button className="border border-white/50 text-white px-4 py-2 text-[10px] rounded-full hover:bg-white hover:text-cs-navy transition">Ver más</button>
+                <button className="bg-cs-gold text-cs-navy px-4 py-2 text-[10px] rounded-full font-bold hover:bg-white transition">Escríbenos</button>
+              </div>
+            </div>
+            <div className="md:w-1/2 h-64 md:h-auto overflow-hidden">
+              <img src="/home/servicio-home-notarial-Cardenas-saltos-Abogados.png" className="w-full h-full object-cover" alt="Notarial" />
+            </div>
+          </div>
+
+          {/* Tarjeta 4 - Mediación */}
+          <div className="bg-cs-navy rounded-3xl overflow-hidden flex flex-col md:flex-row shadow-2xl">
+            <div className="p-8 md:w-1/2 text-white flex flex-col justify-between">
+              <div>
+                <h3 className="text-xl font-bold mb-4">Mediación</h3>
+                <p className="text-xs text-gray-300 leading-relaxed mb-6">
+                  Resuelve tus conflictos hoy mismo de forma económica y sin peleas. Acuerdos legales sobre pensiones, deudas y liquidaciones laborales con acta de mediación definitiva.
+                </p>
+              </div>
+              <div className="flex gap-4">
+                <button className="border border-white/50 text-white px-4 py-2 text-[10px] rounded-full hover:bg-white hover:text-cs-navy transition">Ver más</button>
+                <button className="bg-cs-gold text-cs-navy px-4 py-2 text-[10px] rounded-full font-bold hover:bg-white transition">Escríbenos</button>
+              </div>
+            </div>
+            <div className="md:w-1/2 h-64 md:h-auto overflow-hidden">
+              <img src="/home/servicio-home-mediacion-Cardenas-saltos-Abogados.png" className="w-full h-full object-cover" alt="Mediación" />
+            </div>
+          </div>
+
         </div>
       </section>
 
-      {/* WHATSAPP FLOAT */}
-      <a href={`https://wa.me/${phoneNumber}`} className="fixed bottom-10 right-10 bg-[#25D366] text-white p-5 rounded-full shadow-[0_10px_40px_rgba(37,211,102,0.4)] hover:scale-110 transition-all z-[100]">
-        <MessageCircle size={30} fill="currentColor" />
-      </a>
+      {/* FOOTER AMARILLO */}
+      <section className="bg-cs-gold py-24 px-6 text-center">
+        <h2 className="text-cs-navy text-5xl font-bold mb-10 max-w-4xl mx-auto">
+          Estrategia legal <br /> que genera resultados
+        </h2>
+        <a href={`https://wa.me/${phoneNumber}`} className="inline-block bg-cs-navy text-white px-12 py-4 rounded-full font-bold uppercase tracking-widest hover:bg-white hover:text-cs-navy transition-all shadow-xl">
+          Consulta gratis
+        </a>
+      </section>
+
+      {/* FOOTER AZUL FINAL */}
+      <footer className="bg-cs-navy text-white py-16 px-6 border-t border-white/10">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+          <div>
+            <h4 className="font-bold mb-2">Dirección</h4>
+            <p className="text-sm text-gray-400">Edificio La Previsora</p>
+          </div>
+          <div>
+            <h4 className="font-bold mb-2">Email</h4>
+            <p className="text-sm text-gray-400">atencion@cardenassaltos.com</p>
+          </div>
+          <div>
+            <h4 className="font-bold mb-2">Teléfono</h4>
+            <p className="text-sm text-gray-400">09984851296</p>
+          </div>
+        </div>
+        <div className="text-center mt-12 pt-8 border-t border-white/5 text-[10px] text-gray-500 uppercase tracking-widest">
+          Todos los derechos reservados para Cárdenas Saltos Abogados
+        </div>
+      </footer>
     </div>
   );
 }
-
-const services = [
-  { title: "Derecho Administrativo", desc: "Especialistas en recursos para recuperar empleos, frenar abusos estatales y proteger tu patrimonio." },
-  { title: "Derecho Constitucional", desc: "Protegemos tus derechos con Habeas Data para limpiar tu historial y acciones de protección urgente." },
-  { title: "Notarial", desc: "SAS en tiempo récord, escrituras y promesas de compraventa con total respaldo y agilidad." },
-  { title: "Mediación", desc: "Resuelve pensiones, deudas y liquidaciones hoy mismo sin juicios largos y costosos." }
-];

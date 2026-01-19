@@ -10,16 +10,16 @@ export default function Home() {
         <title>Cárdenas Saltos | Inicio</title>
       </Head>
 
-      {/* HERO SECTION - ESTRUCTURA DE REFERENCIA */}
-      <section className="w-full bg-[#051d40] min-h-[600px] md:min-h-[85vh] flex items-stretch overflow-hidden">
-        <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-center px-6">
-          
-          {/* COLUMNA IZQUIERDA: TEXTO */}
-          <div className="py-16 md:py-24 z-20 flex flex-col justify-center h-full">
-            <h1 className="text-white text-left">
+      {/* HERO SECTION - ESTRUCTURA 2 COLUMNAS PURA */}
+      <section className="w-full bg-[#051d40] flex flex-col md:flex-row items-stretch min-h-[600px] md:h-[85vh] overflow-hidden">
+        
+        {/* COLUMNA IZQUIERDA: TEXTO (50%) */}
+        <div className="w-full md:w-1/2 flex items-center justify-center md:justify-end px-6 md:pr-12 py-16">
+          <div className="max-w-[550px] w-full text-left">
+            <h1 className="text-white">
               <span 
-                className="block font-black tracking-tight mb-[0.7rem]" 
-                style={{ fontSize: '3.2rem', lineHeight: '1' }}
+                className="block font-black tracking-tight" 
+                style={{ fontSize: '3.2rem', marginBottom: '0.7rem', lineHeight: '1' }}
               >
                 Nos importas,
               </span>
@@ -32,26 +32,26 @@ export default function Home() {
                 legales
               </span>
             </h1>
-            <div className="mt-12">
+            <div className="mt-10">
               <a href={`https://wa.me/${phoneNumber}`} 
-                 className="inline-block bg-[#ffbd4a] text-[#051d40] px-12 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-transform shadow-2xl">
+                 className="inline-block bg-[#ffbd4a] text-[#051d40] px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-transform shadow-2xl">
                 Consulta gratis
               </a>
             </div>
           </div>
+        </div>
 
-          {/* COLUMNA DERECHA: IMAGEN (Alineada al fondo para eliminar aire azul) */}
-          <div className="h-full w-full flex items-end justify-end self-end relative min-h-[400px] md:min-h-full">
-            <img 
-                src="/home/Cardenas-Saltos-Hero.jpg" 
-                alt="Abogada Cárdenas Saltos" 
-                className="w-full h-full object-contain object-right-bottom" 
-            />
-          </div>
+        {/* COLUMNA DERECHA: FOTO QUE LLENA EL ESPACIO (50%) */}
+        <div className="w-full md:w-1/2 relative bg-[#051d40]">
+          <img 
+              src="/home/Cardenas-Saltos-Hero.jpg" 
+              alt="Abogada Cárdenas Saltos" 
+              className="w-full h-full object-cover object-bottom md:object-right-bottom" 
+          />
         </div>
       </section>
 
-      {/* SECCIÓN EXPERIENCIA - RUTAS CORREGIDAS */}
+      {/* SECCIÓN EXPERIENCIA - RUTAS JPG ACTUALIZADAS */}
       <section className="w-full py-24 px-6 bg-white text-center">
         <h2 className="text-2xl font-medium text-[#051d40] mb-16">Nuestra experiencia nos avala</h2>
         <div className="max-w-6xl mx-auto flex flex-wrap justify-center items-center gap-16 md:gap-24 grayscale opacity-70">
@@ -73,7 +73,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECCIÓN SERVICIOS - TÍTULOS AMARILLOS Y ORDEN FOTO-TEXTO EN MÓVIL */}
+      {/* SECCIÓN SERVICIOS - TÍTULOS AMARILLOS - BOTONES MEDIANOS */}
       <section className="w-full py-20 px-6 bg-[#f2f2f2]">
         <h2 className="text-center text-4xl font-medium text-[#051d40] mb-16">¿En qué te podemos ayudar?</h2>
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
@@ -124,22 +124,22 @@ export default function Home() {
 function ServiceCard({ title, desc, img, phoneNumber }) {
   return (
     <div className="bg-[#051d40] rounded-3xl overflow-hidden flex flex-col md:flex-row min-h-[350px] shadow-2xl group border border-white/5">
-      {/* IMAGEN: Primero en móvil */}
+      {/* IMAGEN PRIMERO EN MÓVIL */}
       <div className="md:w-1/2 h-64 md:h-auto overflow-hidden bg-[#051d40] order-first md:order-last">
         <img src={img} alt={title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
       </div>
-      {/* TEXTO Y BOTONES */}
       <div className="p-8 md:w-1/2 text-white flex flex-col justify-between order-last md:order-first">
         <div>
           <h3 className="text-xl font-medium mb-4 leading-tight text-[#ffbd4a]">{title}</h3>
           <p className="text-[12px] text-gray-300 leading-relaxed mb-8 font-normal">{desc}</p>
         </div>
         <div className="flex flex-col sm:flex-row gap-3">
-          <button className="border border-white/50 text-white px-5 py-2.5 text-[11px] rounded-full font-normal hover:bg-white hover:text-[#051d40] transition w-full sm:w-auto uppercase">
+          {/* BOTONES TAMAÑO EQUILIBRADO */}
+          <button className="border border-white/50 text-white px-6 py-3 text-[11px] rounded-full font-normal hover:bg-white hover:text-[#051d40] transition w-full sm:w-auto uppercase tracking-wider">
             Ver más
           </button>
           <a href={`https://wa.me/${phoneNumber}`} 
-             className="bg-[#ffbd4a] text-[#051d40] px-5 py-2.5 text-[11px] rounded-full font-bold hover:bg-white transition text-center w-full sm:w-auto uppercase">
+             className="bg-[#ffbd4a] text-[#051d40] px-6 py-3 text-[11px] rounded-full font-bold hover:bg-white transition text-center w-full sm:w-auto uppercase tracking-wider">
             Escríbenos
           </a>
         </div>

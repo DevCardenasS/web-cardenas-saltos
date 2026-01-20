@@ -1,6 +1,5 @@
 import React from 'react';
 import Head from 'next/head';
-import Navbar from '../components/Navbar';
 
 export default function Nosotros() {
   const phoneNumber = "5939984851296";
@@ -11,8 +10,7 @@ export default function Nosotros() {
         <title>Cárdenas Saltos | Nosotros</title>
       </Head>
 
-      <Navbar transparent={true} />
-
+      {/* HERO NOSOTROS - Ahora empezará desde arriba porque el Navbar es absoluto */}
       <section className="relative w-full h-[70vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
         <img 
           src="/nosotros/cardenas-saltos-abogados-hero-nosotros.jpg" 
@@ -29,6 +27,7 @@ export default function Nosotros() {
         </div>
       </section>
 
+      {/* SECCIÓN ESTRATEGIA LEGAL */}
       <section className="w-full bg-[#051d40] py-24 px-6">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
           
@@ -72,6 +71,7 @@ export default function Nosotros() {
         </div>
       </section>
 
+      {/* SECCIÓN EXPERIENCIA */}
       <section className="w-full py-24 px-6 bg-white text-center">
         <h2 className="font-medium text-[#051d40] mb-20 leading-tight text-[2.25rem]">
           Nuestra experiencia nos avala
@@ -83,6 +83,7 @@ export default function Nosotros() {
         </div>
       </section>
 
+      {/* BANNER FINAL */}
       <section className="w-full bg-[#ffbd4a] py-24">
         <div className="max-w-7xl mx-auto px-6 text-left">
           <h2 className="text-[#051d40] text-4xl md:text-6xl mb-10" style={{ lineHeight: '1' }}>
@@ -98,3 +99,6 @@ export default function Nosotros() {
     </div>
   );
 }
+
+// ESTA ES LA CLAVE: Le decimos al Layout que esta página requiere navbar transparente
+Nosotros.transparentNavbar = true;

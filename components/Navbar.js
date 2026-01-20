@@ -7,18 +7,33 @@ export default function Navbar({ transparent }) {
   const logoPath = "/Logos/CS-logo-blanco.png";
   const phoneNumber = "5939984851296";
 
+  // Lógica de clases:
+  // 1. Siempre es 'sticky top-0' para que te siga al bajar.
+  // 2. Si es transparente y está cerrado, el fondo es 'bg-transparent' y tiene un margen negativo 
+  //    para que el contenido de abajo (el Hero) suba y se vea detrás del menú.
+  // 3. Si no es transparente (o el menú móvil está abierto), tiene el fondo azul sólido.
+  
+  const navStyles = {
+    backgroundColor: transparent && !isOpen ? 'transparent' : '#051d40',
+    marginBottom: transparent ? '-81px' : '0px', // Compensación de altura para que el Hero suba
+  };
+
   return (
-    <nav className={`w-full z-[100] font-['Gantari'] font-normal transition-all duration-300 border-b border-white/20 sticky top-0 ${
-      transparent && !isOpen 
-        ? 'bg-transparent' 
-        : 'bg-[#051d40]'
-    } ${transparent ? 'mb-[-81px] md:mb-[-93px]' : ''}`}>
-      
+    <nav 
+      style={navStyles}
+      className="w-full z-[100] font-['Gantari'] font-normal transition-all duration-300 border-b border-white/20 sticky top-0"
+    >
       <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+        {/* LOGOTIPO */}
         <Link href="/" className="flex items-center">
-          <img src={logoPath} alt="Cárdenas Saltos" className="h-9 md:h-12 object-contain cursor-pointer" />
+          <img 
+            src={logoPath} 
+            alt="Cárdenas Saltos" 
+            className="h-9 md:h-12 object-contain cursor-pointer" 
+          />
         </Link>
 
+        {/* MENÚ DESKTOP */}
         <div className="flex items-center gap-4">
           <div className="hidden lg:flex gap-8 text-[11px] uppercase tracking-[0.15em] text-white/90 items-center">
             <Link href="/" className="hover:text-[#ffbd4a] transition cursor-pointer">Inicio</Link>
@@ -27,22 +42,33 @@ export default function Navbar({ transparent }) {
             <Link href="/constitucional" className="hover:text-[#ffbd4a] transition cursor-pointer">Derecho constitucional</Link>
             <Link href="/notarial" className="hover:text-[#ffbd4a] transition cursor-pointer">Notarial</Link>
             <Link href="/mediacion" className="hover:text-[#ffbd4a] transition cursor-pointer">Mediación</Link>
-            <a href={`https://wa.me/${phoneNumber}`} className="bg-[#ffbd4a] text-[#051d40] px-6 py-2.5 rounded-full hover:bg-white transition-all font-bold ml-4 text-center uppercase tracking-wider shadow-md">
+            <a 
+              href={`https://wa.me/${phoneNumber}`} 
+              className="bg-[#ffbd4a] text-[#051d40] px-6 py-2.5 rounded-full hover:bg-white transition-all font-bold ml-4 text-center uppercase tracking-wider shadow-md"
+            >
               Consulta gratis
             </a>
           </div>
 
+          {/* BOTONES MÓVIL */}
           <div className="flex lg:hidden items-center gap-3">
-            <a href={`https://wa.me/${phoneNumber}`} className="bg-[#ffbd4a] text-[#051d40] px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-wider">
+            <a 
+              href={`https://wa.me/${phoneNumber}`} 
+              className="bg-[#ffbd4a] text-[#051d40] px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-wider"
+            >
               Consulta gratis
             </a>
-            <button onClick={() => setIsOpen(!isOpen)} className="text-white p-1">
+            <button 
+              onClick={() => setIsOpen(!isOpen)} 
+              className="text-white p-1"
+            >
               {isOpen ? <X size={26} /> : <Menu size={26} />}
             </button>
           </div>
         </div>
       </div>
 
+      {/* MENÚ DESPLEGABLE MÓVIL */}
       {isOpen && (
         <div className="lg:hidden bg-[#051d40] border-t border-white/10 px-6 py-8 flex flex-col gap-6 text-sm uppercase tracking-widest text-white">
           <Link href="/" onClick={() => setIsOpen(false)}>Inicio</Link>

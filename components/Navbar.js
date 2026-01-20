@@ -9,7 +9,10 @@ export default function Navbar() {
   const phoneNumber = "5939984851296";
 
   return (
-    <nav className="bg-[#051d40] w-full z-50 font-['Gantari'] font-normal border-b border-white/20">
+    /* sticky top-0: Fija el menú arriba.
+       z-[100]: Asegura que flote sobre todo el contenido.
+    */
+    <nav className="bg-[#051d40] w-full sticky top-0 z-[100] font-['Gantari'] font-normal border-b border-white/20">
       <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
         
         {/* LOGOTIPO */}
@@ -17,7 +20,7 @@ export default function Navbar() {
           <img 
             src={logoPath} 
             alt="Cárdenas Saltos" 
-            className="h-9 md:h-12 object-contain"
+            className="h-9 md:h-12 object-contain cursor-pointer"
           />
         </Link>
 
@@ -26,18 +29,18 @@ export default function Navbar() {
           
           {/* MENÚ DESKTOP */}
           <div className="hidden lg:flex gap-8 text-[11px] uppercase tracking-[0.15em] text-white/90 items-center">
-            <Link href="/" className="hover:text-[#ffbd4a] transition">Inicio</Link>
-            <Link href="/nosotros" className="hover:text-[#ffbd4a] transition">Nosotros</Link>
-            <Link href="/administrativo" className="hover:text-[#ffbd4a] transition">Derecho administrativo</Link>
-            <Link href="/constitucional" className="hover:text-[#ffbd4a] transition">Derecho constitucional</Link>
-            <Link href="/notarial" className="hover:text-[#ffbd4a] transition">Notarial</Link>
-            <Link href="/mediacion" className="hover:text-[#ffbd4a] transition">Mediación</Link>
-            <a href={`https://wa.me/${phoneNumber}`} className="border border-white px-5 py-2 rounded-full hover:bg-white hover:text-[#051d40] transition-all font-bold ml-4 text-center">
+            <Link href="/" className="hover:text-[#ffbd4a] transition cursor-pointer">Inicio</Link>
+            <Link href="/nosotros" className="hover:text-[#ffbd4a] transition cursor-pointer">Nosotros</Link>
+            <Link href="/administrativo" className="hover:text-[#ffbd4a] transition cursor-pointer">Derecho administrativo</Link>
+            <Link href="/constitucional" className="hover:text-[#ffbd4a] transition cursor-pointer">Derecho constitucional</Link>
+            <Link href="/notarial" className="hover:text-[#ffbd4a] transition cursor-pointer">Notarial</Link>
+            <Link href="/mediacion" className="hover:text-[#ffbd4a] transition cursor-pointer">Mediación</Link>
+            <a href={`https://wa.me/${phoneNumber}`} className="border border-white px-5 py-2 rounded-full hover:bg-white hover:text-[#051d40] transition-all font-bold ml-4 text-center uppercase">
               Consulta gratis
             </a>
           </div>
 
-          {/* BOTÓN "CONSULTA" EN MÓVIL (Visible solo en responsive junto a la hamburguesa) */}
+          {/* BOTÓN "CONSULTA" EN MÓVIL (Sticky junto a la hamburguesa) */}
           <div className="flex lg:hidden items-center gap-3">
             <a href={`https://wa.me/${phoneNumber}`} className="bg-[#ffbd4a] text-[#051d40] px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-wider">
               Consulta gratis
@@ -50,15 +53,15 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* MENÚ MÓVIL DESPLEGABLE */}
+      {/* MENÚ MÓVIL DESPLEGABLE (También sticky al estar dentro del nav) */}
       {isOpen && (
-        <div className="lg:hidden bg-[#051d40] border-t border-white/10 px-6 py-8 flex flex-col gap-6 text-sm uppercase tracking-widest text-white animate-in fade-in slide-in-from-top-4 duration-300">
-          <Link href="/" onClick={() => setIsOpen(false)}>Inicio</Link>
-          <Link href="/nosotros" onClick={() => setIsOpen(false)}>Nosotros</Link>
-          <Link href="/administrativo" onClick={() => setIsOpen(false)}>Derecho administrativo</Link>
-          <Link href="/constitucional" onClick={() => setIsOpen(false)}>Derecho constitucional</Link>
-          <Link href="/notarial" onClick={() => setIsOpen(false)}>Notarial</Link>
-          <Link href="/mediacion" onClick={() => setIsOpen(false)}>Mediación</Link>
+        <div className="lg:hidden bg-[#051d40] border-t border-white/10 px-6 py-8 flex flex-col gap-6 text-sm uppercase tracking-widest text-white shadow-2xl overflow-y-auto max-h-[calc(100vh-80px)]">
+          <Link href="/" onClick={() => setIsOpen(false)} className="cursor-pointer">Inicio</Link>
+          <Link href="/nosotros" onClick={() => setIsOpen(false)} className="cursor-pointer">Nosotros</Link>
+          <Link href="/administrativo" onClick={() => setIsOpen(false)} className="cursor-pointer">Derecho administrativo</Link>
+          <Link href="/constitucional" onClick={() => setIsOpen(false)} className="cursor-pointer">Derecho constitucional</Link>
+          <Link href="/notarial" onClick={() => setIsOpen(false)} className="cursor-pointer">Notarial</Link>
+          <Link href="/mediacion" onClick={() => setIsOpen(false)} className="cursor-pointer">Mediación</Link>
         </div>
       )}
     </nav>

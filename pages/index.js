@@ -10,23 +10,22 @@ export default function Home() {
         <title>Cárdenas Saltos | Inicio</title>
       </Head>
 
-      {/* HERO SECTION - RESPONSIVE CORREGIDO */}
-      <section className="w-full bg-[#051d40] flex flex-col md:flex-row items-stretch min-h-[100vh] md:min-h-[600px] md:h-[85vh] overflow-hidden">
+      {/* HERO SECTION - CORREGIDO ESPACIO AZUL EN MÓVIL */}
+      <section className="w-full bg-[#051d40] flex flex-col md:flex-row items-stretch overflow-hidden">
         
-        {/* COLUMNA TEXTO: En móvil arriba, en desktop izquierda */}
-        <div className="w-full md:w-1/2 flex items-center justify-center md:justify-end px-6 md:pr-16 py-12 md:py-16">
+        {/* TEXTO HERO */}
+        <div className="w-full md:w-1/2 flex items-center justify-center md:justify-end px-6 md:pr-16 py-12 md:py-24 z-20">
           <div className="max-w-[550px] w-full text-left">
             <h1 className="text-white">
-              {/* Tamaño fluido: text-4xl en móvil, style 3.2rem en desktop */}
               <span 
                 className="block font-black tracking-tight text-4xl md:text-[3.2rem]" 
-                style={{ marginBottom: '0rem', lineHeight: '1.1' }}
+                style={{ marginBottom: '0rem', lineHeight: '1' }}
               >
                 Nos importas,
               </span>
               <span 
                 className="block font-medium text-white/90 text-3xl md:text-[3rem]"
-                style={{ lineHeight: '1' }}
+                style={{ lineHeight: '0.9' }}
               >
                 por eso te ofrecemos <br className="hidden md:block" />
                 las mejores soluciones <br className="hidden md:block" />
@@ -42,27 +41,25 @@ export default function Home() {
           </div>
         </div>
 
-        {/* COLUMNA FOTO: En móvil abajo para evitar superposición */}
-        <div className="w-full md:w-1/2 relative bg-[#051d40] h-[400px] md:h-auto">
+        {/* IMAGEN HERO - Ajustada para llenar sin dejar vacíos azules */}
+        <div className="w-full md:w-1/2 h-[450px] md:h-auto overflow-hidden">
           <img 
               src="/home/Cardenas-Saltos-Hero.jpg" 
               alt="Abogada Cárdenas Saltos" 
-              className="w-full h-full object-cover object-top md:object-right-bottom" 
+              className="w-full h-full object-cover object-center md:object-right-bottom" 
           />
         </div>
       </section>
 
       {/* SECCIÓN EXPERIENCIA */}
       <section className="w-full py-24 px-6 bg-white text-center border-t border-gray-100">
-        <h2 
-          className="font-medium text-[#051d40] mb-20 leading-tight text-3xl md:text-[2.25rem]"
-        >
+        <h2 className="font-medium text-[#051d40] mb-20 leading-tight text-3xl md:text-[2.25rem]">
           Nuestra experiencia nos avala
         </h2>
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-center items-center gap-20 md:gap-32 grayscale opacity-80">
-          <img src="/home/asociacion-de-profesionales-de-gestion-de-riesgos-Cardenas-Saltos-Abogados-Ecuador.jpg" className="h-28 md:h-36 w-auto object-contain" alt="Asociación" />
-          <img src="/home/leal-importaciones-Cardenas-Saltos-Abogados-Ecuador.jpg" className="h-24 md:h-32 w-auto object-contain" alt="Leal" />
-          <img src="/home/kunnaxport-Cardenas-Saltos-Abogados-ecuador.jpg" className="h-20 md:h-28 w-auto object-contain" alt="Kunnaxport" />
+          <img src="/home/asociacion-de-profesionales-de-gestion-de-riesgos-Cardenas-Saltos-Abogados-Ecuador.jpg" className="h-28 md:h-36 object-contain" alt="Asociación" />
+          <img src="/home/leal-importaciones-Cardenas-Saltos-Abogados-Ecuador.jpg" className="h-24 md:h-32 object-contain" alt="Leal" />
+          <img src="/home/kunnaxport-Cardenas-Saltos-Abogados-ecuador.jpg" className="h-20 md:h-28 object-contain" alt="Kunnaxport" />
         </div>
       </section>
 
@@ -84,18 +81,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* BANNER FINAL - INTERLINEADO CORREGIDO PARA RESPONSIVE */}
+      {/* BANNER FINAL - BOTÓN CORREGIDO Y TAMAÑO TEXTO */}
       <section className="w-full bg-[#ffbd4a] py-24">
         <div className="max-w-7xl mx-auto px-6 text-left">
           <h2 
-            className="text-[#051d40] text-4xl md:text-6xl mb-12" 
-            style={{ lineHeight: '1.2' }} 
+            className="text-[#051d40] text-4xl md:text-6xl mb-10" 
+            style={{ lineHeight: '1' }} 
           >
             <span className="block font-black">Estrategia legal</span>
             <span className="block font-normal">que genera resultados</span>
           </h2>
           <a href={`https://wa.me/${phoneNumber}`} 
-             className="inline-block bg-[#051d40] text-white px-16 py-5 rounded-full font-bold text-lg uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+             className="inline-block bg-[#051d40] text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
             Consulta gratis
           </a>
         </div>

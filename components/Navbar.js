@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useRouter } from 'next/router';
 
 export default function Navbar({ transparent }) {
@@ -18,24 +18,35 @@ export default function Navbar({ transparent }) {
   }, []);
 
   // DETERMINACIÓN DEL TIPO DE MENÚ
-  // 1. Home: Azul sólido (isHome)
-  // 2. Nosotros: Transparente que cambia a Azul (transparent)
-  // 3. Servicios: Blanco sólido (isServicePage)
-  
   const isHome = router.pathname === "/";
   const servicePages = ["/administrativo", "/constitucional", "/notarial", "/mediacion"];
   const isServicePage = servicePages.includes(router.pathname);
 
-  // Lógica de visualización
+  // 1. Lógica de visualización para las 3 versiones:
+  
+  // Versión 2: Transparente (Nosotros en el tope)
   const isTransparentActive = transparent && !isScrolled && !isOpen;
-  const isWhiteMenu = isServicePage && !isTransparentActive;
-  const isBlueMenu = isHome || (transparent && isScrolled) || (transparent && isOpen);
+  
+  // Versión 3: Blanco (Páginas de Servicios)
+  // Se mantiene blanco a menos que se haga scroll (donde pasa a ser azul)
+  const isWhiteMenu = isServicePage && !isScrolled && !isOpen;
+  
+  // Versión 1: Azul (Home, Scroll de cualquier página, o Menú móvil abierto)
+  const isBlueMenu = isHome || (isScrolled && !isWhiteMenu) || isOpen;
 
-  // Recursos según el tipo de menú
-  const logoPath = isWhiteMenu ? "/Logos/CS-logo-color-pequeño.png" : "/Logos/CS-logo-blanco.png";
+  // RECURSOS SEGÚN EL TIPO DE MENÚ
+  // Usamos la URL exacta que enviaste (sin la ñ para evitar errores)
+  const logoPath = isWhiteMenu 
+    ? "/Logos/CS-logo-color-pequeno.png" 
+    : "/Logos/CS-logo-blanco.png";
+
   const textColor = isWhiteMenu ? "text-[#051d40]" : "text-white/90";
   const borderColor = isWhiteMenu ? "border-[#051d40]/20" : "border-white/10";
-  const bgColor = isWhiteMenu ? "bg-white" : (isTransparentActive ? "bg-transparent" : "bg-[#051d40]");
+  
+  // Fondo: Blanco para servicios, Transparente para nosotros(tope), Azul para el resto
+  const bgColor = isWhiteMenu 
+    ? "bg-white" 
+    : (isTransparentActive ? "bg-transparent" : "bg-[#051d40]");
 
   return (
     <nav 
@@ -46,7 +57,11 @@ export default function Navbar({ transparent }) {
       <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
         {/* LOGO */}
         <Link href="/" className="flex items-center">
-          <img src={logoPath} alt="Cárdenas Saltos" className="h-9 md:h-12 object-contain cursor-pointer" />
+          <img 
+            src={logoPath} 
+            alt="Cárdenas Saltos" 
+            className="h-9 md:h-12 object-contain cursor-pointer" 
+          />
         </Link>
 
         {/* NAVEGACIÓN DESKTOP */}
@@ -58,14 +73,20 @@ export default function Navbar({ transparent }) {
           <Link href="/notarial" className={`${textColor} hover:text-[#ffbd4a] transition`}>Notarial</Link>
           <Link href="/mediacion" className={`${textColor} hover:text-[#ffbd4a] transition`}>Mediación</Link>
           
-          <a href={`https://wa.me/${phoneNumber}`} className="bg-[#ffbd4a] text-[#051d40] px-6 py-2.5 rounded-full hover:scale-105 transition-all font-black ml-4 text-center uppercase tracking-wider shadow-md">
+          <a 
+            href={`https://wa.me/${phoneNumber}`} 
+            className="bg-[#ffbd4a] text-[#051d40] px-6 py-2.5 rounded-full hover:scale-105 transition-all font-black ml-4 text-center uppercase tracking-wider shadow-md"
+          >
             Consulta gratis
           </a>
         </div>
 
         {/* MÓVIL */}
         <div className="flex lg:hidden items-center gap-3">
-          <button onClick={() => setIsOpen(!isOpen)} className={isWhiteMenu ? "text-[#051d40]" : "text-white"}>
+          <button 
+            onClick={() => setIsOpen(!isOpen)} 
+            className={isWhiteMenu ? "text-[#051d40]" : "text-white"}
+          >
             {isOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
         </div>

@@ -7,11 +7,13 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title>Cárdenas Saltos | Abogados</title>
-        <link rel="icon" href="/favicon.png" /> 
+        {/* Favicon global */}
+        <link rel="icon" href="/favicon.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
       <Layout>
+        {/* Pasamos Component.transparentNavbar como prop al Layout si es necesario */}
         <Component {...pageProps} transparentNavbar={Component.transparentNavbar} />
       </Layout>
     </>

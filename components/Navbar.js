@@ -8,18 +8,17 @@ export default function Navbar({ transparent }) {
   const phoneNumber = "5939984851296";
 
   return (
-    <nav className={`w-full z-[100] font-['Gantari'] font-normal transition-all duration-300 border-b border-white/20 ${
+    <nav className={`w-full z-[100] font-['Gantari'] font-normal transition-all duration-300 border-b border-white/20 sticky top-0 ${
       transparent && !isOpen 
-        ? 'bg-transparent absolute top-0 left-0' 
-        : 'bg-[#051d40] sticky top-0'
-    }`}>
+        ? 'bg-transparent' 
+        : 'bg-[#051d40]'
+    } ${transparent ? 'mb-[-81px] md:mb-[-93px]' : ''}`}>
+      
       <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-        {/* LOGOTIPO */}
         <Link href="/" className="flex items-center">
           <img src={logoPath} alt="Cárdenas Saltos" className="h-9 md:h-12 object-contain cursor-pointer" />
         </Link>
 
-        {/* CONTENEDOR DERECHO */}
         <div className="flex items-center gap-4">
           <div className="hidden lg:flex gap-8 text-[11px] uppercase tracking-[0.15em] text-white/90 items-center">
             <Link href="/" className="hover:text-[#ffbd4a] transition cursor-pointer">Inicio</Link>
@@ -33,7 +32,6 @@ export default function Navbar({ transparent }) {
             </a>
           </div>
 
-          {/* MÓVIL */}
           <div className="flex lg:hidden items-center gap-3">
             <a href={`https://wa.me/${phoneNumber}`} className="bg-[#ffbd4a] text-[#051d40] px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-wider">
               Consulta gratis
@@ -45,7 +43,6 @@ export default function Navbar({ transparent }) {
         </div>
       </div>
 
-      {/* MENÚ MÓVIL */}
       {isOpen && (
         <div className="lg:hidden bg-[#051d40] border-t border-white/10 px-6 py-8 flex flex-col gap-6 text-sm uppercase tracking-widest text-white">
           <Link href="/" onClick={() => setIsOpen(false)}>Inicio</Link>

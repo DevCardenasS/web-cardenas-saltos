@@ -7,8 +7,8 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title>Cárdenas Saltos | Abogados</title>
-        {/* Favicon global */}
-        <link rel="icon" href="/favicon.png" />
+        {/* Favicon global con la ruta correcta */}
+        <link rel="icon" href="/Logos/Favicon-cardenas-saltos-abogados.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 

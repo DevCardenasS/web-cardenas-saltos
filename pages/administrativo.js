@@ -172,7 +172,7 @@ export default function Administrativo() {
       <section className="w-full bg-[#ffbd4a] py-24">
         <div className="max-w-7xl mx-auto px-6 text-left">
           <h2 className="text-[#051d40] text-4xl md:text-6xl mb-10" style={{ lineHeight: '1' }}>
-            <span className="block font-black uppercase tracking-tighter">Estrategia legal</span>
+            <span className="block font-black">Estrategia legal</span>
             <span className="block font-normal">que genera resultados</span>
           </h2>
           <a href={`https://wa.me/${phoneNumber}`} 

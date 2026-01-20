@@ -50,7 +50,7 @@ export default function Administrativo() {
       ]
     },
     {
-      titulo: "Defensa ante multas y clausuras (Municipios y Agencias)",
+      titulo: "Defensa ante multas y clausuras (Municipios y agencias)",
       descripcion: "Defensa rápida contra cierres de locales o multas impuestas por el Municipio, Bomberos o Intendencia.",
       beneficios: [
         "Reabrir tu negocio rápido: Levantar sellos de clausura para volver a trabajar de inmediato.",
@@ -79,20 +79,16 @@ export default function Administrativo() {
         <title>Cárdenas Saltos | Derecho Administrativo</title>
       </Head>
 
-      {/* NUEVO HERO DESIGN - BASADO EN IMAGEN */}
+      {/* HERO SECTION DE DOS COLUMNAS */}
       <section className="pt-24 pb-16 px-6">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-[#051d40] text-5xl md:text-8xl mb-10 uppercase tracking-tighter leading-[0.85]">
-            <span className="block font-black">Derecho</span>
-            <span className="block font-medium">administrativo</span>
-          </h1>
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
           
-          <div className="max-w-4xl">
-            <p className="text-[#051d40] text-lg md:text-xl leading-relaxed mb-10 font-normal">
-              ¿Te sancionó el Estado? ¿Tienes problemas con AMT, AMC, SUPERÍAS, SUPERBANCOS, SEPS, etc? <br className="hidden md:block" />
-              Impugnamos glosas de Contraloría, defendemos en sumarios LOSEP y frenamos multas de GADS o Superintendencias. <br className="hidden md:block" />
-              Expertos en recursos de apelación, reclamos al SRI y contratación pública. <br className="hidden md:block" />
-              ¡Escríbenos ahora y recupera tu tranquilidad legal!
+          {/* Columna Izquierda: Textos y Botón */}
+          <div className="lg:w-1/2 order-2 lg:order-1">
+            <p className="text-[#051d40] text-lg md:text-xl leading-relaxed mb-8 font-normal">
+              ¿Te sancionó el Estado? ¿Tienes problemas con AMT, AMC, SUPECIAS, SUPER DE BANCOS, SEPS, etc? 
+              Impugnamos glosas de Contraloría, defendemos en sumarios LOSEP y frenamos multas de GADS o Superintendencias. 
+              Recibe ayuda en recursos de apelación, reclamos al SRI y contratación pública.
             </p>
             
             <p className="text-[#051d40] text-xl md:text-2xl font-bold mb-8">
@@ -106,6 +102,15 @@ export default function Administrativo() {
               Escríbenos ahora
             </a>
           </div>
+
+          {/* Columna Derecha: Título Principal */}
+          <div className="lg:w-1/2 order-1 lg:order-2">
+            <h1 className="text-[#051d40] text-6xl md:text-8xl lg:text-9xl uppercase tracking-tighter leading-[0.85] text-right">
+              <span className="block font-black">Derecho</span>
+              <span className="block font-medium">administrativo</span>
+            </h1>
+          </div>
+          
         </div>
       </section>
 
@@ -128,7 +133,8 @@ export default function Administrativo() {
             {/* Lado Izquierdo: Título y descripción (Azul) */}
             <div className="lg:w-2/5 bg-[#051d40] p-10 md:p-14 flex flex-col justify-between">
               <div>
-                <h3 className="text-[#ffbd4a] text-3xl md:text-4xl font-black uppercase leading-tight">
+                {/* Título en minúsculas (solo primera letra capital) */}
+                <h3 className="text-[#ffbd4a] text-3xl md:text-4xl font-black leading-tight">
                   {servicio.titulo}
                 </h3>
                 <p className="text-white/80 mt-6 text-base font-normal leading-relaxed">

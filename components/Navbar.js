@@ -9,9 +9,6 @@ export default function Navbar() {
   const phoneNumber = "5939984851296";
 
   return (
-    /* sticky top-0: Fija el menú arriba.
-       z-[100]: Asegura que flote sobre todo el contenido.
-    */
     <nav className="bg-[#051d40] w-full sticky top-0 z-[100] font-['Gantari'] font-normal border-b border-white/20">
       <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
         
@@ -24,10 +21,10 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* CONTENEDOR DERECHO: Desktop Menú / Móvil Botón + Hamburguesa */}
+        {/* CONTENEDOR DERECHO */}
         <div className="flex items-center gap-4">
           
-          {/* MENÚ DESKTOP */}
+          {/* MENÚ DESKTOP - BOTÓN UNIFICADO */}
           <div className="hidden lg:flex gap-8 text-[11px] uppercase tracking-[0.15em] text-white/90 items-center">
             <Link href="/" className="hover:text-[#ffbd4a] transition cursor-pointer">Inicio</Link>
             <Link href="/nosotros" className="hover:text-[#ffbd4a] transition cursor-pointer">Nosotros</Link>
@@ -35,14 +32,18 @@ export default function Navbar() {
             <Link href="/constitucional" className="hover:text-[#ffbd4a] transition cursor-pointer">Derecho constitucional</Link>
             <Link href="/notarial" className="hover:text-[#ffbd4a] transition cursor-pointer">Notarial</Link>
             <Link href="/mediacion" className="hover:text-[#ffbd4a] transition cursor-pointer">Mediación</Link>
-            <a href={`https://wa.me/${phoneNumber}`} className="border border-white px-5 py-2 rounded-full hover:bg-white hover:text-[#051d40] transition-all font-bold ml-4 text-center uppercase">
+            
+            {/* Botón Desktop ahora igual al Responsive */}
+            <a href={`https://wa.me/${phoneNumber}`} 
+               className="bg-[#ffbd4a] text-[#051d40] px-6 py-2.5 rounded-full hover:bg-white transition-all font-bold ml-4 text-center uppercase tracking-wider shadow-md">
               Consulta gratis
             </a>
           </div>
 
-          {/* BOTÓN "CONSULTA" EN MÓVIL (Sticky junto a la hamburguesa) */}
+          {/* BOTÓN RESPONSIVE */}
           <div className="flex lg:hidden items-center gap-3">
-            <a href={`https://wa.me/${phoneNumber}`} className="bg-[#ffbd4a] text-[#051d40] px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-wider">
+            <a href={`https://wa.me/${phoneNumber}`} 
+               className="bg-[#ffbd4a] text-[#051d40] px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-wider">
               Consulta gratis
             </a>
             <button onClick={() => setIsOpen(!isOpen)} className="text-white p-1">
@@ -53,9 +54,9 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* MENÚ MÓVIL DESPLEGABLE (También sticky al estar dentro del nav) */}
+      {/* MENÚ MÓVIL DESPLEGABLE */}
       {isOpen && (
-        <div className="lg:hidden bg-[#051d40] border-t border-white/10 px-6 py-8 flex flex-col gap-6 text-sm uppercase tracking-widest text-white shadow-2xl overflow-y-auto max-h-[calc(100vh-80px)]">
+        <div className="lg:hidden bg-[#051d40] border-t border-white/10 px-6 py-8 flex flex-col gap-6 text-sm uppercase tracking-widest text-white shadow-2xl">
           <Link href="/" onClick={() => setIsOpen(false)} className="cursor-pointer">Inicio</Link>
           <Link href="/nosotros" onClick={() => setIsOpen(false)} className="cursor-pointer">Nosotros</Link>
           <Link href="/administrativo" onClick={() => setIsOpen(false)} className="cursor-pointer">Derecho administrativo</Link>

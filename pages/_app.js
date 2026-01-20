@@ -1,3 +1,8 @@
+<Head>
+  <title>Cárdenas Saltos | Abogados</title>
+  {/* Esta es la línea que debes agregar */}
+  <link rel="icon" href="/favicon.png" /> 
+</Head>
 import '../styles/globals.css';
 import Layout from '../components/Layout';
 

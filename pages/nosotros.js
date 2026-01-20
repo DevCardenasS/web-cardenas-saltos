@@ -27,45 +27,47 @@ export default function Nosotros() {
         </div>
       </section>
 
-      {/* SECCIÓN ESTRATEGIA LEGAL (Card azul sobre fondo blanco) */}
-      <section className="w-full bg-white py-24 px-4 md:px-6">
-        <div className="max-w-7xl mx-auto bg-[#051d40] rounded-[40px] md:rounded-[60px] p-10 md:p-20 flex flex-col lg:flex-row items-center gap-16 shadow-2xl">
+      {/* SECCIÓN ESTRATEGIA LEGAL (Card azul más grande) */}
+      <section className="w-full bg-white pt-24 pb-12 px-4 md:px-6">
+        <div className="max-w-7xl mx-auto bg-[#051d40] rounded-[40px] md:rounded-[60px] p-12 md:p-24 flex flex-col lg:flex-row items-center gap-16 shadow-2xl">
           
-          {/* Lado Izquierdo: Logotipo 2 */}
+          {/* Lado Izquierdo: Logotipo (Sin texto) */}
           <div className="w-full lg:w-1/3 flex flex-col items-center lg:items-end border-r-0 lg:border-r border-white/10 pr-0 lg:pr-16">
             <img 
               src="/nosotros/nosotros-logo-blanco-CS-2.png" 
-              className="h-32 md:h-40 object-contain mb-6" 
+              className="h-40 md:h-52 object-contain" 
               alt="Logo Cárdenas Saltos"
             />
-            <h2 className="text-white text-2xl font-black tracking-tighter text-center lg:text-right uppercase">
-              Cárdenas <br /> Saltos <br /> <span className="font-light tracking-[0.3em] text-sm">Abogados</span>
-            </h2>
           </div>
 
-          {/* Lado Derecho: Iconos y Texto */}
+          {/* Lado Derecho: Iconos más grandes y Frases con font-black */}
           <div className="w-full lg:w-2/3">
             <h3 className="text-[#ffbd4a] text-3xl md:text-4xl font-medium mb-12">
               Es clave para tu estrategia legal
             </h3>
             
-            <div className="grid gap-10">
-              <div className="flex gap-6 items-start">
-                <img src="/nosotros/procesos-cardenas-saltos-abogados.svg" className="w-12 h-12 flex-shrink-0" alt="Icono procesos" />
-                <p className="text-white/80 text-lg leading-relaxed pt-2">
-                  Experiencia en procesos legales de instituciones como ministerios gubernamentales
+            <div className="grid gap-12">
+              {/* Item 1 */}
+              <div className="flex gap-8 items-start">
+                <img src="/nosotros/procesos-cardenas-saltos-abogados.svg" className="w-16 h-16 flex-shrink-0" alt="Icono procesos" />
+                <p className="text-white/80 text-xl leading-relaxed pt-2">
+                  <span className="font-black text-white">Experiencia en procesos legales de instituciones</span> como ministerios gubernamentales
                 </p>
               </div>
-              <div className="flex gap-6 items-start">
-                <img src="/nosotros/nosotros/asesoramientos-entidades-ecuatorianas-cardenas-saltos-abogados.svg" className="w-12 h-12 flex-shrink-0" alt="Icono asesoramiento" />
-                <p className="text-white/80 text-lg leading-relaxed pt-2">
-                  Experiencia en asesoramiento jurídico de alto nivel en diversas entidades del Estado Ecuatoriano
+
+              {/* Item 2 */}
+              <div className="flex gap-8 items-start">
+                <img src="/nosotros/asesoramientos-entidades-ecuatorianas-cardenas-saltos-abogados.svg" className="w-16 h-16 flex-shrink-0" alt="Icono asesoramiento" />
+                <p className="text-white/80 text-xl leading-relaxed pt-2">
+                  <span className="font-black text-white">Experiencia en asesoramiento jurídico de alto nivel</span> en diversas entidades del Estado Ecuatoriano
                 </p>
               </div>
-              <div className="flex gap-6 items-start">
-                <img src="/nosotros/litigio-cardenas-saltos-abogados.svg" className="w-12 h-12 flex-shrink-0" alt="Icono litigio" />
-                <p className="text-white/80 text-lg leading-relaxed pt-2">
-                  Experiencia en Litigios de sanciones estatales y representación en juzgados y tribunales
+
+              {/* Item 3 */}
+              <div className="flex gap-8 items-start">
+                <img src="/nosotros/litigio-cardenas-saltos-abogados.svg" className="w-16 h-16 flex-shrink-0" alt="Icono litigio" />
+                <p className="text-white/80 text-xl leading-relaxed pt-2">
+                  <span className="font-black text-white">Experiencia en Litigios de sanciones estatales</span> y representación en juzgados y tribunales
                 </p>
               </div>
             </div>
@@ -73,8 +75,8 @@ export default function Nosotros() {
         </div>
       </section>
 
-      {/* SECCIÓN EXPERIENCIA (Fondo Blanco) */}
-      <section className="w-full py-24 px-6 bg-white text-center">
+      {/* SECCIÓN EXPERIENCIA (Espacio reducido arriba) */}
+      <section className="w-full py-12 px-6 bg-white text-center">
         <h2 className="font-medium text-[#051d40] mb-20 leading-tight text-[2.25rem]">
           Nuestra experiencia nos avala
         </h2>
@@ -102,5 +104,5 @@ export default function Nosotros() {
   );
 }
 
-// Configuración para el Layout global
+// Para que el Layout use el navbar transparente
 Nosotros.transparentNavbar = true;

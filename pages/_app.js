@@ -1,17 +1,21 @@
-<Head>
-  <title>Cárdenas Saltos | Abogados</title>
-  {/* Esta es la línea que debes agregar */}
-  <link rel="icon" href="/favicon.png" /> 
-</Head>
 import '../styles/globals.css';
 import Layout from '../components/Layout';
+import Head from 'next/head'; // 1. Importación necesaria agregada
 
 function MyApp({ Component, pageProps }) {
-  // Pasamos Component.transparentNavbar como una prop al hijo del Layout
   return (
-    <Layout>
-      <Component {...pageProps} transparentNavbar={Component.transparentNavbar} />
-    </Layout>
+    <>
+      {/* 2. El bloque Head debe ir dentro del return y envuelto en fragmentos <> */}
+      <Head>
+        <title>Cárdenas Saltos | Abogados</title>
+        <link rel="icon" href="/favicon.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+      
+      <Layout>
+        <Component {...pageProps} transparentNavbar={Component.transparentNavbar} />
+      </Layout>
+    </>
   );
 }
 

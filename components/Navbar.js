@@ -22,20 +22,12 @@ export default function Navbar({ transparent }) {
   const servicePages = ["/administrativo", "/constitucional", "/notarial", "/mediacion"];
   const isServicePage = servicePages.includes(router.pathname);
 
-  // 1. Lógica de visualización para las 3 versiones:
-  
-  // Versión 2: Transparente (Nosotros en el tope)
+  // Lógica de visualización para las 3 versiones:
   const isTransparentActive = transparent && !isScrolled && !isOpen;
-  
-  // Versión 3: Blanco (Páginas de Servicios)
-  // Se mantiene blanco a menos que se haga scroll (donde pasa a ser azul)
   const isWhiteMenu = isServicePage && !isScrolled && !isOpen;
-  
-  // Versión 1: Azul (Home, Scroll de cualquier página, o Menú móvil abierto)
   const isBlueMenu = isHome || (isScrolled && !isWhiteMenu) || isOpen;
 
   // RECURSOS SEGÚN EL TIPO DE MENÚ
-  // Usamos la URL exacta que enviaste (sin la ñ para evitar errores)
   const logoPath = isWhiteMenu 
     ? "/Logos/CS-logo-color-pequeno.png" 
     : "/Logos/CS-logo-blanco.png";
@@ -43,7 +35,6 @@ export default function Navbar({ transparent }) {
   const textColor = isWhiteMenu ? "text-[#051d40]" : "text-white/90";
   const borderColor = isWhiteMenu ? "border-[#051d40]/20" : "border-white/10";
   
-  // Fondo: Blanco para servicios, Transparente para nosotros(tope), Azul para el resto
   const bgColor = isWhiteMenu 
     ? "bg-white" 
     : (isTransparentActive ? "bg-transparent" : "bg-[#051d40]");
@@ -81,8 +72,16 @@ export default function Navbar({ transparent }) {
           </a>
         </div>
 
-        {/* MÓVIL */}
+        {/* CONTROLES MÓVIL */}
         <div className="flex lg:hidden items-center gap-3">
+          {/* Botón Consulta Gratis para Móvil (visible siempre junto al menú) */}
+          <a 
+            href={`https://wa.me/${phoneNumber}`} 
+            className="bg-[#ffbd4a] text-[#051d40] px-4 py-2 rounded-full font-black text-[10px] uppercase tracking-wider shadow-sm"
+          >
+            Consulta gratis
+          </a>
+          
           <button 
             onClick={() => setIsOpen(!isOpen)} 
             className={isWhiteMenu ? "text-[#051d40]" : "text-white"}
@@ -103,6 +102,14 @@ export default function Navbar({ transparent }) {
           <Link href="/constitucional" onClick={() => setIsOpen(false)}>Derecho constitucional</Link>
           <Link href="/notarial" onClick={() => setIsOpen(false)}>Notarial</Link>
           <Link href="/mediacion" onClick={() => setIsOpen(false)}>Mediación</Link>
+          
+          {/* Botón extra dentro del menú desplegable */}
+          <a 
+            href={`https://wa.me/${phoneNumber}`} 
+            className="bg-[#ffbd4a] text-[#051d40] py-4 rounded-xl text-center shadow-lg mt-4"
+          >
+            Consulta gratis por WhatsApp
+          </a>
         </div>
       )}
     </nav>

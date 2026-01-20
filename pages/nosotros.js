@@ -18,7 +18,7 @@ export default function Nosotros() {
       <section className="relative w-full h-[60vh] md:h-[80vh] flex items-center justify-center overflow-hidden -mt-[92px]">
         {/* Imagen de fondo */}
         <img 
-          src="/nosotros/cardenas-saltos-abogados-share-nowatts.jpg" 
+          src="/nosotros/cardenas-saltos-abogados-hero-nosotros.jpg" 
           className="absolute inset-0 w-full h-full object-cover"
           alt="Cárdenas Saltos"
         />
@@ -29,7 +29,7 @@ export default function Nosotros() {
         <div className="relative z-20 max-w-4xl px-6 text-center">
           <h1 className="text-white text-3xl md:text-5xl font-medium leading-tight">
             Nuestro compromiso es acompañarte en el proceso <br />
-            y darte las mejores los mejores resultados 
+            y darte los mejores resultados 
           </h1>
         </div>
       </section>
@@ -59,21 +59,21 @@ export default function Nosotros() {
             <div className="grid gap-10">
               {/* Item 1 */}
               <div className="flex gap-6 items-start">
-                <img src="/nosotros/procesos .cardenas saltos abogados.svg" className="w-12 h-12 flex-shrink-0" alt="Icono procesos" />
+                <img src="/nosotros/procesos-cardenas-saltos-abogados.svg" className="w-12 h-12 flex-shrink-0" alt="Icono procesos" />
                 <p className="text-white/80 text-lg leading-relaxed pt-2">
                   Experiencia en procesos legales de instituciones como ministerios gubernamentales [cite: 42]
                 </p>
               </div>
               {/* Item 2 */}
               <div className="flex gap-6 items-start">
-                <img src="/nosotros/asesoramientos entidades ecuatorianas cardenas saltos abogados.svg" className="w-12 h-12 flex-shrink-0" alt="Icono asesoramiento" />
+                <img src="/nosotros/nosotros/asesoramientos-entidades-ecuatorianas-cardenas-saltos-abogados.svg" className="w-12 h-12 flex-shrink-0" alt="Icono asesoramiento" />
                 <p className="text-white/80 text-lg leading-relaxed pt-2">
                   Experiencia en asesoramiento jurídico de alto nivel en diversas entidades del Estado Ecuatoriano [cite: 47]
                 </p>
               </div>
               {/* Item 3 */}
               <div className="flex gap-6 items-start">
-                <img src="/nosotros/litigio cardenas saltos abogados.svg" className="w-12 h-12 flex-shrink-0" alt="Icono litigio" />
+                <img src="/nosotros/litigio-cardenas-saltos-abogados.svg" className="w-12 h-12 flex-shrink-0" alt="Icono litigio" />
                 <p className="text-white/80 text-lg leading-relaxed pt-2">
                   Experiencia en Litigios de sanciones estatales y representación en juzgados y tribunales [cite: 49]
                 </p>
@@ -86,7 +86,7 @@ export default function Nosotros() {
       {/* SECCIÓN EXPERIENCIA (Reutilizada) */}
       <section className="w-full py-24 px-6 bg-white text-center">
         <h2 className="font-medium text-[#051d40] mb-20 leading-tight text-[2.25rem]">
-          Nuestra experiencia nos avala [cite: 17, 50]
+          Nuestra experiencia nos avala
         </h2>
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-center items-center gap-20 md:gap-32 grayscale opacity-80">
           <img src="/home/asociacion-de-profesionales-de-gestion-de-riesgos-Cardenas-Saltos-Abogados-Ecuador.jpg" className="h-28 md:h-36 object-contain" alt="Asociación" />
@@ -100,7 +100,7 @@ export default function Nosotros() {
         <div className="max-w-7xl mx-auto px-6 text-left">
           <h2 className="text-[#051d40] text-4xl md:text-6xl mb-10" style={{ lineHeight: '1' }}>
             <span className="block font-black">Estrategia legal</span>
-            <span className="block font-normal">que genera resultados</span> [cite: 19, 20, 52, 53]
+            <span className="block font-normal">que genera resultados
           </h2>
           <a href={`https://wa.me/${phoneNumber}`} 
              className="inline-block bg-[#051d40] text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl">

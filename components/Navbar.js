@@ -1,76 +1,61 @@
-import React, { useState } from 'react';
 import Link from 'next/link';
+import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  
+  // RUTA ACTUALIZADA: Se eliminó la palabra "pequeño"
+  const logoPath = "/Logos/CS-logo-blanco.png";
+  const phoneNumber = "5939984851296";
 
   return (
-    <nav className="w-full bg-[#051d40] sticky top-0 z-[100] border-b border-white/20 font-['Gantari']">
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    /* Se añadió 'border-b border-white/20' para la línea blanca sutil */
+    <nav className="bg-[#051d40] w-full z-50 font-['Gantari'] font-normal border-b border-white/20">
+      <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
         
         {/* LOGOTIPO */}
-        <div className="flex-shrink-0">
-          <Link href="/">
-            <span className="text-white font-black text-xl tracking-tighter cursor-pointer">
-              CÁRDENAS SALTOS
-            </span>
-          </Link>
-        </div>
+        <Link href="/" className="flex items-center">
+          <img 
+            src={logoPath} 
+            alt="Cárdenas Saltos" 
+            className="h-10 md:h-12 object-contain"
+          />
+        </Link>
 
-        {/* MENÚ DESKTOP */}
-        <div className="hidden md:flex items-center gap-10">
-          <Link href="/">
-            <a className="text-white/90 hover:text-[#ffbd4a] text-sm font-medium transition-colors uppercase tracking-widest">Inicio</a>
-          </Link>
-          <Link href="/nosotros">
-            <a className="text-white/90 hover:text-[#ffbd4a] text-sm font-medium transition-colors uppercase tracking-widest">Nosotros</a>
-          </Link>
-          <Link href="/servicios">
-            <a className="text-white/90 hover:text-[#ffbd4a] text-sm font-medium transition-colors uppercase tracking-widest">Servicios</a>
-          </Link>
-          <Link href="/contacto">
-            <a className="text-white/90 hover:text-[#ffbd4a] text-sm font-medium transition-colors uppercase tracking-widest">Contacto</a>
-          </Link>
-          <a 
-            href="https://wa.me/5939984851296" 
-            className="bg-[#ffbd4a] text-[#051d40] px-6 py-2.5 rounded-full text-[12px] font-bold uppercase tracking-widest hover:scale-105 transition-all shadow-lg"
-          >
-            Consulta Hoy
+        {/* MENÚ DESKTOP (Gantari Regular) */}
+        <div className="hidden lg:flex gap-8 text-[11px] uppercase tracking-[0.15em] text-white/90 items-center">
+          <Link href="/" className="hover:text-[#ffbd4a] transition">Inicio</Link>
+          <Link href="/nosotros" className="hover:text-[#ffbd4a] transition">Nosotros</Link>
+          <Link href="/administrativo" className="hover:text-[#ffbd4a] transition">Derecho administrativo</Link>
+          <Link href="/constitucional" className="hover:text-[#ffbd4a] transition">Derecho constitucional</Link>
+          <Link href="/notarial" className="hover:text-[#ffbd4a] transition">Notarial</Link>
+          <Link href="/mediacion" className="hover:text-[#ffbd4a] transition">Mediación</Link>
+          <a href={`https://wa.me/${phoneNumber}`} className="border border-white px-5 py-2 rounded-full hover:bg-white hover:text-[#051d40] transition-all font-bold ml-4 text-center">
+            Consulta gratis
           </a>
         </div>
 
-        {/* BOTÓN MÓVIL */}
-        <div className="md:hidden">
-          <button 
-            onClick={() => setIsOpen(!isOpen)}
-            className="text-white focus:outline-none"
-          >
-            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {isOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-              )}
-            </svg>
+        {/* BOTÓN HAMBURGUESA (Móvil) */}
+        <div className="lg:hidden">
+          <button onClick={() => setIsOpen(!isOpen)} className="text-white">
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
       </div>
 
       {/* MENÚ MÓVIL DESPLEGABLE */}
       {isOpen && (
-        <div className="md:hidden bg-[#051d40] border-t border-white/10 px-6 py-8 flex flex-col gap-6 animate-fadeIn">
-          <Link href="/">
-            <a onClick={() => setIsOpen(false)} className="text-white text-lg font-medium">Inicio</a>
-          </Link>
-          <Link href="/nosotros">
-            <a onClick={() => setIsOpen(false)} className="text-white text-lg font-medium">Nosotros</a>
-          </Link>
-          <Link href="/servicios">
-            <a onClick={() => setIsOpen(false)} className="text-white text-lg font-medium">Servicios</a>
-          </Link>
-          <Link href="/contacto">
-            <a onClick={() => setIsOpen(false)} className="text-white text-lg font-medium">Contacto</a>
-          </Link>
+        <div className="lg:hidden bg-[#051d40] border-t border-white/10 px-6 py-8 flex flex-col gap-6 text-sm uppercase tracking-widest text-white">
+          <Link href="/" onClick={() => setIsOpen(false)}>Inicio</Link>
+          <Link href="/nosotros" onClick={() => setIsOpen(false)}>Nosotros</Link>
+          <Link href="/administrativo" onClick={() => setIsOpen(false)}>Derecho administrativo</Link>
+          <Link href="/constitucional" onClick={() => setIsOpen(false)}>Derecho constitucional</Link>
+          <Link href="/notarial" onClick={() => setIsOpen(false)}>Notarial</Link>
+          <Link href="/mediacion" onClick={() => setIsOpen(false)}>Mediación</Link>
+          <a href={`https://wa.me/${phoneNumber}`} className="bg-[#ffbd4a] text-[#051d40] py-3 rounded-full text-center font-bold">
+            Consulta gratis
+          </a>
         </div>
       )}
     </nav>

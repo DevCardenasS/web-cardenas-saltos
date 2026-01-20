@@ -1,75 +1,80 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
+import { useRouter } from 'next/router';
 
 export default function Navbar({ transparent }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const router = useRouter();
   const phoneNumber = "5939984851296";
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Solo es transparente si la página lo solicita Y no hay scroll Y el menú móvil está cerrado
-  const isTransparentNow = transparent && !isScrolled && !isOpen;
+  // DETERMINACIÓN DEL TIPO DE MENÚ
+  // 1. Home: Azul sólido (isHome)
+  // 2. Nosotros: Transparente que cambia a Azul (transparent)
+  // 3. Servicios: Blanco sólido (isServicePage)
+  
+  const isHome = router.pathname === "/";
+  const servicePages = ["/administrativo", "/constitucional", "/notarial", "/mediacion"];
+  const isServicePage = servicePages.includes(router.pathname);
 
-  // Selección dinámica de Logo
-  const logoPath = isTransparentNow 
-    ? "/Logos/CS-logo-blanco.png" 
-    : "/Logos/CS-logo-color-pequeño.png";
+  // Lógica de visualización
+  const isTransparentActive = transparent && !isScrolled && !isOpen;
+  const isWhiteMenu = isServicePage && !isTransparentActive;
+  const isBlueMenu = isHome || (transparent && isScrolled) || (transparent && isOpen);
+
+  // Recursos según el tipo de menú
+  const logoPath = isWhiteMenu ? "/Logos/CS-logo-color-pequeño.png" : "/Logos/CS-logo-blanco.png";
+  const textColor = isWhiteMenu ? "text-[#051d40]" : "text-white/90";
+  const borderColor = isWhiteMenu ? "border-[#051d40]/20" : "border-white/10";
+  const bgColor = isWhiteMenu ? "bg-white" : (isTransparentActive ? "bg-transparent" : "bg-[#051d40]");
 
   return (
     <nav 
-      className={`w-full z-[100] font-['Gantari'] font-normal transition-all duration-500 border-b ${
-        isTransparentNow 
-          ? 'bg-transparent fixed top-0 left-0 border-transparent' 
-          : 'bg-white sticky top-0 border-[#051d40]/20 shadow-sm'
+      className={`w-full z-[100] font-['Gantari'] transition-all duration-500 border-b ${bgColor} ${borderColor} ${
+        isTransparentActive ? 'fixed top-0 left-0 border-transparent' : 'sticky top-0 shadow-sm'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-        {/* LOGOTIPO */}
+        {/* LOGO */}
         <Link href="/" className="flex items-center">
           <img src={logoPath} alt="Cárdenas Saltos" className="h-9 md:h-12 object-contain cursor-pointer" />
         </Link>
 
-        {/* MENÚ DESKTOP */}
-        <div className="flex items-center gap-4">
-          <div className={`hidden lg:flex gap-8 text-[11px] uppercase tracking-[0.15em] items-center ${
-            isTransparentNow ? 'text-white/90' : 'text-[#051d40] font-bold'
-          }`}>
-            <Link href="/" className="hover:text-[#ffbd4a] transition cursor-pointer">Inicio</Link>
-            <Link href="/nosotros" className="hover:text-[#ffbd4a] transition cursor-pointer">Nosotros</Link>
-            <Link href="/administrativo" className="hover:text-[#ffbd4a] transition cursor-pointer">Derecho administrativo</Link>
-            <Link href="/constitucional" className="hover:text-[#ffbd4a] transition cursor-pointer">Derecho constitucional</Link>
-            <Link href="/notarial" className="hover:text-[#ffbd4a] transition cursor-pointer">Notarial</Link>
-            <Link href="/mediacion" className="hover:text-[#ffbd4a] transition cursor-pointer">Mediación</Link>
-            <a href={`https://wa.me/${phoneNumber}`} className="bg-[#ffbd4a] text-[#051d40] px-6 py-2.5 rounded-full hover:bg-[#051d40] hover:text-white transition-all font-bold ml-4 text-center uppercase tracking-wider shadow-md">
-              Consulta gratis
-            </a>
-          </div>
+        {/* NAVEGACIÓN DESKTOP */}
+        <div className="hidden lg:flex gap-8 text-[11px] uppercase tracking-[0.15em] items-center font-bold">
+          <Link href="/" className={`${textColor} hover:text-[#ffbd4a] transition`}>Inicio</Link>
+          <Link href="/nosotros" className={`${textColor} hover:text-[#ffbd4a] transition`}>Nosotros</Link>
+          <Link href="/administrativo" className={`${textColor} hover:text-[#ffbd4a] transition`}>Derecho administrativo</Link>
+          <Link href="/constitucional" className={`${textColor} hover:text-[#ffbd4a] transition`}>Derecho constitucional</Link>
+          <Link href="/notarial" className={`${textColor} hover:text-[#ffbd4a] transition`}>Notarial</Link>
+          <Link href="/mediacion" className={`${textColor} hover:text-[#ffbd4a] transition`}>Mediación</Link>
+          
+          <a href={`https://wa.me/${phoneNumber}`} className="bg-[#ffbd4a] text-[#051d40] px-6 py-2.5 rounded-full hover:scale-105 transition-all font-black ml-4 text-center uppercase tracking-wider shadow-md">
+            Consulta gratis
+          </a>
+        </div>
 
-          {/* BOTÓN MÓVIL */}
-          <div className="flex lg:hidden items-center gap-3">
-            <button onClick={() => setIsOpen(!isOpen)} className={isTransparentNow ? "text-white" : "text-[#051d40]"}>
-              {isOpen ? <X size={26} /> : <Menu size={26} />}
-            </button>
-          </div>
+        {/* MÓVIL */}
+        <div className="flex lg:hidden items-center gap-3">
+          <button onClick={() => setIsOpen(!isOpen)} className={isWhiteMenu ? "text-[#051d40]" : "text-white"}>
+            {isOpen ? <X size={26} /> : <Menu size={26} />}
+          </button>
         </div>
       </div>
 
-      {/* MENÚ DESPLEGABLE MÓVIL */}
+      {/* MENÚ MÓVIL DESPLEGABLE */}
       {isOpen && (
         <div className={`lg:hidden border-t px-6 py-8 flex flex-col gap-6 text-sm uppercase tracking-widest font-bold ${
-          isTransparentNow ? 'bg-[#051d40] text-white border-white/10' : 'bg-white text-[#051d40] border-slate-100'
+          isWhiteMenu ? 'bg-white text-[#051d40] border-slate-100' : 'bg-[#051d40] text-white border-white/10'
         }`}>
           <Link href="/" onClick={() => setIsOpen(false)}>Inicio</Link>
           <Link href="/nosotros" onClick={() => setIsOpen(false)}>Nosotros</Link>

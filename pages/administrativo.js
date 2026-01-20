@@ -79,13 +79,13 @@ export default function Administrativo() {
         <title>Cárdenas Saltos | Derecho Administrativo</title>
       </Head>
 
-      {/* HERO SECTION DE DOS COLUMNAS */}
+      {/* HERO SECTION - 2 COLUMNAS ALINEADAS SUPERIOR */}
       <section className="pt-24 pb-16 px-6">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start gap-12">
           
-          {/* Columna de Texto: Aparece PRIMERO en móvil y a la IZQUIERDA en desktop */}
-          <div className="lg:w-1/2 order-1 lg:order-1">
-            <p className="text-[#051d40] text-lg md:text-xl leading-relaxed mb-8 font-normal">
+          {/* Columna de Texto: Primero en móvil, Izquierda en Desktop */}
+          <div className="lg:w-1/2 order-1">
+            <p className="text-[#051d40] text-lg md:text-xl leading-relaxed mb-8 font-normal pt-2">
               ¿Te sancionó el Estado? ¿Tienes problemas con AMT, AMC, SUPECIAS, SUPER DE BANCOS, SEPS, etc? 
               Impugnamos glosas de Contraloría, defendemos en sumarios LOSEP y frenamos multas de GADS o Superintendencias. 
               Recibe ayuda en recursos de apelación, reclamos al SRI y contratación pública.
@@ -103,8 +103,8 @@ export default function Administrativo() {
             </a>
           </div>
 
-          {/* Columna de Título: Aparece DEBAJO en móvil y a la DERECHA en desktop */}
-          <div className="lg:w-1/2 order-2 lg:order-2">
+          {/* Columna de Título: Segundo en móvil, Derecha en Desktop */}
+          <div className="lg:w-1/2 order-2">
             <h1 className="text-[#051d40] text-5xl md:text-[5rem] uppercase tracking-tighter leading-[0.85] lg:text-right">
               <span className="block font-black">Derecho</span>
               <span className="block font-medium">administrativo</span>
@@ -123,14 +123,14 @@ export default function Administrativo() {
         />
       </section>
 
-      {/* SECCIÓN DE CARDS HORIZONTALES */}
+      {/* CARDS HORIZONTALES CON MARCO AZUL */}
       <section className="max-w-7xl mx-auto px-6 py-24 space-y-16">
         {servicios.map((servicio, index) => (
           <div 
             key={index} 
-            className="flex flex-col lg:flex-row bg-white border border-slate-100 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-blue-900/10 min-h-[450px]"
+            className="flex flex-col lg:flex-row bg-white border-2 border-[#051d40] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-blue-900/10 min-h-[450px]"
           >
-            {/* Lado Izquierdo: Título y descripción (Azul) */}
+            {/* Lado Azul (40%) */}
             <div className="lg:w-2/5 bg-[#051d40] p-10 md:p-14 flex flex-col justify-between">
               <div>
                 <h3 className="text-[#ffbd4a] text-3xl md:text-4xl font-black leading-tight">
@@ -150,8 +150,8 @@ export default function Administrativo() {
               </div>
             </div>
 
-            {/* Lado Derecho: Beneficios (Blanco) */}
-            <div className="lg:w-3/5 p-10 md:p-14 flex flex-col justify-center bg-white border-l border-slate-100">
+            {/* Lado Blanco (60%) */}
+            <div className="lg:w-3/5 p-10 md:p-14 flex flex-col justify-center bg-white border-l border-[#051d40]">
               <h4 className="text-[#ffbd4a] font-black uppercase text-sm tracking-[0.2em] mb-8">
                 Posibles beneficios
               </h4>

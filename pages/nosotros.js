@@ -5,12 +5,12 @@ export default function Nosotros() {
   const phoneNumber = "5939984851296";
 
   return (
-    <div className="w-full bg-[#051d40] font-['Gantari']">
+    <div className="w-full bg-white font-['Gantari']">
       <Head>
         <title>Cárdenas Saltos | Nosotros</title>
       </Head>
 
-      {/* HERO NOSOTROS - Ahora empezará desde arriba porque el Navbar es absoluto */}
+      {/* HERO NOSOTROS */}
       <section className="relative w-full h-[70vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
         <img 
           src="/nosotros/cardenas-saltos-abogados-hero-nosotros.jpg" 
@@ -19,21 +19,22 @@ export default function Nosotros() {
         />
         <div className="absolute inset-0 bg-black/50 z-10"></div>
         
-        <div className="relative z-20 max-w-4xl px-6 text-center">
-          <h1 className="text-white text-3xl md:text-5xl font-medium leading-tight">
-            Nuestro compromiso es acompañarte en el proceso <br />
-            y darte los mejores resultados
+        <div className="relative z-20 max-w-5xl px-6 text-center">
+          <h1 className="text-white text-3xl md:text-5xl leading-tight">
+            <span className="font-black">Nuestro compromiso es</span> <br />
+            <span className="font-medium">acompañarte en el proceso y darte los mejores resultados</span>
           </h1>
         </div>
       </section>
 
-      {/* SECCIÓN ESTRATEGIA LEGAL */}
-      <section className="w-full bg-[#051d40] py-24 px-6">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+      {/* SECCIÓN ESTRATEGIA LEGAL (Card azul sobre fondo blanco) */}
+      <section className="w-full bg-white py-24 px-4 md:px-6">
+        <div className="max-w-7xl mx-auto bg-[#051d40] rounded-[40px] md:rounded-[60px] p-10 md:p-20 flex flex-col lg:flex-row items-center gap-16 shadow-2xl">
           
+          {/* Lado Izquierdo: Logotipo 2 */}
           <div className="w-full lg:w-1/3 flex flex-col items-center lg:items-end border-r-0 lg:border-r border-white/10 pr-0 lg:pr-16">
             <img 
-              src="/nosotros/nosotros-logo-blanco-CS.png" 
+              src="/nosotros/nosotros-logo-blanco-CS-2.png" 
               className="h-32 md:h-40 object-contain mb-6" 
               alt="Logo Cárdenas Saltos"
             />
@@ -42,6 +43,7 @@ export default function Nosotros() {
             </h2>
           </div>
 
+          {/* Lado Derecho: Iconos y Texto */}
           <div className="w-full lg:w-2/3">
             <h3 className="text-[#ffbd4a] text-3xl md:text-4xl font-medium mb-12">
               Es clave para tu estrategia legal
@@ -71,7 +73,7 @@ export default function Nosotros() {
         </div>
       </section>
 
-      {/* SECCIÓN EXPERIENCIA */}
+      {/* SECCIÓN EXPERIENCIA (Fondo Blanco) */}
       <section className="w-full py-24 px-6 bg-white text-center">
         <h2 className="font-medium text-[#051d40] mb-20 leading-tight text-[2.25rem]">
           Nuestra experiencia nos avala
@@ -100,5 +102,5 @@ export default function Nosotros() {
   );
 }
 
-// ESTA ES LA CLAVE: Le decimos al Layout que esta página requiere navbar transparente
+// Configuración para el Layout global
 Nosotros.transparentNavbar = true;

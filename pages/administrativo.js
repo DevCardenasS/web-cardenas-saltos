@@ -83,8 +83,8 @@ export default function Administrativo() {
       <section className="pt-24 pb-16 px-6">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
           
-          {/* Columna Izquierda: Textos y Botón */}
-          <div className="lg:w-1/2 order-2 lg:order-1">
+          {/* Columna de Texto: Aparece PRIMERO en móvil y a la IZQUIERDA en desktop */}
+          <div className="lg:w-1/2 order-1 lg:order-1">
             <p className="text-[#051d40] text-lg md:text-xl leading-relaxed mb-8 font-normal">
               ¿Te sancionó el Estado? ¿Tienes problemas con AMT, AMC, SUPECIAS, SUPER DE BANCOS, SEPS, etc? 
               Impugnamos glosas de Contraloría, defendemos en sumarios LOSEP y frenamos multas de GADS o Superintendencias. 
@@ -103,9 +103,9 @@ export default function Administrativo() {
             </a>
           </div>
 
-          {/* Columna Derecha: Título Principal */}
-          <div className="lg:w-1/2 order-1 lg:order-2">
-            <h1 className="text-[#051d40] text-6xl md:text-8xl lg:text-9xl uppercase tracking-tighter leading-[0.85] text-right">
+          {/* Columna de Título: Aparece DEBAJO en móvil y a la DERECHA en desktop */}
+          <div className="lg:w-1/2 order-2 lg:order-2">
+            <h1 className="text-[#051d40] text-5xl md:text-[5rem] uppercase tracking-tighter leading-[0.85] lg:text-right">
               <span className="block font-black">Derecho</span>
               <span className="block font-medium">administrativo</span>
             </h1>
@@ -133,7 +133,6 @@ export default function Administrativo() {
             {/* Lado Izquierdo: Título y descripción (Azul) */}
             <div className="lg:w-2/5 bg-[#051d40] p-10 md:p-14 flex flex-col justify-between">
               <div>
-                {/* Título en minúsculas (solo primera letra capital) */}
                 <h3 className="text-[#ffbd4a] text-3xl md:text-4xl font-black leading-tight">
                   {servicio.titulo}
                 </h3>

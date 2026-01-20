@@ -6,7 +6,7 @@ export default function Administrativo() {
 
   const servicios = [
     {
-      titulo: "Impugnación de Glosas (Contraloría)",
+      titulo: "Impugnación de glosas (Contraloría)",
       descripcion: "Defensa técnica para eliminar responsabilidades y multas impuestas por la Contraloría General del Estado.",
       beneficios: [
         "No pagar la multa: Lograr que el valor económico impuesto quede sin efecto.",
@@ -17,7 +17,7 @@ export default function Administrativo() {
       ]
     },
     {
-      titulo: "Contratación Pública (Defensa de Proveedores - SERCOP)",
+      titulo: "Contratación pública (Defensa de proveedores - SERCOP)",
       descripcion: "Asesoría y defensa para empresas que venden al Estado y enfrentan problemas en sus contratos o licitaciones.",
       beneficios: [
         "No ser 'Contratista Incumplido': Evitar la sanción que te impide venderle al Estado por 5 años.",
@@ -28,7 +28,7 @@ export default function Administrativo() {
       ]
     },
     {
-      titulo: "Sumarios Administrativos (Defensa de Servidores Públicos - LOSEP)",
+      titulo: "Sumarios administrativos (Defensa de servidores públicos - LOSEP)",
       descripcion: "Defensa para empleados públicos que enfrentan procesos para ser despedidos o sancionados.",
       beneficios: [
         "Conservar tu empleo: Desvanecer las acusaciones para que no te destituyan de la institución.",
@@ -39,7 +39,7 @@ export default function Administrativo() {
       ]
     },
     {
-      titulo: "Reclamos SRI (Tributario Administrativo)",
+      titulo: "Reclamos SRI (Tributario administrativo)",
       descripcion: "Trámites para recuperar dinero, borrar deudas antiguas o frenar cobros injustos del SRI.",
       beneficios: [
         "Recuperar dinero de impuestos: Lograr que te devuelvan el IVA o Impuesto a la Renta estancado.",
@@ -50,7 +50,7 @@ export default function Administrativo() {
       ]
     },
     {
-      titulo: "Defensa ante Multas y Clausuras (Municipios y Agencias)",
+      titulo: "Defensa ante multas y clausuras (Municipios y Agencias)",
       descripcion: "Defensa rápida contra cierres de locales o multas impuestas por el Municipio, Bomberos o Intendencia.",
       beneficios: [
         "Reabrir tu negocio rápido: Levantar sellos de clausura para volver a trabajar de inmediato.",
@@ -61,7 +61,7 @@ export default function Administrativo() {
       ]
     },
     {
-      titulo: "Recursos Administrativos (Apelación y Revisión)",
+      titulo: "Recursos administrativos (Apelación y revisión)",
       descripcion: "El camino legal para que el jefe de la institución cambie una decisión que te perjudica.",
       beneficios: [
         "Cambiar una resolución negativa: Lograr que la autoridad superior anule lo que decidió el inferior.",
@@ -79,7 +79,7 @@ export default function Administrativo() {
         <title>Cárdenas Saltos | Derecho Administrativo</title>
       </Head>
 
-      {/* HERO TEXT SECTION */}
+      {/* NUEVO HERO DESIGN - BASADO EN IMAGEN */}
       <section className="pt-24 pb-16 px-6">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-[#051d40] text-5xl md:text-8xl mb-10 uppercase tracking-tighter leading-[0.85]">
@@ -109,7 +109,7 @@ export default function Administrativo() {
         </div>
       </section>
 
-      {/* FULL WIDE IMAGE SECTION */}
+      {/* IMAGEN FULL WIDE */}
       <section className="w-full h-[40vh] md:h-[70vh]">
         <img 
           src="/administrativo/cardenas-saltos-abogados-derecho-administrativo.jpg" 
@@ -118,20 +118,20 @@ export default function Administrativo() {
         />
       </section>
 
-      {/* HORIZONTAL SERVICES GRID */}
+      {/* SECCIÓN DE CARDS HORIZONTALES */}
       <section className="max-w-7xl mx-auto px-6 py-24 space-y-16">
         {servicios.map((servicio, index) => (
           <div 
             key={index} 
             className="flex flex-col lg:flex-row bg-white border border-slate-100 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-blue-900/10 min-h-[450px]"
           >
-            {/* Left Side: Title and Description (Blue) */}
+            {/* Lado Izquierdo: Título y descripción (Azul) */}
             <div className="lg:w-2/5 bg-[#051d40] p-10 md:p-14 flex flex-col justify-between">
               <div>
                 <h3 className="text-[#ffbd4a] text-3xl md:text-4xl font-black uppercase leading-tight">
                   {servicio.titulo}
                 </h3>
-                <p className="text-white/80 mt-6 text-base italic leading-relaxed">
+                <p className="text-white/80 mt-6 text-base font-normal leading-relaxed">
                   {servicio.descripcion}
                 </p>
               </div>
@@ -145,14 +145,14 @@ export default function Administrativo() {
               </div>
             </div>
 
-            {/* Right Side: Benefits (White) */}
+            {/* Lado Derecho: Beneficios (Blanco) */}
             <div className="lg:w-3/5 p-10 md:p-14 flex flex-col justify-center bg-white border-l border-slate-100">
               <h4 className="text-[#ffbd4a] font-black uppercase text-sm tracking-[0.2em] mb-8">
                 Posibles beneficios
               </h4>
               <ul className="grid grid-cols-1 gap-5">
                 {servicio.beneficios.map((beneficio, bIndex) => (
-                  <li key={bIndex} className="flex gap-4 items-start text-slate-700 text-[0.95rem] leading-snug">
+                  <li key={bIndex} className="flex gap-4 items-start text-slate-700 text-[0.95rem] font-normal leading-snug">
                     <div className="w-2 h-2 rounded-full bg-[#ffbd4a] mt-1.5 flex-shrink-0"></div>
                     {beneficio}
                   </li>
@@ -163,7 +163,7 @@ export default function Administrativo() {
         ))}
       </section>
 
-      {/* FINAL CALL TO ACTION */}
+      {/* BANNER FINAL */}
       <section className="w-full bg-[#ffbd4a] py-24">
         <div className="max-w-7xl mx-auto px-6 text-left">
           <h2 className="text-[#051d40] text-4xl md:text-6xl mb-10" style={{ lineHeight: '1' }}>

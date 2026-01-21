@@ -1,8 +1,10 @@
 import React from 'react';
 import Head from 'next/head';
+import { WHATSAPP_NUMBER } from '../constants'; // Importación de la constante global
 
 export default function Administrativo() {
-  const phoneNumber = "5939984851296";
+  // Definimos el mensaje predeterminado para WhatsApp codificado para URL
+  const whatsappMessage = encodeURIComponent("Hola Cárdenas Saltos Abogados, tengo una consulta sobre...");
 
   const servicios = [
     {
@@ -79,11 +81,10 @@ export default function Administrativo() {
         <title>Cárdenas Saltos | Derecho Administrativo</title>
       </Head>
 
-      {/* HERO SECTION - 2 COLUMNAS ALINEADAS SUPERIOR */}
+      {/* HERO SECTION */}
       <section className="pt-24 pb-16 px-6">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start gap-12">
           
-          {/* Columna de Texto: Primero en móvil, Izquierda en Desktop */}
           <div className="lg:w-1/2 order-1">
             <p className="text-[#051d40] text-lg md:text-xl leading-relaxed mb-8 font-normal pt-2">
               ¿Te sancionó el Estado? ¿Tienes problemas con AMT, AMC, SUPECIAS, SUPER DE BANCOS, SEPS, etc? 
@@ -96,14 +97,13 @@ export default function Administrativo() {
             </p>
 
             <a 
-              href={`https://wa.me/${phoneNumber}`} 
+              href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
               className="inline-block bg-[#ffbd4a] text-[#051d40] px-10 py-4 rounded-full font-medium text-sm uppercase tracking-widest hover:bg-[#051d40] hover:text-white transition-all shadow-lg"
             >
               Escríbenos ahora
             </a>
           </div>
 
-          {/* Columna de Título: Segundo en móvil, Derecha en Desktop */}
           <div className="lg:w-1/2 order-2">
             <h1 className="text-[#051d40] text-5xl md:text-[5rem] uppercase tracking-tighter leading-[0.85] lg:text-right">
               <span className="block font-black">Derecho</span>
@@ -123,14 +123,13 @@ export default function Administrativo() {
         />
       </section>
 
-      {/* CARDS HORIZONTALES CON MARCO AZUL */}
+      {/* CARDS HORIZONTALES */}
       <section className="max-w-7xl mx-auto px-6 py-24 space-y-16">
         {servicios.map((servicio, index) => (
           <div 
             key={index} 
             className="flex flex-col lg:flex-row bg-white border-2 border-[#051d40] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-blue-900/10 min-h-[450px]"
           >
-            {/* Lado Azul (40%) */}
             <div className="lg:w-2/5 bg-[#051d40] p-10 md:p-14 flex flex-col justify-between">
               <div>
                 <h3 className="text-[#ffbd4a] text-3xl md:text-4xl font-black leading-tight">
@@ -142,7 +141,7 @@ export default function Administrativo() {
               </div>
               <div className="mt-10">
                 <a 
-                  href={`https://wa.me/${phoneNumber}`} 
+                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
                   className="inline-block bg-[#ffbd4a] text-[#051d40] px-8 py-3 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-white transition-colors"
                 >
                   Escríbenos ahora
@@ -150,7 +149,6 @@ export default function Administrativo() {
               </div>
             </div>
 
-            {/* Lado Blanco (60%) */}
             <div className="lg:w-3/5 p-10 md:p-14 flex flex-col justify-center bg-white border-l border-[#051d40]">
               <h4 className="text-[#ffbd4a] font-black uppercase text-sm tracking-[0.2em] mb-8">
                 Posibles beneficios
@@ -175,7 +173,7 @@ export default function Administrativo() {
             <span className="block font-black">Estrategia legal</span>
             <span className="block font-normal">que genera resultados</span>
           </h2>
-          <a href={`https://wa.me/${phoneNumber}`} 
+          <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
              className="inline-block bg-[#051d40] text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
             Consulta gratis
           </a>

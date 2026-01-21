@@ -1,8 +1,10 @@
 import React from 'react';
 import Head from 'next/head';
+import { WHATSAPP_NUMBER } from '../constants'; // Importación de la constante global
 
 export default function Mediacion() {
-  const phoneNumber = "5939984851296";
+  // Definimos el mensaje predeterminado para WhatsApp codificado para URL
+  const whatsappMessage = encodeURIComponent("Hola Cárdenas Saltos Abogados, tengo una consulta sobre...");
 
   const servicios = [
     {
@@ -68,7 +70,7 @@ export default function Mediacion() {
               ¡Escríbenos y recibe una consulta gratis! 
             </p>
             <a 
-              href={`https://wa.me/${phoneNumber}`} 
+              href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
               className="inline-block bg-[#ffbd4a] text-[#051d40] px-10 py-4 rounded-full font-medium text-sm uppercase tracking-widest hover:bg-[#051d40] hover:text-white transition-all shadow-lg"
             >
               Escribenos ahora
@@ -109,7 +111,7 @@ export default function Mediacion() {
               </div>
               <div className="mt-10">
                 <a 
-                  href={`https://wa.me/${phoneNumber}`} 
+                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
                   className="inline-block bg-[#ffbd4a] text-[#051d40] px-8 py-3 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-white transition-colors"
                 >
                   Escríbenos ahora
@@ -141,7 +143,7 @@ export default function Mediacion() {
             <span className="block font-black">Estrategia legal</span>
             <span className="block font-normal">que genera resultados</span>
           </h2>
-          <a href={`https://wa.me/${phoneNumber}`} 
+          <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
              className="inline-block bg-[#051d40] text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
             Consulta gratis 
           </a>

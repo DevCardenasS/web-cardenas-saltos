@@ -1,8 +1,10 @@
 import React from 'react';
 import Head from 'next/head';
+import { WHATSAPP_NUMBER } from '../constants'; // Importamos la constante centralizada
 
 export default function Home() {
-  const phoneNumber = "5939984851296";
+  // Definimos el mensaje predeterminado para WhatsApp codificado para URL
+  const whatsappMessage = encodeURIComponent("Hola Cárdenas Saltos Abogados, tengo una consulta sobre...");
 
   return (
     <div className="w-full bg-white font-['Gantari']">
@@ -25,7 +27,7 @@ export default function Home() {
               </span>
               <span 
                 className="block font-medium text-white/90 text-[1.75rem] md:text-[3rem]"
-                style={{ lineHeight: '1.2' }} // Ajustado a 1.2 en móvil para que no se superponga
+                style={{ lineHeight: '1.2' }} 
               >
                 por eso te ofrecemos <br className="hidden md:block" />
                 las mejores soluciones <br className="hidden md:block" />
@@ -33,7 +35,7 @@ export default function Home() {
               </span>
             </h1>
             <div className="mt-10">
-              <a href={`https://wa.me/${phoneNumber}`} 
+              <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
                  className="inline-block bg-[#ffbd4a] text-[#051d40] px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-transform shadow-2xl">
                 Consulta gratis
               </a>
@@ -66,7 +68,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECCIÓN SERVICIOS - TEXTOS INTEGRADOS COMPLETAMENTE */}
+      {/* SECCIÓN SERVICIOS */}
       <section className="w-full py-20 px-6 bg-[#f2f2f2]">
         <h2 className="text-center text-3xl md:text-4xl font-medium text-[#051d40] mb-16 leading-tight">
           ¿En qué te podemos ayudar?
@@ -76,25 +78,29 @@ export default function Home() {
             title="Derecho administrativo" 
             desc="¿Problemas con el Estado? Te ayudamos a recuperar tu empleo, anular glosas de Contraloría, impugnar multas injustas y cobrar planillas del SERCOP. Somos especialistas en recursos administrativos para revocar sanciones, frenar abusos de autoridad y proteger tu patrimonio con total seguridad legal."
             img="/home/home-ayudar-Cardenas-saltos-Abogados-derecho-administrativo.png"
-            phoneNumber={phoneNumber}
+            phoneNumber={WHATSAPP_NUMBER}
+            whatsappMessage={whatsappMessage}
           />
           <ServiceCard 
             title="Derecho constitucional" 
             desc="Protegemos tus derechos con resultados reales. Recupera tu puesto de trabajo, limpia tu historial crediticio con Habeas Data o borra datos que dañan tu reputación (Derecho al Olvido). Defensa urgente con medidas cautelares en menos de 48 horas para evitar daños inminentes a tu vida y bienes."
             img="/home/home-ayudar-Cardenas-saltos-Abogados-derecho-constitucional.png"
-            phoneNumber={phoneNumber}
+            phoneNumber={WHATSAPP_NUMBER}
+            whatsappMessage={whatsappMessage}
           />
           <ServiceCard 
             title="Notarías" 
             desc="Trámites legales rápidos sin ir a juicio. Resolvemos herencias (posesión efectiva), divorcios inmediatos y creación de empresas SAS en tiempo récord. Garantizamos seguridad jurídica en tus escrituras y promesas de compraventa de casas o carros, con total respaldo legal y agilidad en cada proceso."
             img="/home/home-ayudar-Cardenas-saltos-Abogados-derecho-notarial-notarias.png"
-            phoneNumber={phoneNumber}
+            phoneNumber={WHATSAPP_NUMBER}
+            whatsappMessage={whatsappMessage}
           />
           <ServiceCard 
             title="Mediación" 
             desc="Resuelve tus conflictos hoy mismo de forma económica y sin peleas. Acuerdos legales sobre pensiones de alimentos, visitas, tenencia, deudas bancarias y liquidaciones laborales. Evita juicios de años con un acta de mediación que tiene la misma fuerza de una sentencia y garantiza tu paz mental."
             img="/home/home-ayudar-Cardenas-saltos-Abogados-mediacion-pension-alimenticia.png"
-            phoneNumber={phoneNumber}
+            phoneNumber={WHATSAPP_NUMBER}
+            whatsappMessage={whatsappMessage}
           />
         </div>
       </section>
@@ -109,7 +115,7 @@ export default function Home() {
             <span className="block font-black">Estrategia legal</span>
             <span className="block font-normal">que genera resultados</span>
           </h2>
-          <a href={`https://wa.me/${phoneNumber}`} 
+          <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
              className="inline-block bg-[#051d40] text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
             Consulta gratis
           </a>
@@ -119,7 +125,7 @@ export default function Home() {
   );
 }
 
-function ServiceCard({ title, desc, img, phoneNumber }) {
+function ServiceCard({ title, desc, img, phoneNumber, whatsappMessage }) {
   return (
     <div className="bg-[#051d40] rounded-3xl overflow-hidden flex flex-col lg:flex-row min-h-[380px] shadow-2xl group border border-white/5">
       <div className="lg:w-1/2 h-64 lg:h-auto overflow-hidden bg-[#051d40] order-first lg:order-last">
@@ -134,7 +140,7 @@ function ServiceCard({ title, desc, img, phoneNumber }) {
           <button className="border border-white/50 text-white px-6 py-3 text-[11px] rounded-full font-normal hover:bg-white hover:text-[#051d40] transition w-full sm:w-auto uppercase tracking-wider">
             Ver más
           </button>
-          <a href={`https://wa.me/${phoneNumber}`} 
+          <a href={`https://wa.me/${phoneNumber}?text=${whatsappMessage}`} 
              className="bg-[#ffbd4a] text-[#051d40] px-6 py-3 text-[11px] rounded-full font-bold hover:bg-white transition text-center w-full sm:w-auto uppercase tracking-wider">
             Escríbenos
           </a>

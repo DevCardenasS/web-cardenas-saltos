@@ -1,6 +1,7 @@
 import '../styles/globals.css';
 import Layout from '../components/Layout';
 import Head from 'next/head'; 
+import WhatsAppButton from '../components/WhatsAppButton'; // <-- 1. Importamos el botón
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -16,6 +17,9 @@ function MyApp({ Component, pageProps }) {
         {/* Pasamos Component.transparentNavbar como prop al Layout si es necesario */}
         <Component {...pageProps} transparentNavbar={Component.transparentNavbar} />
       </Layout>
+
+      {/* 2. Colocamos el botón aquí para que aparezca en TODAS las páginas */}
+      <WhatsAppButton />
     </>
   );
 }

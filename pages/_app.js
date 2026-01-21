@@ -1,7 +1,8 @@
 import '../styles/globals.css';
 import Layout from '../components/Layout';
 import Head from 'next/head'; 
-import WhatsAppButton from '../components/WhatsAppButton'; // <-- 1. Importamos el botón
+import WhatsAppButton from '../components/WhatsAppButton';
+import { WHATSAPP_NUMBER } from '../constants'; // <-- Importamos la constante aquí también
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -18,7 +19,10 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} transparentNavbar={Component.transparentNavbar} />
       </Layout>
 
-      {/* 2. Colocamos el botón aquí para que aparezca en TODAS las páginas */}
+      {/* Colocamos el botón aquí para que aparezca en TODAS las páginas.
+          Al estar centralizado, el componente WhatsAppButton interno 
+          ya debería estar leyendo de constants.js 
+      */}
       <WhatsAppButton />
     </>
   );

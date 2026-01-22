@@ -2,12 +2,15 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useRouter } from 'next/router';
+import { WHATSAPP_NUMBER } from '../constants'; // Importación de la constante global
 
 export default function Navbar({ transparent }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const router = useRouter();
-  const phoneNumber = "5939984851296";
+
+  // Definimos el mensaje predeterminado para WhatsApp codificado para URL
+  const whatsappMessage = encodeURIComponent("Hola Cárdenas Saltos Abogados, tengo una consulta sobre...");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,7 +67,7 @@ export default function Navbar({ transparent }) {
           <Link href="/mediacion" className={`${textColor} hover:text-[#ffbd4a] transition`}>Mediación</Link>
           
           <a 
-            href={`https://wa.me/${phoneNumber}`} 
+            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
             className="bg-[#ffbd4a] text-[#051d40] px-6 py-2.5 rounded-full hover:scale-105 transition-all font-black ml-4 text-center uppercase tracking-wider shadow-md"
           >
             Consulta gratis
@@ -75,7 +78,7 @@ export default function Navbar({ transparent }) {
         <div className="flex lg:hidden items-center gap-3">
           {/* Botón de acceso rápido (fuera del menú desplegable) */}
           <a 
-            href={`https://wa.me/${phoneNumber}`} 
+            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
             className="bg-[#ffbd4a] text-[#051d40] px-4 py-2 rounded-full font-black text-[10px] uppercase tracking-wider shadow-sm"
           >
             Consulta gratis
@@ -90,7 +93,7 @@ export default function Navbar({ transparent }) {
         </div>
       </div>
 
-      {/* MENÚ MÓVIL DESPLEGABLE (Botón interno eliminado) */}
+      {/* MENÚ MÓVIL DESPLEGABLE */}
       {isOpen && (
         <div className={`lg:hidden border-t px-6 py-8 flex flex-col gap-6 text-sm uppercase tracking-widest font-bold ${
           isWhiteMenu ? 'bg-white text-[#051d40] border-slate-100' : 'bg-[#051d40] text-white border-white/10'

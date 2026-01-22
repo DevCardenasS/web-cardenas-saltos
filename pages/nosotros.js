@@ -1,8 +1,10 @@
 import React from 'react';
 import Head from 'next/head';
+import { WHATSAPP_NUMBER } from '../constants'; // Importamos la constante centralizada
 
 export default function Nosotros() {
-  const phoneNumber = "5939984851296";
+  // Definimos el mensaje predeterminado para WhatsApp codificado para URL
+  const whatsappMessage = encodeURIComponent("Hola Cárdenas Saltos Abogados, tengo una consulta sobre...");
 
   return (
     <div className="w-full bg-white font-['Gantari']">
@@ -10,7 +12,7 @@ export default function Nosotros() {
         <title>Cárdenas Saltos | Nosotros</title>
       </Head>
 
-      {/* HERO */}
+      {/* HERO - Texto fluido sin saltos forzados en responsive */}
       <section className="relative w-full h-[70vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
         <img 
           src="/nosotros/cardenas-saltos-abogados-hero-nosotros.jpg" 
@@ -20,7 +22,7 @@ export default function Nosotros() {
         <div className="absolute inset-0 bg-black/50 z-10"></div>
         <div className="relative z-20 max-w-5xl px-6 text-center">
           <h1 className="text-white text-3xl md:text-5xl leading-tight">
-            <span className="font-black">Nuestro compromiso es</span> <br />
+            <span className="font-black">Nuestro compromiso es </span>
             <span className="font-medium">acompañarte en el proceso y darte los mejores resultados</span>
           </h1>
         </div>
@@ -75,7 +77,7 @@ export default function Nosotros() {
             <span className="block font-black">Estrategia legal</span>
             <span className="block font-normal">que genera resultados</span>
           </h2>
-          <a href={`https://wa.me/${phoneNumber}`} className="inline-block bg-[#051d40] text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+          <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} className="inline-block bg-[#051d40] text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
             Consulta gratis
           </a>
         </div>

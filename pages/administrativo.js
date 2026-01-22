@@ -105,7 +105,8 @@ export default function Administrativo() {
           </div>
 
           <div className="lg:w-1/2 order-2">
-            <h1 className="text-[#051d40] text-5xl md:text-[5rem] uppercase tracking-tighter leading-[0.85] lg:text-right">
+            {/* Título ajustado a text-4xl en móvil para evitar desbordamiento */}
+            <h1 className="text-[#051d40] text-4xl md:text-[5rem] uppercase tracking-tighter leading-[0.85] lg:text-right">
               <span className="block font-black">Derecho</span>
               <span className="block font-medium">administrativo</span>
             </h1>

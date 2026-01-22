@@ -94,9 +94,9 @@ export default function Constitucional() {
             </a>
           </div>
 
-          {/* Columna de Título: Segundo en móvil, Derecha en Desktop */}
+          {/* Columna de Título: Ajustado text-4xl para responsive */}
           <div className="lg:w-1/2 order-2">
-            <h1 className="text-[#051d40] text-5xl md:text-[5rem] uppercase tracking-tighter leading-[0.85] lg:text-right">
+            <h1 className="text-[#051d40] text-4xl md:text-[5rem] uppercase tracking-tighter leading-[0.85] lg:text-right">
               <span className="block font-black">Derecho</span>
               <span className="block font-medium">constitucional</span>
             </h1>

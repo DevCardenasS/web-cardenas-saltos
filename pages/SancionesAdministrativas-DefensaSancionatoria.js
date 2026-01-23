@@ -16,7 +16,7 @@ export default function DefensaSancionatoria() {
         <div className="max-w-7xl mx-auto text-left">
           <h1 className="text-[#051d40] text-3xl md:text-6xl leading-tight mb-6">
             <span className="block font-black">¿Tu negocio fue Clausurado</span>
-           <span className="block font-medium mt-1">o recibiste una Multa Injusta?</span> 
+            <span className="block font-medium mt-1">o recibiste una Multa Injusta?</span> 
           </h1>
           
           <p className="text-[#051d40] text-lg md:text-2xl mb-10 max-w-3xl leading-relaxed font-normal">
@@ -46,9 +46,9 @@ export default function DefensaSancionatoria() {
       <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
         <div className="grid lg:grid-cols-2 gap-0 rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border-2 border-[#051d40]">
           
-          {/* Lado Izquierdo: ¿Te está sucediendo esto? */}
+          {/* Lado Izquierdo: ¿Te está sucediendo esto? (AJUSTADO TAMAÑO DESKTOP) */}
           <div className="bg-white p-8 md:p-16 flex flex-col justify-center">
-            <h2 className="text-[#051d40] text-3xl md:text-4xl font-bold mb-10 uppercase leading-tight">
+            <h2 className="text-[#051d40] text-3xl lg:text-5xl font-bold mb-10 uppercase leading-tight">
               ¿Te está sucediendo esto? 
             </h2>
             <div className="space-y-8 md:space-y-10">

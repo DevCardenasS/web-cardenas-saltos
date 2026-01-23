@@ -48,7 +48,7 @@ export default function DefensaLosep() {
           
           {/* Lado Izquierdo: ¿Te está sucediendo esto? (Bold + Tamaño Ajustado en Desktop) */}
           <div className="bg-white p-8 md:p-16 flex flex-col justify-center">
-            <h2 className="text-[#051d40] text-3xl md:text-4xl font-bold mb-10 uppercase leading-tight">
+            <h2 className="text-[#051d40] text-3xl lg:text-5xl font-bold mb-10 uppercase leading-tight">
               ¿Te está sucediendo esto?
             </h2>
             <div className="space-y-8 md:space-y-10">

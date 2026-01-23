@@ -46,6 +46,7 @@ export default function DefensaLosep() {
       <section className="max-w-7xl mx-auto px-6 py-24">
         <div className="grid lg:grid-cols-2 gap-0 rounded-[3rem] overflow-hidden shadow-2xl border-2 border-[#051d40]">
           
+          {/* Lado Izquierdo: Dolor */}
           <div className="bg-white p-10 md:p-16 flex flex-col justify-center">
             <h2 className="text-[#051d40] text-4xl md:text-5xl font-black mb-12 uppercase leading-tight">
               ¿Te está sucediendo esto?
@@ -72,6 +73,7 @@ export default function DefensaLosep() {
             </div>
           </div>
 
+          {/* Lado Derecho: Te Ayudamos */}
           <div className="bg-[#051d40] p-10 md:p-16 text-white flex flex-col justify-center">
             <h3 className="text-[#ffbd4a] text-3xl font-black mb-10 uppercase italic">Te ayudamos</h3>
             <ul className="space-y-8 mb-12">
@@ -98,23 +100,22 @@ export default function DefensaLosep() {
         </div>
       </section>
 
-      {/* --- SECCIÓN: AGITADORES DE CONCIENCIA CON TÍTULO PERSUASIVO --- */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
-        <div className="mb-12">
+      {/* --- NUEVA SECCIÓN: EMPATÍA (AGITADORES DE CONCIENCIA CORREGIDOS) --- */}
+      <section className="max-w-7xl mx-auto px-6 py-16 bg-gray-50/50 rounded-[3rem] mb-20">
+        <div className="mb-12 text-center md:text-left">
           <h2 className="text-[#051d40] text-3xl md:text-5xl font-black leading-tight">
-            Recupera la tranquilidad <br />
-            <span className="text-[#ffbd4a] font-medium">de saber que tu futuro está protegido</span>
+            Entendemos lo que estás pasando
           </h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
           {[
-            "Cada día con el sello de clausura es dinero que no vuelve y sueldos que hay que pagar.",
-            "Las multas no deben ser una sentencia de muerte para tu empresa.",
-            "Que la burocracia no asfixie tu derecho a trabajar. Peleamos contra la arbitrariedad de los inspectores.",
-            "Existen plazos legales que la autoridad ignora; si ellos fallan, tú ganas."
+            "No eres solo un número de expediente, es tu estabilidad familiar la que está en juego.",
+            "Sabemos que el Estado suele ser juez y parte. No estás solo contra el sistema.",
+            "Un error en el trámite de la institución puede ser tu salvación legal. Nosotros lo encontramos.",
+            "Tu récord profesional de años no puede ser borrado por una decisión política o un jefe momentáneo."
           ].map((text, index) => (
-            <div key={index} className="border-l-4 border-[#ffbd4a] bg-gray-50 p-8 shadow-sm">
+            <div key={index} className="bg-white p-8 rounded-2xl shadow-md border-t-4 border-[#051d40]">
               <p className="text-[#051d40] text-xl italic font-medium leading-relaxed">
                 "{text}"
               </p>

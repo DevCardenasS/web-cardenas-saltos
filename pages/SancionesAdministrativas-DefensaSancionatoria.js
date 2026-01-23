@@ -46,10 +46,10 @@ export default function DefensaSancionatoria() {
       <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
         <div className="grid lg:grid-cols-2 gap-0 rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border-2 border-[#051d40]">
           
-          {/* Lado Izquierdo: ¿Te está sucediendo esto? */}
+          {/* Lado Izquierdo: ¿Estás pasando por esto? */}
           <div className="bg-white p-8 md:p-16 flex flex-col justify-center">
             <h2 className="text-[#051d40] text-3xl lg:text-5xl font-bold mb-10 uppercase leading-tight">
-              ¿Te está sucediendo esto? 
+              ¿Estás pasando por esto? 
             </h2>
             <div className="space-y-8 md:space-y-10">
               <div className="flex gap-4">
@@ -108,9 +108,12 @@ export default function DefensaSancionatoria() {
         </div>
       </section>
 
-      {/* --- SECCIÓN: AUTORIDAD Y RESULTADOS (DEBAJO DE SERVICE CARD) --- */}
+      {/* --- SECCIÓN: AUTORIDAD Y RESULTADOS --- */}
       <section className="bg-[#f8f9fa] py-16 md:py-20 border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-[#051d40] text-3xl md:text-4xl font-black mb-12 text-center uppercase tracking-tight">
+            Somos tu mejor opción
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
             <div>
               <p className="text-[#ffbd4a] text-5xl md:text-6xl font-black mb-2">19</p>

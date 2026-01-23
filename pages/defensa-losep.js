@@ -24,7 +24,6 @@ export default function DefensaLosep() {
             no dejes que el Estado vulnere tus derechos.
           </p>
 
-          {/* BOTÓN AMARILLO */}
           <a 
             href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
             className="inline-block bg-[#ffbd4a] text-[#051d40] px-12 py-5 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-[#051d40] hover:text-white transition-all shadow-xl"
@@ -43,7 +42,7 @@ export default function DefensaLosep() {
         />
       </section>
 
-      {/* --- SECCIÓN DUAL: IDENTIFICACIÓN Y AYUDA (DISEÑO PDF) --- */}
+      {/* --- SECCIÓN DUAL: IDENTIFICACIÓN Y AYUDA --- */}
       <section className="max-w-7xl mx-auto px-6 py-24">
         <div className="grid lg:grid-cols-2 gap-0 rounded-[3rem] overflow-hidden shadow-2xl border-2 border-[#051d40]">
           
@@ -68,7 +67,7 @@ export default function DefensaLosep() {
             </div>
           </div>
 
-          {/* Lado Derecho: Te Ayudamos (Bloque Azul) */}
+          {/* Lado Derecho: Te Ayudamos */}
           <div className="bg-[#051d40] p-10 md:p-16 text-white flex flex-col justify-center">
             <h3 className="text-[#ffbd4a] text-3xl font-black mb-10 uppercase italic">Te ayudamos</h3>
             <ul className="space-y-8">
@@ -85,16 +84,37 @@ export default function DefensaLosep() {
                 <p className="text-lg leading-snug"><span className="font-bold text-[#ffbd4a]">Reintegro y Sueldos Caídos:</span> Peleamos por tu regreso al puesto y el pago de todo el tiempo que estuviste fuera.</p>
               </li>
             </ul>
-            <div className="mt-12 pt-8 border-t border-white/20">
-              <p className="text-sm leading-relaxed text-white/80 font-medium italic">
-                Expertos en normativa LOSEP, procesos ante la Contraloría General del Estado y Ministerio de Trabajo.
-              </p>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* BANNER FINAL: ESTRATEGIA LEGAL (CÓDIGO SOLICITADO) */}
+      {/* --- NUEVA SECCIÓN: EXPERTOS EN NORMATIVA (CON FOTO AL LADO) --- */}
+      <section className="max-w-7xl mx-auto px-6 py-20">
+        <div className="flex flex-col md:flex-row items-center gap-12">
+          {/* Texto a la izquierda */}
+          <div className="md:w-1/2">
+            <h2 className="text-[#051d40] text-3xl md:text-5xl font-bold leading-tight mb-10">
+              Expertos en normativa LOSEP, procesos ante la Contraloría General del Estado y Ministerio de Trabajo.
+            </h2>
+            <a 
+              href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
+              className="inline-block bg-[#ffbd4a] text-[#051d40] px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-[#051d40] hover:text-white transition-all shadow-lg"
+            >
+              Consulta gratis
+            </a>
+          </div>
+          {/* Imagen a la derecha con bordes redondeados */}
+          <div className="md:w-1/2">
+            <img 
+              src="/losep/DCS-Cardenas-Saltos-Abogados.png" 
+              alt="Cárdenas Saltos Abogados Expertos" 
+              className="w-full h-auto rounded-[2.5rem] shadow-2xl"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* --- BANNER FINAL: ESTRATEGIA LEGAL --- */}
       <section className="w-full bg-[#ffbd4a] py-24">
         <div className="max-w-7xl mx-auto px-6 text-left">
           <h2 className="text-[#051d40] text-4xl md:text-6xl mb-10" style={{ lineHeight: '1' }}>
@@ -106,15 +126,6 @@ export default function DefensaLosep() {
             Consulta gratis 
           </a>
         </div>
-      </section>
-
-      {/* Imagen final opcional DCS-Cardenas-Saltos-Abogados.png si se requiere visualmente */}
-      <section className="w-full">
-        <img 
-          src="/losep/DCS-Cardenas-Saltos-Abogados.png" 
-          alt="Cardenas Saltos Abogados" 
-          className="w-full h-auto"
-        />
       </section>
 
     </div>

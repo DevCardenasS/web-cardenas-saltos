@@ -14,9 +14,9 @@ export default function DefensaLosep() {
       {/* --- HERO SECTION: ALINEADO A LA IZQUIERDA --- */}
       <section className="pt-32 pb-16 px-6 md:px-20">
         <div className="max-w-7xl mx-auto text-left">
-          <h1 className="text-[#051d40] text-4xl md:text-6xl font-black leading-tight mb-6 uppercase">
-            ¿Te abrieron un Sumario Administrativo <br />
-            o fuiste Destituido injustamente?
+          <h1 className="text-[#051d40] text-4xl md:text-6xl leading-tight mb-6">
+            <span className="block font-black">¿Te abrieron un sumario administrativo</span>
+            <span className="block font-medium mt-1">o fuiste destituido injustamente?</span>
           </h1>
           
           <p className="text-[#051d40] text-xl md:text-2xl mb-10 max-w-3xl leading-relaxed font-normal">
@@ -34,7 +34,7 @@ export default function DefensaLosep() {
         </div>
       </section>
 
-      {/* --- IMAGEN FULL WIDTH: DEBAJO DEL HERO (USANDO TU PRIMERA RUTA) --- */}
+      {/* --- IMAGEN FULL WIDTH: DEBAJO DEL HERO --- */}
       <section className="w-full">
         <img 
           src="/losep/Expertos-en-normativa-LOSEP-Cardenas-Saltos-Abogados.jpg" 
@@ -94,41 +94,29 @@ export default function DefensaLosep() {
         </div>
       </section>
 
-      {/* BANNER FINAL: ESTRATEGIA LEGAL (USANDO TU SEGUNDA RUTA DE FOTO) */}
-      <section className="relative w-full overflow-hidden">
-        {/* Usamos la imagen de fondo si quieres que sea igual al diseño previo o mantenemos el color sólido que pediste */}
-        <div className="bg-[#ffbd4a] py-24 relative z-10">
-            <div className="max-w-7xl mx-auto px-6 text-left">
-            <h2 className="text-[#051d40] text-4xl md:text-6xl mb-10" style={{ lineHeight: '1' }}>
-                <span className="block font-black uppercase">Estrategia legal</span>
-                <span className="block font-normal">que genera resultados</span>
-            </h2>
-            <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
-                className="inline-block bg-[#051d40] text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
-                Consulta gratis 
-            </a>
-            </div>
+      {/* BANNER FINAL: ESTRATEGIA LEGAL (CÓDIGO SOLICITADO) */}
+      <section className="w-full bg-[#ffbd4a] py-24">
+        <div className="max-w-7xl mx-auto px-6 text-left">
+          <h2 className="text-[#051d40] text-4xl md:text-6xl mb-10" style={{ lineHeight: '1' }}>
+            <span className="block font-black uppercase">Estrategia legal</span>
+            <span className="block font-normal">que genera resultados</span>
+          </h2>
+          <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
+             className="inline-block bg-[#051d40] text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+            Consulta gratis 
+          </a>
         </div>
-        {/* He dejado el contenedor preparado por si la imagen DCS-Cardenas-Saltos-Abogados.png debe ir aquí de fondo */}
       </section>
 
-      {/* FOOTER */}
-      <footer className="bg-white py-20 border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12 text-[#051d40]">
-          <div>
-            <h4 className="font-black uppercase text-xs tracking-widest mb-4">Dirección</h4>
-            <p className="text-lg italic">Edificio La Previsora</p>
-          </div>
-          <div>
-            <h4 className="font-black uppercase text-xs tracking-widest mb-4">Email</h4>
-            <p className="text-lg italic">atencion@cardenassaltos.com</p>
-          </div>
-          <div>
-            <h4 className="font-black uppercase text-xs tracking-widest mb-4">Teléfono</h4>
-            <p className="text-lg italic">09984851296</p>
-          </div>
-        </div>
-      </footer>
+      {/* Imagen final opcional DCS-Cardenas-Saltos-Abogados.png si se requiere visualmente */}
+      <section className="w-full">
+        <img 
+          src="/losep/DCS-Cardenas-Saltos-Abogados.png" 
+          alt="Cardenas Saltos Abogados" 
+          className="w-full h-auto"
+        />
+      </section>
+
     </div>
   );
 }

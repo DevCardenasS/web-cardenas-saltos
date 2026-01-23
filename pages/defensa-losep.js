@@ -12,21 +12,21 @@ export default function DefensaLosep() {
       </Head>
 
       {/* --- HERO SECTION --- */}
-      <section className="pt-32 pb-16 px-6 md:px-20">
+      <section className="pt-24 md:pt-32 pb-16 px-6 md:px-20">
         <div className="max-w-7xl mx-auto text-left">
-          <h1 className="text-[#051d40] text-4xl md:text-6xl leading-tight mb-6">
+          <h1 className="text-[#051d40] text-3xl md:text-6xl leading-tight mb-6">
             <span className="block font-black">¿Te abrieron un sumario administrativo</span>
             <span className="block font-medium mt-1">o fuiste destituido injustamente?</span>
           </h1>
           
-          <p className="text-[#051d40] text-xl md:text-2xl mb-10 max-w-3xl leading-relaxed font-normal">
+          <p className="text-[#051d40] text-lg md:text-2xl mb-10 max-w-3xl leading-relaxed font-normal">
             Protege tu cargo y tu hoja de vida. Tienes poco tiempo para defenderte, 
             no dejes que el Estado vulnere tus derechos.
           </p>
 
           <a 
             href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
-            className="inline-block bg-[#ffbd4a] text-[#051d40] px-12 py-5 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-[#051d40] hover:text-white transition-all shadow-xl"
+            className="inline-block bg-[#ffbd4a] text-[#051d40] px-10 py-4 md:px-12 md:py-5 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-[#051d40] hover:text-white transition-all shadow-xl"
           >
             Consulta gratis
           </a>
@@ -43,53 +43,53 @@ export default function DefensaLosep() {
       </section>
 
       {/* --- SECCIÓN DUAL: SERVICE CARD --- */}
-      <section className="max-w-7xl mx-auto px-6 py-24">
-        <div className="grid lg:grid-cols-2 gap-0 rounded-[3rem] overflow-hidden shadow-2xl border-2 border-[#051d40]">
+      <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
+        <div className="grid lg:grid-cols-2 gap-0 rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border-2 border-[#051d40]">
           
-          {/* Lado Izquierdo: ¿Te está sucediendo esto? (Ahora font-medium) */}
-          <div className="bg-white p-10 md:p-16 flex flex-col justify-center">
-            <h2 className="text-[#051d40] text-4xl md:text-5xl font-medium mb-12 uppercase leading-tight">
+          {/* Lado Izquierdo: ¿Te está sucediendo esto? (Bold) */}
+          <div className="bg-white p-8 md:p-16 flex flex-col justify-center">
+            <h2 className="text-[#051d40] text-3xl md:text-5xl font-bold mb-10 uppercase leading-tight">
               ¿Te está sucediendo esto?
             </h2>
-            <div className="space-y-10">
+            <div className="space-y-8 md:space-y-10">
               <div className="flex gap-4">
                 <span className="text-[#ffbd4a] font-black text-2xl">•</span>
-                <p className="text-xl text-gray-700 italic font-medium leading-relaxed">
+                <p className="text-lg md:text-xl text-gray-700 italic font-medium leading-relaxed">
                   "¿Te notificaron el inicio de un sumario administrativo y temes la destitución?"
                 </p>
               </div>
-              <div className="flex gap-4 border-t border-gray-100 pt-8">
+              <div className="flex gap-4 border-t border-gray-100 pt-6 md:pt-8">
                 <span className="text-[#ffbd4a] font-black text-2xl">•</span>
-                <p className="text-xl text-gray-700 italic font-medium leading-relaxed">
+                <p className="text-lg md:text-xl text-gray-700 italic font-medium leading-relaxed">
                   "¿Estás sufriendo acoso laboral para obligarte a renunciar?"
                 </p>
               </div>
-              <div className="flex gap-4 border-t border-gray-100 pt-8">
+              <div className="flex gap-4 border-t border-gray-100 pt-6 md:pt-8">
                 <span className="text-[#ffbd4a] font-black text-2xl">•</span>
-                <p className="text-xl text-gray-700 italic font-medium leading-relaxed">
+                <p className="text-lg md:text-xl text-gray-700 italic font-medium leading-relaxed">
                   "¿Te notificaron una resolución de destitución sin seguir el debido proceso?"
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Lado Derecho: Te ayudamos (Más grande, sin cursiva) */}
-          <div className="bg-[#051d40] p-10 md:p-16 text-white flex flex-col justify-center">
-            <h3 className="text-[#ffbd4a] text-4xl md:text-5xl font-black mb-10 uppercase">
+          {/* Lado Derecho: Te ayudamos */}
+          <div className="bg-[#051d40] p-8 md:p-16 text-white flex flex-col justify-center">
+            <h3 className="text-[#ffbd4a] text-3xl md:text-5xl font-black mb-10 uppercase">
               Te ayudamos
             </h3>
-            <ul className="space-y-8 mb-12">
+            <ul className="space-y-6 md:space-y-8 mb-12">
               <li className="flex gap-4 items-start">
                 <span className="text-[#ffbd4a] font-bold text-xl">✓</span>
-                <p className="text-lg leading-snug"><span className="font-bold text-[#ffbd4a]">Frenamos la destitución:</span> Analizamos el expediente para encontrar errores técnicos que anulen el proceso.</p>
+                <p className="text-base md:text-lg leading-snug"><span className="font-bold text-[#ffbd4a]">Frenamos la destitución:</span> Analizamos el expediente para encontrar errores técnicos que anulen el proceso.</p>
               </li>
               <li className="flex gap-4 items-start border-t border-white/10 pt-6">
                 <span className="text-[#ffbd4a] font-bold text-xl">✓</span>
-                <p className="text-lg leading-snug"><span className="font-bold text-[#ffbd4a]">Limpiamos tu historial:</span> Evitamos que la sanción aparezca en el sistema del Ministerio de Trabajo (historial limpio).</p>
+                <p className="text-base md:text-lg leading-snug"><span className="font-bold text-[#ffbd4a]">Limpiamos tu historial:</span> Evitamos que la sanción aparezca en el sistema del Ministerio de Trabajo (historial limpio).</p>
               </li>
               <li className="flex gap-4 items-start border-t border-white/10 pt-6">
                 <span className="text-[#ffbd4a] font-bold text-xl">✓</span>
-                <p className="text-lg leading-snug"><span className="font-bold text-[#ffbd4a]">Reintegro y Sueldos Caídos:</span> Peleamos por tu regreso al puesto y el pago de todo el tiempo que estuviste fuera.</p>
+                <p className="text-base md:text-lg leading-snug"><span className="font-bold text-[#ffbd4a]">Reintegro y Sueldos Caídos:</span> Peleamos por tu regreso al puesto y el pago de todo el tiempo que estuviste fuera.</p>
               </li>
             </ul>
             <a 
@@ -103,14 +103,14 @@ export default function DefensaLosep() {
       </section>
 
       {/* --- SECCIÓN MINIMALISTA: ENTENDEMOS LO QUE ESTÁS PASANDO --- */}
-      <section className="max-w-7xl mx-auto px-6 py-24">
-        <div className="flex flex-col md:flex-row gap-16">
+      <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
+        <div className="flex flex-col md:flex-row gap-10 md:gap-16">
           <div className="md:w-1/3">
-            <h2 className="text-[#051d40] text-4xl md:text-5xl font-black leading-tight sticky top-32">
+            <h2 className="text-[#051d40] text-3xl md:text-5xl font-black leading-tight md:sticky md:top-32">
               Entendemos lo que estás pasando
             </h2>
           </div>
-          <div className="md:w-2/3 grid gap-12">
+          <div className="md:w-2/3 grid gap-10 md:gap-12">
             {[
               "No eres solo un número de expediente, es tu estabilidad familiar la que está en juego.",
               "Sabemos que el Estado suele ser juez y parte. No estás solo contra el sistema.",
@@ -118,8 +118,8 @@ export default function DefensaLosep() {
               "Tu récord profesional de años no puede ser borrado por una decisión política o un jefe momentáneo."
             ].map((text, index) => (
               <div key={index} className="flex gap-6 group">
-                <span className="text-[#ffbd4a] text-2xl font-black">0{index + 1}</span>
-                <p className="text-[#051d40] text-2xl italic font-medium leading-relaxed border-b border-gray-100 pb-8 group-last:border-0">
+                <span className="text-[#ffbd4a] text-xl md:text-2xl font-black">0{index + 1}</span>
+                <p className="text-xl md:text-2xl italic font-medium leading-relaxed border-b border-gray-100 pb-8 group-last:border-0 text-[#051d40]">
                   "{text}"
                 </p>
               </div>
@@ -128,12 +128,13 @@ export default function DefensaLosep() {
         </div>
       </section>
 
-      {/* --- SECCIÓN EXPERTO --- */}
-      <section className="max-w-7xl mx-auto px-6 py-20">
+      {/* --- SECCIÓN EXPERTO: FRASE CORREGIDA (Tranquilo) --- */}
+      <section className="max-w-7xl mx-auto px-6 py-16 md:py-20">
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2">
-            <h2 className="text-[#051d40] text-3xl md:text-5xl font-bold leading-tight mb-10">
-              Expertos en normativa LOSEP, procesos ante la Contraloría General del Estado y Ministerio de Trabajo.
+            <h2 className="text-[#051d40] text-2xl md:text-5xl leading-tight mb-10">
+              <span className="font-black">Tranquilo, somos </span>
+              <span className="font-medium">Expertos en normativa LOSEP, procesos ante la Contraloría General del Estado y Ministerio de Trabajo.</span>
             </h2>
             <a 
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
@@ -153,10 +154,10 @@ export default function DefensaLosep() {
       </section>
 
       {/* --- BANNER FINAL --- */}
-      <section className="w-full bg-[#ffbd4a] py-24">
+      <section className="w-full bg-[#ffbd4a] py-20 md:py-24">
         <div className="max-w-7xl mx-auto px-6 text-left">
-          <h2 className="text-[#051d40] text-4xl md:text-6xl mb-10" style={{ lineHeight: '1' }}>
-            <span className="block font-black uppercase">Estrategia legal</span>
+          <h2 className="text-[#051d40] text-3xl md:text-6xl mb-10" style={{ lineHeight: '1' }}>
+            <span className="block font-black">Estrategia legal</span>
             <span className="block font-normal">que genera resultados</span>
           </h2>
           <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 

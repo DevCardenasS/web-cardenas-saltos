@@ -46,9 +46,9 @@ export default function DefensaLosep() {
       <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
         <div className="grid lg:grid-cols-2 gap-0 rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border-2 border-[#051d40]">
           
-          {/* Lado Izquierdo: ¿Te está sucediendo esto? (Bold) */}
+          {/* Lado Izquierdo: ¿Te está sucediendo esto? (Bold + Tamaño Ajustado en Desktop) */}
           <div className="bg-white p-8 md:p-16 flex flex-col justify-center">
-            <h2 className="text-[#051d40] text-3xl md:text-5xl font-bold mb-10 uppercase leading-tight">
+            <h2 className="text-[#051d40] text-3xl md:text-4xl font-bold mb-10 uppercase leading-tight">
               ¿Te está sucediendo esto?
             </h2>
             <div className="space-y-8 md:space-y-10">
@@ -128,13 +128,13 @@ export default function DefensaLosep() {
         </div>
       </section>
 
-      {/* --- SECCIÓN EXPERTO: FRASE CORREGIDA (Tranquilo) --- */}
+      {/* --- SECCIÓN EXPERTO: FRASE CORREGIDA (Tranquilo en Black, resto normal) --- */}
       <section className="max-w-7xl mx-auto px-6 py-16 md:py-20">
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2">
             <h2 className="text-[#051d40] text-2xl md:text-5xl leading-tight mb-10">
-              <span className="font-black">Tranquilo, somos </span>
-              <span className="font-medium">Expertos en normativa LOSEP, procesos ante la Contraloría General del Estado y Ministerio de Trabajo.</span>
+              <span className="font-black">Tranquilo, </span>
+              <span className="font-normal">somos expertos en normativa LOSEP, procesos ante la Contraloría General del Estado y Ministerio de Trabajo.</span>
             </h2>
             <a 
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
@@ -157,7 +157,7 @@ export default function DefensaLosep() {
       <section className="w-full bg-[#ffbd4a] py-20 md:py-24">
         <div className="max-w-7xl mx-auto px-6 text-left">
           <h2 className="text-[#051d40] text-3xl md:text-6xl mb-10" style={{ lineHeight: '1' }}>
-            <span className="block font-black">Estrategia legal</span>
+            <span className="block font-black uppercase">Estrategia legal</span>
             <span className="block font-normal">que genera resultados</span>
           </h2>
           <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 

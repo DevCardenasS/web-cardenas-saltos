@@ -46,7 +46,6 @@ export default function DefensaLosep() {
       <section className="max-w-7xl mx-auto px-6 py-24">
         <div className="grid lg:grid-cols-2 gap-0 rounded-[3rem] overflow-hidden shadow-2xl border-2 border-[#051d40]">
           
-          {/* Lado Izquierdo: Dolor */}
           <div className="bg-white p-10 md:p-16 flex flex-col justify-center">
             <h2 className="text-[#051d40] text-4xl md:text-5xl font-black mb-12 uppercase leading-tight">
               ¿Te está sucediendo esto?
@@ -73,7 +72,6 @@ export default function DefensaLosep() {
             </div>
           </div>
 
-          {/* Lado Derecho: Te Ayudamos */}
           <div className="bg-[#051d40] p-10 md:p-16 text-white flex flex-col justify-center">
             <h3 className="text-[#ffbd4a] text-3xl font-black mb-10 uppercase italic">Te ayudamos</h3>
             <ul className="space-y-8 mb-12">
@@ -100,27 +98,29 @@ export default function DefensaLosep() {
         </div>
       </section>
 
-      {/* --- NUEVA SECCIÓN: EMPATÍA (AGITADORES DE CONCIENCIA CORREGIDOS) --- */}
-      <section className="max-w-7xl mx-auto px-6 py-16 bg-gray-50/50 rounded-[3rem] mb-20">
-        <div className="mb-12 text-center md:text-left">
-          <h2 className="text-[#051d40] text-3xl md:text-5xl font-black leading-tight">
-            Entendemos lo que estás pasando
-          </h2>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8">
-          {[
-            "No eres solo un número de expediente, es tu estabilidad familiar la que está en juego.",
-            "Sabemos que el Estado suele ser juez y parte. No estás solo contra el sistema.",
-            "Un error en el trámite de la institución puede ser tu salvación legal. Nosotros lo encontramos.",
-            "Tu récord profesional de años no puede ser borrado por una decisión política o un jefe momentáneo."
-          ].map((text, index) => (
-            <div key={index} className="bg-white p-8 rounded-2xl shadow-md border-t-4 border-[#051d40]">
-              <p className="text-[#051d40] text-xl italic font-medium leading-relaxed">
-                "{text}"
-              </p>
-            </div>
-          ))}
+      {/* --- SECCIÓN MINIMALISTA: ENTENDEMOS LO QUE ESTÁS PASANDO --- */}
+      <section className="max-w-7xl mx-auto px-6 py-24 border-t border-gray-100">
+        <div className="flex flex-col md:flex-row gap-16">
+          <div className="md:w-1/3">
+            <h2 className="text-[#051d40] text-4xl md:text-5xl font-black leading-tight sticky top-32">
+              Entendemos lo que estás pasando
+            </h2>
+          </div>
+          <div className="md:w-2/3 grid gap-12">
+            {[
+              "No eres solo un número de expediente, es tu estabilidad familiar la que está en juego.",
+              "Sabemos que el Estado suele ser juez y parte. No estás solo contra el sistema.",
+              "Un error en el trámite de la institución puede ser tu salvación legal. Nosotros lo encontramos.",
+              "Tu récord profesional de años no puede ser borrado por una decisión política o un jefe momentáneo."
+            ].map((text, index) => (
+              <div key={index} className="flex gap-6 group">
+                <span className="text-[#ffbd4a] text-2xl font-black">0{index + 1}</span>
+                <p className="text-[#051d40] text-2xl italic font-medium leading-relaxed border-b border-gray-100 pb-8 group-last:border-0">
+                  "{text}"
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -152,7 +152,7 @@ export default function DefensaLosep() {
       <section className="w-full bg-[#ffbd4a] py-24">
         <div className="max-w-7xl mx-auto px-6 text-left">
           <h2 className="text-[#051d40] text-4xl md:text-6xl mb-10" style={{ lineHeight: '1' }}>
-            <span className="block font-black">estrategia legal</span>
+            <span className="block font-black uppercase">Estrategia legal</span>
             <span className="block font-normal">que genera resultados</span>
           </h2>
           <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 

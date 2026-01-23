@@ -1,142 +1,100 @@
 import React from 'react';
 import Head from 'next/head';
-import { WHATSAPP_NUMBER } from '../constants'; // Importación de la constante global
+import { WHATSAPP_NUMBER } from '../constants';
 
-export default function Mediacion() {
-  // Definimos el mensaje predeterminado para WhatsApp codificado para URL
-  const whatsappMessage = encodeURIComponent("Hola Cárdenas Saltos Abogados, tengo una consulta sobre...");
-
-  const servicios = [
-    {
-      titulo: "Pensión alimenticia, régimen de visitas y tenencia",
-      descripcion: "Acuerdo integral para organizar la vida de los hijos: desde cuánto se paga de pensión hasta con quién viven y cuándo se visitan.",
-      beneficios: [
-        "Aumento o Reducción de Pensión: Ajustar el valor legal si el padre/madre gana más o si se quedó sin empleo.",
-        "Horarios de Visitas Claros: Definir días, feriados y vacaciones para evitar peleas y llamadas constantes.",
-        "Acuerdo de Tenencia: Establecer legalmente con quién vivirán los hijos de forma estable.",
-        "Ahorro de Juicios Largos: Resolver en una hora lo que un Juez de Familia tarda 6 meses o más.",
-        "Acta con Fuerza de Sentencia: Si el acuerdo no se cumple, se puede pedir apremio o ejecución inmediata."
-      ]
-    },
-    {
-      titulo: "Liquidaciones Laborales (Empresa y Empleado)",
-      descripcion: "Espacio para pactar el pago de liquidaciones, despidos o bonificaciones de forma amistosa y legal.",
-      beneficios: [
-        "Cobro Inmediato: El trabajador recibe su dinero sin esperar años de juicio laboral.",
-        "Cero Multas para la Empresa: Evitar la sanción del Ministerio del Trabajo por falta de pago a tiempo.",
-        "Cálculos Legales Correctos: Revisión profesional de décimos, vacaciones y desahucios.",
-        "Seguridad Total: El acta impide que el empleado pueda volver a demandar por el mismo tema.",
-        "Planes de Pago: Posibilidad de pactar cuotas si la empresa no tiene liquidez total inmediata."
-      ]
-    },
-    {
-      titulo: "Reestructuración de deudas (Bancos y Cooperativas)",
-      descripcion: "Negociación directa con acreedores para conseguir nuevas cuotas que el cliente sí pueda pagar.",
-      beneficios: [
-        "Frenar el Acoso de Cobranza: Detener las llamadas insistentes y las amenazas de juicio.",
-        "Nuevos Plazos y Cuotas: Lograr que el banco extienda el tiempo y baje el valor de la cuota mensual.",
-        "Bajar Intereses de Mora: Negociar la reducción de recargos por atrasos.",
-        "Evitar Embargos: Detener el proceso de quitarte el sueldo, el carro o la casa.",
-        "Certificado de Acuerdo: Un documento legal que demuestra que estás cumpliendo con tus pagos."
-      ]
-    },
-    {
-      titulo: "Conflictos de Inquilinato (Arriendos)",
-      descripcion: "Solución de problemas por falta de pago de renta, daños al inmueble o entrega de locales.",
-      beneficios: [
-        "Desalojo Pactado: Acordar una fecha fija para desocupar sin necesidad de usar la fuerza pública.",
-        "Plan para Pagar Arriendos: Reconocer la deuda y pactar cómo se va a cancelar lo adeudado.",
-        "Devolución de Garantía: Liquidación justa descontando daños reales y servicios pendientes.",
-        "Evitar Juicios de Inquilinato: Ahorrar miles de dólares en abogados y trámites judiciales eternos.",
-        "Paz entre las Partes: Terminar la relación arrendaticia sin violencia ni rencores."
-      ]
-    }
-  ];
+export default function DefensaLosep() {
+  const whatsappMessage = encodeURIComponent("Hola Cárdenas Saltos Abogados, necesito ayuda urgente con un tema de LOSEP / Sumario...");
 
   return (
     <div className="w-full bg-white font-['Gantari']">
       <Head>
-        <title>Cárdenas Saltos | Mediación</title>
+        <title>Cárdenas Saltos | Defensa LOSEP</title>
       </Head>
 
-      {/* HERO SECTION */}
-      <section className="pt-24 pb-16 px-6">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start gap-12">
-          <div className="lg:w-1/2 order-1">
-            <p className="text-[#051d40] text-lg md:text-xl leading-relaxed mb-8 font-normal pt-2">
-              Resuelve tus conflictos de forma rápida y económica sin juicios. Logra acuerdos legales en pensión alimenticia, visitas, tenencia, deudas y liquidaciones laborales. Total validez ante la ley, menos estrés y resultados rápidos.
-            </p>
-            <p className="text-[#051d40] text-xl md:text-2xl font-bold mb-8">
-              ¡Escríbenos y recibe una consulta gratis! 
-            </p>
-            <a 
-              href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
-              className="inline-block bg-[#ffbd4a] text-[#051d40] px-10 py-4 rounded-full font-medium text-sm uppercase tracking-widest hover:bg-[#051d40] hover:text-white transition-all shadow-lg"
-            >
-              Escribenos ahora
-            </a>
+      {/* --- HERO SECTION: ALINEADO A LA IZQUIERDA --- */}
+      <section className="pt-32 pb-16 px-6 md:px-20">
+        <div className="max-w-7xl mx-auto text-left">
+          <h1 className="text-[#051d40] text-4xl md:text-6xl font-black leading-tight mb-6 uppercase">
+            ¿Te abrieron un Sumario Administrativo <br />
+            o fuiste Destituido injustamente?
+          </h1>
+          
+          <p className="text-[#051d40] text-xl md:text-2xl mb-10 max-w-3xl leading-relaxed font-normal">
+            Protege tu cargo y tu hoja de vida. Tienes poco tiempo para defenderte, 
+            no dejes que el Estado vulnere tus derechos.
+          </p>
+
+          {/* BOTÓN AMARILLO */}
+          <a 
+            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
+            className="inline-block bg-[#ffbd4a] text-[#051d40] px-12 py-5 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-[#051d40] hover:text-white transition-all shadow-xl"
+          >
+            Consulta gratis
+          </a>
+        </div>
+      </section>
+
+      {/* --- IMAGEN FULL WIDTH: DEBAJO DEL HERO --- */}
+      <section className="w-full">
+        <img 
+          src="/losep/losep.png" 
+          alt="Defensa LOSEP Cárdenas Saltos" 
+          className="w-full h-auto object-cover max-h-[700px]"
+        />
+      </section>
+
+      {/* --- SECCIÓN DUAL: IDENTIFICACIÓN Y AYUDA (DISEÑO PDF) --- */}
+      <section className="max-w-7xl mx-auto px-6 py-24">
+        <div className="grid lg:grid-cols-2 gap-0 rounded-[3rem] overflow-hidden shadow-2xl border-2 border-[#051d40]">
+          
+          {/* Lado Izquierdo: Dolor */}
+          <div className="bg-white p-10 md:p-16 flex flex-col justify-center">
+            <h2 className="text-[#051d40] text-4xl md:text-5xl font-black mb-12 uppercase leading-tight">
+              ¿Te está sucediendo esto?
+            </h2>
+            <div className="space-y-10">
+              <div className="flex gap-4">
+                <span className="text-[#ffbd4a] font-black text-2xl">•</span>
+                <p className="text-xl text-gray-700 italic font-medium">"¿Te notificaron el inicio de un sumario administrativo y temes la destitución?"</p>
+              </div>
+              <div className="flex gap-4 border-t border-gray-100 pt-8">
+                <span className="text-[#ffbd4a] font-black text-2xl">•</span>
+                <p className="text-xl text-gray-700 italic font-medium">"¿Estás sufriendo acoso laboral para obligarte a renunciar?"</p>
+              </div>
+              <div className="flex gap-4 border-t border-gray-100 pt-8">
+                <span className="text-[#ffbd4a] font-black text-2xl">•</span>
+                <p className="text-xl text-gray-700 italic font-medium">"¿Te notificaron una resolución de destitución sin seguir el debido proceso?"</p>
+              </div>
+            </div>
           </div>
-          <div className="lg:w-1/2 order-2">
-            <h1 className="text-[#051d40] text-5xl md:text-[5rem] uppercase tracking-tighter leading-[0.85] lg:text-right">
-              <span className="block font-black">Mediación</span>
-            </h1>
+
+          {/* Lado Derecho: Te Ayudamos (Bloque Azul) */}
+          <div className="bg-[#051d40] p-10 md:p-16 text-white flex flex-col justify-center">
+            <h3 className="text-[#ffbd4a] text-3xl font-black mb-10 uppercase italic">Te ayudamos</h3>
+            <ul className="space-y-8">
+              <li className="flex gap-4 items-start">
+                <span className="text-[#ffbd4a] font-bold text-xl">✓</span>
+                <p className="text-lg leading-snug"><span className="font-bold text-[#ffbd4a]">Frenamos la destitución:</span> Analizamos el expediente para encontrar errores técnicos que anulen el proceso.</p>
+              </li>
+              <li className="flex gap-4 items-start border-t border-white/10 pt-6">
+                <span className="text-[#ffbd4a] font-bold text-xl">✓</span>
+                <p className="text-lg leading-snug"><span className="font-bold text-[#ffbd4a]">Limpiamos tu historial:</span> Evitamos que la sanción aparezca en el sistema del Ministerio de Trabajo (historial limpio).</p>
+              </li>
+              <li className="flex gap-4 items-start border-t border-white/10 pt-6">
+                <span className="text-[#ffbd4a] font-bold text-xl">✓</span>
+                <p className="text-lg leading-snug"><span className="font-bold text-[#ffbd4a]">Reintegro y Sueldos Caídos:</span> Peleamos por tu regreso al puesto y el pago de todo el tiempo que estuviste fuera.</p>
+              </li>
+            </ul>
+            <div className="mt-12 pt-8 border-t border-white/20">
+              <p className="text-sm leading-relaxed text-white/80 font-medium italic">
+                Expertos en normativa LOSEP, procesos ante la Contraloría General del Estado y Ministerio de Trabajo.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* IMAGEN FULL WIDE */}
-      <section className="w-full h-[40vh] md:h-[70vh]">
-        <img 
-          src="/mediacion/mediacion-cardenas-saltos.jpg" 
-          className="w-full h-full object-cover"
-          alt="Mediación Cárdenas Saltos"
-        />
-      </section>
-
-      {/* CARDS HORIZONTALES */}
-      <section className="max-w-7xl mx-auto px-6 py-24 space-y-16">
-        {servicios.map((servicio, index) => (
-          <div 
-            key={index} 
-            className="flex flex-col lg:flex-row bg-white border-2 border-[#051d40] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-blue-900/10 min-h-[450px]"
-          >
-            <div className="lg:w-2/5 bg-[#051d40] p-10 md:p-14 flex flex-col justify-between">
-              <div>
-                <h3 className="text-[#ffbd4a] text-3xl md:text-4xl font-black leading-tight">
-                  {servicio.titulo}
-                </h3>
-                <p className="text-white/80 mt-6 text-base font-normal leading-relaxed">
-                  {servicio.descripcion}
-                </p>
-              </div>
-              <div className="mt-10">
-                <a 
-                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
-                  className="inline-block bg-[#ffbd4a] text-[#051d40] px-8 py-3 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-white transition-colors"
-                >
-                  Escríbenos ahora
-                </a>
-              </div>
-            </div>
-
-            <div className="lg:w-3/5 p-10 md:p-14 flex flex-col justify-center bg-white border-l border-[#051d40]">
-              <h4 className="text-[#ffbd4a] font-black uppercase text-sm tracking-[0.2em] mb-8">
-                Posibles beneficios 
-              </h4>
-              <ul className="grid grid-cols-1 gap-5">
-                {servicio.beneficios.map((beneficio, bIndex) => (
-                  <li key={bIndex} className="flex gap-4 items-start text-slate-700 text-[0.95rem] font-normal leading-snug">
-                    <div className="w-2 h-2 rounded-full bg-[#ffbd4a] mt-1.5 flex-shrink-0"></div>
-                    {beneficio}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        ))}
-      </section>
-
-      {/* BANNER FINAL */}
+      {/* BANNER FINAL: ESTRATEGIA LEGAL (CÓDIGO SOLICITADO) */}
       <section className="w-full bg-[#ffbd4a] py-24">
         <div className="max-w-7xl mx-auto px-6 text-left">
           <h2 className="text-[#051d40] text-4xl md:text-6xl mb-10" style={{ lineHeight: '1' }}>
@@ -149,6 +107,24 @@ export default function Mediacion() {
           </a>
         </div>
       </section>
+
+      {/* FOOTER */}
+      <footer className="bg-white py-20 border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12 text-[#051d40]">
+          <div>
+            <h4 className="font-black uppercase text-xs tracking-widest mb-4">Dirección</h4>
+            <p className="text-lg italic">Edificio La Previsora</p>
+          </div>
+          <div>
+            <h4 className="font-black uppercase text-xs tracking-widest mb-4">Email</h4>
+            <p className="text-lg italic">atencion@cardenassaltos.com</p>
+          </div>
+          <div>
+            <h4 className="font-black uppercase text-xs tracking-widest mb-4">Teléfono</h4>
+            <p className="text-lg italic">09984851296</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

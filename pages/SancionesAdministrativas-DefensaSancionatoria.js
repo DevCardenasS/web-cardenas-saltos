@@ -16,19 +16,19 @@ export default function DefensaSancionatoria() {
         <div className="max-w-7xl mx-auto text-left">
           <h1 className="text-[#051d40] text-3xl md:text-6xl leading-tight mb-6">
             <span className="block font-black">¿Tu negocio fue Clausurado</span>
-            [cite_start]<span className="block font-medium mt-1">o recibiste una Multa Injusta?</span> [cite: 40, 41]
+           <span className="block font-medium mt-1">o recibiste una Multa Injusta?</span> 
           </h1>
           
           <p className="text-[#051d40] text-lg md:text-2xl mb-10 max-w-3xl leading-relaxed font-normal">
             Impugnamos sanciones de Municipios, Agencias de Control y Superintendencias. 
-            [cite_start]Reactiva tu economía inmediatamente. [cite: 42]
+            Reactiva tu economía inmediatamente. 
           </p>
 
           <a 
             href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
             className="inline-block bg-[#ffbd4a] text-[#051d40] px-10 py-4 md:px-12 md:py-5 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-[#051d40] hover:text-white transition-all shadow-xl"
           >
-            [cite_start]Consulta gratis [cite: 43]
+            Consulta gratis 
           </a>
         </div>
       </section>
@@ -49,25 +49,25 @@ export default function DefensaSancionatoria() {
           {/* Lado Izquierdo: ¿Te está sucediendo esto? */}
           <div className="bg-white p-8 md:p-16 flex flex-col justify-center">
             <h2 className="text-[#051d40] text-3xl md:text-4xl font-bold mb-10 uppercase leading-tight">
-              [cite_start]¿Te está sucediendo esto? [cite: 44]
+              ¿Te está sucediendo esto? 
             </h2>
             <div className="space-y-8 md:space-y-10">
               <div className="flex gap-4">
                 <span className="text-[#ffbd4a] font-black text-2xl">•</span>
                 <p className="text-lg md:text-xl text-gray-700 italic font-medium leading-relaxed">
-                  [cite_start]"¿Te clausuraron el local injustamente y estás perdiendo ventas cada hora?" [cite: 45]
+                  "¿Te clausuraron el local injustamente y estás perdiendo ventas cada hora?" 
                 </p>
               </div>
               <div className="flex gap-4 border-t border-gray-100 pt-6 md:pt-8">
                 <span className="text-[#ffbd4a] font-black text-2xl">•</span>
                 <p className="text-lg md:text-xl text-gray-700 italic font-medium leading-relaxed">
-                  [cite_start]"¿Te llegó una multa desproporcionada de la AMC, Intendencia o Municipio que es imposible de pagar?" [cite: 46, 47]
+                  "¿Te llegó una multa desproporcionada de la AMC, Intendencia o Municipio que es imposible de pagar?" 
                 </p>
               </div>
               <div className="flex gap-4 border-t border-gray-100 pt-6 md:pt-8">
                 <span className="text-[#ffbd4a] font-black text-2xl">•</span>
                 <p className="text-lg md:text-xl text-gray-700 italic font-medium leading-relaxed">
-                  [cite_start]"¿Presentaste un reclamo y la autoridad ignora tu apelación?" [cite: 48]
+                  "¿Presentaste un reclamo y la autoridad ignora tu apelación?" 
                 </p>
               </div>
             </div>
@@ -76,25 +76,25 @@ export default function DefensaSancionatoria() {
           {/* Lado Derecho: Te ayudamos */}
           <div className="bg-[#051d40] p-8 md:p-16 text-white flex flex-col justify-center">
             <h3 className="text-[#ffbd4a] text-3xl md:text-5xl font-black mb-10 uppercase">
-              [cite_start]Te ayudamos [cite: 49]
+              Te ayudamos 
             </h3>
             <ul className="space-y-6 md:space-y-8 mb-12">
               <li className="flex gap-4 items-start">
                 <span className="text-[#ffbd4a] font-bold text-xl">✓</span>
                 <p className="text-base md:text-lg leading-snug">
-                  [cite_start]<span className="font-bold text-[#ffbd4a]">Suspensión Inmediata:</span> Aplicamos medidas para que el negocio siga operando o la multa no se cobre mientras peleamos. [cite: 50]
+                  <span className="font-bold text-[#ffbd4a]">Suspensión Inmediata:</span> Aplicamos medidas para que el negocio siga operando o la multa no se cobre mientras peleamos. 
                 </p>
               </li>
               <li className="flex gap-4 items-start border-t border-white/10 pt-6">
                 <span className="text-[#ffbd4a] font-bold text-xl">✓</span>
                 <p className="text-base md:text-lg leading-snug">
-                  [cite_start]<span className="font-bold text-[#ffbd4a]">Ahorro y Anulación:</span> Reducimos drásticamente los montos o eliminamos multas por falta de sustento legal. [cite: 51]
+                  <span className="font-bold text-[#ffbd4a]">Ahorro y Anulación:</span> Reducimos drásticamente los montos o eliminamos multas por falta de sustento legal. 
                 </p>
               </li>
               <li className="flex gap-4 items-start border-t border-white/10 pt-6">
                 <span className="text-[#ffbd4a] font-bold text-xl">✓</span>
                 <p className="text-base md:text-lg leading-snug">
-                  [cite_start]<span className="font-bold text-[#ffbd4a]">Silencio Administrativo:</span> Si la autoridad no responde en los plazos legales, exigimos que ganes el caso por ley. [cite: 53, 54]
+                  <span className="font-bold text-[#ffbd4a]">Silencio Administrativo:</span> Si la autoridad no responde en los plazos legales, exigimos que ganes el caso por ley. 
                 </p>
               </li>
             </ul>
@@ -102,7 +102,7 @@ export default function DefensaSancionatoria() {
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
               className="w-fit bg-[#ffbd4a] text-[#051d40] px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-white transition-all shadow-lg block"
             >
-              [cite_start]Consulta gratis [cite: 55]
+              Consulta gratis
             </a>
           </div>
         </div>
@@ -140,13 +140,13 @@ export default function DefensaSancionatoria() {
           <div className="md:w-1/2">
             <h2 className="text-[#051d40] text-2xl md:text-5xl leading-tight mb-10">
               <span className="font-black">Tranquilo, </span>
-              [cite_start]<span className="font-normal">somos representación especializada ante Municipios (AMC/AMT), ARCSA, Intendencias, SRI y Superintendencias.</span> [cite: 56]
+              <span className="font-normal">somos representación especializada ante Municipios (AMC/AMT), ARCSA, Intendencias, SRI y Superintendencias.</span> 
             </h2>
             <a 
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
               className="inline-block bg-[#ffbd4a] text-[#051d40] px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-[#051d40] hover:text-white transition-all shadow-lg"
             >
-              [cite_start]Consulta gratis [cite: 57]
+              Consulta gratis 
             </a>
           </div>
           <div className="md:w-1/2 flex justify-center">
@@ -163,12 +163,12 @@ export default function DefensaSancionatoria() {
       <section className="w-full bg-[#ffbd4a] py-20 md:py-24">
         <div className="max-w-7xl mx-auto px-6 text-left">
           <h2 className="text-[#051d40] text-3xl md:text-6xl mb-10" style={{ lineHeight: '1' }}>
-            [cite_start]<span className="block font-black uppercase">Estrategia legal</span> [cite: 58]
-            [cite_start]<span className="block font-normal">que genera resultados</span> [cite: 58]
+            <span className="block font-black">Estrategia legal</span> 
+            <span className="block font-normal">que genera resultados</span> 
           </h2>
           <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
              className="inline-block bg-[#051d40] text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
-            [cite_start]Consulta gratis [cite: 59]
+            Consulta gratis 
           </a>
         </div>
       </section>

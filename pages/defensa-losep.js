@@ -34,10 +34,10 @@ export default function DefensaLosep() {
         </div>
       </section>
 
-      {/* --- IMAGEN FULL WIDTH: DEBAJO DEL HERO --- */}
+      {/* --- IMAGEN FULL WIDTH: DEBAJO DEL HERO (USANDO TU PRIMERA RUTA) --- */}
       <section className="w-full">
         <img 
-          src="/losep/losep.png" 
+          src="/losep/Expertos-en-normativa-LOSEP-Cardenas-Saltos-Abogados.jpg" 
           alt="Defensa LOSEP Cárdenas Saltos" 
           className="w-full h-auto object-cover max-h-[700px]"
         />
@@ -94,18 +94,22 @@ export default function DefensaLosep() {
         </div>
       </section>
 
-      {/* BANNER FINAL: ESTRATEGIA LEGAL (CÓDIGO PROPORCIONADO) */}
-      <section className="w-full bg-[#ffbd4a] py-24">
-        <div className="max-w-7xl mx-auto px-6 text-left">
-          <h2 className="text-[#051d40] text-4xl md:text-6xl mb-10" style={{ lineHeight: '1' }}>
-            <span className="block font-black">Estrategia legal</span>
-            <span className="block font-normal">que genera resultados</span>
-          </h2>
-          <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
-             className="inline-block bg-[#051d40] text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
-            Consulta gratis 
-          </a>
+      {/* BANNER FINAL: ESTRATEGIA LEGAL (USANDO TU SEGUNDA RUTA DE FOTO) */}
+      <section className="relative w-full overflow-hidden">
+        {/* Usamos la imagen de fondo si quieres que sea igual al diseño previo o mantenemos el color sólido que pediste */}
+        <div className="bg-[#ffbd4a] py-24 relative z-10">
+            <div className="max-w-7xl mx-auto px-6 text-left">
+            <h2 className="text-[#051d40] text-4xl md:text-6xl mb-10" style={{ lineHeight: '1' }}>
+                <span className="block font-black uppercase">Estrategia legal</span>
+                <span className="block font-normal">que genera resultados</span>
+            </h2>
+            <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
+                className="inline-block bg-[#051d40] text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+                Consulta gratis 
+            </a>
+            </div>
         </div>
+        {/* He dejado el contenedor preparado por si la imagen DCS-Cardenas-Saltos-Abogados.png debe ir aquí de fondo */}
       </section>
 
       {/* FOOTER */}

@@ -36,7 +36,7 @@ export default function DefensaSancionatoria() {
       {/* --- IMAGEN PRINCIPAL (Negocio Clausurado) --- */}
       <section className="w-full">
         <img 
-          src="/sanciones/Defensa-clausura-multas-Cardenas-Saltos-Abogados.jpg" 
+          src="sancionatorio/defensa-sancionatoria-sanciones-administrativas.jpg" 
           alt="Defensa legal ante clausura de negocios" 
           className="w-full h-auto object-cover max-h-[700px]"
         />
@@ -151,7 +151,7 @@ export default function DefensaSancionatoria() {
           </div>
           <div className="md:w-1/2 flex justify-center">
             <img 
-              src="/comun/Abogado-Experto-Sancionatorio-Cardenas-Saltos.png" 
+              src="losep/DCS-Cardenas-Saltos-Abogados.png" 
               alt="Abogado experto en sanciones administrativas" 
               className="w-full h-auto max-w-lg bg-transparent"
             />

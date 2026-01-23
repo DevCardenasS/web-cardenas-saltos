@@ -15,8 +15,8 @@ export default function DefensaSancionatoria() {
       <section className="pt-24 md:pt-32 pb-16 px-6 md:px-20">
         <div className="max-w-7xl mx-auto text-left">
           <h1 className="text-[#051d40] text-3xl md:text-6xl leading-tight mb-6">
-            <span className="block font-black">¿Tu negocio fue Clausurado</span>
-            <span className="block font-medium mt-1">o recibiste una Multa Injusta?</span> 
+            <span className="block font-black">¿Tu negocio fue clausurado</span>
+            <span className="block font-medium mt-1">o recibiste una multa injusta?</span> 
           </h1>
           
           <p className="text-[#051d40] text-lg md:text-2xl mb-10 max-w-3xl leading-relaxed font-normal">
@@ -140,7 +140,7 @@ export default function DefensaSancionatoria() {
           <div className="md:w-1/2">
             <h2 className="text-[#051d40] text-2xl md:text-5xl leading-tight mb-10">
               <span className="font-black">Tranquilo, </span>
-              <span className="font-normal">somos representación especializada ante Municipios (AMC/AMT), ARCSA, Intendencias, SRI y Superintendencias.</span> 
+              <span className="font-normal">te ofrecemos representación especializada ante Municipios (AMC/AMT), ARCSA, Intendencias, SRI y Superintendencias.</span> 
             </h2>
             <a 
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}

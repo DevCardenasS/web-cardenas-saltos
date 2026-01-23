@@ -33,7 +33,7 @@ export default function DefensaSancionatoria() {
         </div>
       </section>
 
-      {/* --- IMAGEN PRINCIPAL (Negocio Clausurado) --- */}
+      {/* --- IMAGEN PRINCIPAL --- */}
       <section className="w-full">
         <img 
           src="sancionatorio/defensa-sancionatoria-sanciones-administrativas.jpg" 
@@ -42,33 +42,11 @@ export default function DefensaSancionatoria() {
         />
       </section>
 
-      {/* --- NUEVA SECCIÓN: AUTORIDAD Y RESULTADOS (MINIMALISTA) --- */}
-      <section className="bg-[#f8f9fa] py-16 md:py-20 border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
-            <div>
-              <p className="text-[#ffbd4a] text-5xl md:text-6xl font-black mb-2">19</p>
-              <p className="text-[#051d40] text-lg md:text-xl font-bold uppercase tracking-tighter">Años de experiencia</p>
-              <p className="text-gray-500 mt-2">Liderando la defensa administrativa en el Ecuador.</p>
-            </div>
-            <div className="border-y md:border-y-0 md:border-x border-gray-200 py-10 md:py-0 md:px-12">
-              <p className="text-[#ffbd4a] text-5xl md:text-6xl font-black mb-2">+$300k</p>
-              <p className="text-[#051d40] text-lg md:text-xl font-bold uppercase tracking-tighter">Dólares recuperados</p>
-              <p className="text-gray-500 mt-2">En multas anuladas y valores devueltos a nuestros clientes.</p>
-            </div>
-            <div className="md:pl-12">
-              <p className="text-[#ffbd4a] text-5xl md:text-6xl font-black mb-2 italic">TOP</p>
-              <p className="text-[#051d40] text-lg md:text-xl font-bold uppercase tracking-tighter">Expertos sector público</p>
-              <p className="text-gray-500 mt-2">Especialistas en la normativa que rige a las instituciones del Estado.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* --- SECCIÓN DUAL: SERVICE CARD --- */}
       <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
         <div className="grid lg:grid-cols-2 gap-0 rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border-2 border-[#051d40]">
           
+          {/* Lado Izquierdo: ¿Te está sucediendo esto? */}
           <div className="bg-white p-8 md:p-16 flex flex-col justify-center">
             <h2 className="text-[#051d40] text-3xl lg:text-5xl font-bold mb-10 uppercase leading-tight">
               ¿Te está sucediendo esto? 
@@ -95,6 +73,7 @@ export default function DefensaSancionatoria() {
             </div>
           </div>
 
+          {/* Lado Derecho: Te ayudamos */}
           <div className="bg-[#051d40] p-8 md:p-16 text-white flex flex-col justify-center">
             <h3 className="text-[#ffbd4a] text-3xl md:text-5xl font-black mb-10 uppercase">
               Te ayudamos 
@@ -125,6 +104,29 @@ export default function DefensaSancionatoria() {
             >
               Consulta gratis
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* --- SECCIÓN: AUTORIDAD Y RESULTADOS (DEBAJO DE SERVICE CARD) --- */}
+      <section className="bg-[#f8f9fa] py-16 md:py-20 border-y border-gray-100">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+            <div>
+              <p className="text-[#ffbd4a] text-5xl md:text-6xl font-black mb-2">19</p>
+              <p className="text-[#051d40] text-lg md:text-xl font-bold uppercase tracking-tighter">Años de experiencia</p>
+              <p className="text-gray-500 mt-2">Liderando la defensa administrativa en el Ecuador.</p>
+            </div>
+            <div className="border-y md:border-y-0 md:border-x border-gray-200 py-10 md:py-0 md:px-12">
+              <p className="text-[#ffbd4a] text-5xl md:text-6xl font-black mb-2">+$300k</p>
+              <p className="text-[#051d40] text-lg md:text-xl font-bold uppercase tracking-tighter">Dólares recuperados</p>
+              <p className="text-gray-500 mt-2">En multas anuladas y valores devueltos a nuestros clientes.</p>
+            </div>
+            <div className="md:pl-12">
+              <p className="text-[#ffbd4a] text-5xl md:text-6xl font-black mb-2 italic">TOP</p>
+              <p className="text-[#051d40] text-lg md:text-xl font-bold uppercase tracking-tighter">Expertos sector público</p>
+              <p className="text-gray-500 mt-2">Especialistas en la normativa que rige a las instituciones del Estado.</p>
+            </div>
           </div>
         </div>
       </section>

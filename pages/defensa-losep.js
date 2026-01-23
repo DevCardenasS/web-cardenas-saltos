@@ -46,7 +46,7 @@ export default function DefensaLosep() {
       <section className="max-w-7xl mx-auto px-6 py-24">
         <div className="grid lg:grid-cols-2 gap-0 rounded-[3rem] overflow-hidden shadow-2xl border-2 border-[#051d40]">
           
-          {/* Lado Izquierdo: Dolor (Con cursivas solicitadas) */}
+          {/* Lado Izquierdo: Dolor (Con cursivas) */}
           <div className="bg-white p-10 md:p-16 flex flex-col justify-center">
             <h2 className="text-[#051d40] text-4xl md:text-5xl font-black mb-12 uppercase leading-tight">
               ¿Te está sucediendo esto?
@@ -73,7 +73,7 @@ export default function DefensaLosep() {
             </div>
           </div>
 
-          {/* Lado Derecho: Te Ayudamos (Bloque Azul con Botón Amarillo) */}
+          {/* Lado Derecho: Te Ayudamos (Bloque Azul) */}
           <div className="bg-[#051d40] p-10 md:p-16 text-white flex flex-col justify-center">
             <h3 className="text-[#ffbd4a] text-3xl font-black mb-10 uppercase italic">
               Te ayudamos
@@ -99,10 +99,10 @@ export default function DefensaLosep() {
               </li>
             </ul>
 
-            {/* BOTÓN AMARILLO DENTRO DEL LADO AZUL */}
+            {/* BOTÓN AMARILLO: AJUSTADO (NO AMPLIO + ALINEADO IZQUIERDA) */}
             <a 
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
-              className="inline-block bg-[#ffbd4a] text-[#051d40] px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-white transition-all text-center shadow-lg"
+              className="w-fit bg-[#ffbd4a] text-[#051d40] px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-white transition-all shadow-lg block"
             >
               Consulta gratis
             </a>
@@ -125,7 +125,7 @@ export default function DefensaLosep() {
               Consulta gratis
             </a>
           </div>
-          {/* Foto Derecha (Sin bordes blancos de código) */}
+          {/* Foto Derecha */}
           <div className="md:w-1/2 flex justify-center">
             <img 
               src="/losep/DCS-Cardenas-Saltos-Abogados.png" 
@@ -136,7 +136,7 @@ export default function DefensaLosep() {
         </div>
       </section>
 
-      {/* --- BANNER FINAL: ESTRATEGIA LEGAL (CÓDIGO SOLICITADO) --- */}
+      {/* --- BANNER FINAL: ESTRATEGIA LEGAL --- */}
       <section className="w-full bg-[#ffbd4a] py-24">
         <div className="max-w-7xl mx-auto px-6 text-left">
           <h2 className="text-[#051d40] text-4xl md:text-6xl mb-10" style={{ lineHeight: '1' }}>

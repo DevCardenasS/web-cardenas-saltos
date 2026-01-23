@@ -46,8 +46,9 @@ export default function DefensaLosep() {
       <section className="max-w-7xl mx-auto px-6 py-24">
         <div className="grid lg:grid-cols-2 gap-0 rounded-[3rem] overflow-hidden shadow-2xl border-2 border-[#051d40]">
           
+          {/* Lado Izquierdo: ¿Te está sucediendo esto? (Ahora font-medium) */}
           <div className="bg-white p-10 md:p-16 flex flex-col justify-center">
-            <h2 className="text-[#051d40] text-4xl md:text-5xl font-black mb-12 uppercase leading-tight">
+            <h2 className="text-[#051d40] text-4xl md:text-5xl font-medium mb-12 uppercase leading-tight">
               ¿Te está sucediendo esto?
             </h2>
             <div className="space-y-10">
@@ -72,8 +73,11 @@ export default function DefensaLosep() {
             </div>
           </div>
 
+          {/* Lado Derecho: Te ayudamos (Más grande, sin cursiva) */}
           <div className="bg-[#051d40] p-10 md:p-16 text-white flex flex-col justify-center">
-            <h3 className="text-[#ffbd4a] text-3xl font-black mb-10 uppercase italic">Te ayudamos</h3>
+            <h3 className="text-[#ffbd4a] text-4xl md:text-5xl font-black mb-10 uppercase">
+              Te ayudamos
+            </h3>
             <ul className="space-y-8 mb-12">
               <li className="flex gap-4 items-start">
                 <span className="text-[#ffbd4a] font-bold text-xl">✓</span>
@@ -99,7 +103,7 @@ export default function DefensaLosep() {
       </section>
 
       {/* --- SECCIÓN MINIMALISTA: ENTENDEMOS LO QUE ESTÁS PASANDO --- */}
-      <section className="max-w-7xl mx-auto px-6 py-24 border-t border-gray-100">
+      <section className="max-w-7xl mx-auto px-6 py-24">
         <div className="flex flex-col md:flex-row gap-16">
           <div className="md:w-1/3">
             <h2 className="text-[#051d40] text-4xl md:text-5xl font-black leading-tight sticky top-32">

@@ -5,6 +5,13 @@ const WhatsAppButton = () => {
   // 1. Mensaje personalizado añadido
   const whatsappMessage = encodeURIComponent("Hola Cárdenas Saltos Abogados, tengo una consulta sobre...");
 
+  // FUNCIÓN DE CONVERSIÓN: Avisa a Google antes de abrir WhatsApp
+  const handleClick = () => {
+    if (typeof window !== 'undefined' && window.reportWhatsAppClick) {
+      window.reportWhatsAppClick();
+    }
+  };
+
   return (
     <>
       <style jsx>{`
@@ -22,7 +29,7 @@ const WhatsAppButton = () => {
         href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
         target="_blank"
         rel="noopener noreferrer"
-        // Mantenemos el diseño que confirmas que funciona bien (p-4 md:p-5)
+        onClick={handleClick} // <--- ESTO ES LO QUE FALTABA PARA MEDIR
         className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 bg-[#25d366] p-4 md:p-5 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center group animate-shine"
         aria-label="Chat on WhatsApp"
       >

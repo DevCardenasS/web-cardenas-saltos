@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react'; // Añadimos ChevronDown
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { useRouter } from 'next/router';
 import { WHATSAPP_NUMBER } from '../constants';
 
 export default function Navbar({ transparent }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [showSubMenu, setShowSubMenu] = useState(false); // Estado para el submenú
+  const [showSubMenu, setShowSubMenu] = useState(false);
   const router = useRouter();
 
   const whatsappMessage = encodeURIComponent("Hola Cárdenas Saltos Abogados, tengo una consulta sobre...");
@@ -20,7 +20,6 @@ export default function Navbar({ transparent }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const isHome = router.pathname === "/";
   const servicePages = ["/administrativo", "/constitucional", "/notarial", "/mediacion"];
   const isServicePage = servicePages.includes(router.pathname);
 
@@ -61,22 +60,22 @@ export default function Navbar({ transparent }) {
           
           {/* ITEM CON SUBMENÚ */}
           <div 
-            className="relative group"
+            className="relative h-full flex items-center"
             onMouseEnter={() => setShowSubMenu(true)}
             onMouseLeave={() => setShowSubMenu(false)}
           >
-            <div className={`flex items-center gap-1 cursor-pointer ${textColor} hover:text-[#ffbd4a] transition`}>
+            <div className={`flex items-center gap-1 cursor-pointer ${textColor} hover:text-[#ffbd4a] transition py-2`}>
               <Link href="/administrativo">Derecho administrativo</Link>
-              <ChevronDown size={14} className={`transition-transform ${showSubMenu ? 'rotate-180' : ''}`} />
+              <ChevronDown size={14} className={`transition-transform duration-300 ${showSubMenu ? 'rotate-180 text-[#ffbd4a]' : ''}`} />
             </div>
             
-            {/* SUBMENÚ DESKTOP */}
+            {/* SUBMENÚ DESKTOP - Sin espacios vacíos que corten el hover */}
             {showSubMenu && (
-              <div className="absolute top-full left-0 w-64 bg-[#051d40] border border-white/10 pt-4 pb-2 flex flex-col shadow-2xl">
-                <Link href="/defensa-losep" className="px-6 py-3 text-white hover:text-[#ffbd4a] hover:bg-white/5 transition border-b border-white/5 last:border-0">
+              <div className="absolute top-[100%] left-0 w-64 bg-[#051d40] border border-white/10 shadow-2xl flex flex-col overflow-hidden animate-in fade-in slide-in-from-top-1 duration-200">
+                <Link href="/defensa-losep" className="px-6 py-4 text-white text-[10px] hover:text-[#ffbd4a] hover:bg-white/5 transition border-b border-white/5">
                   Defensa LOSEP
                 </Link>
-                <Link href="/SancionesAdministrativas-DefensaSancionatoria" className="px-6 py-3 text-white hover:text-[#ffbd4a] hover:bg-white/5 transition">
+                <Link href="/SancionesAdministrativas-DefensaSancionatoria" className="px-6 py-4 text-white text-[10px] hover:text-[#ffbd4a] hover:bg-white/5 transition">
                   Sanciones Administrativas
                 </Link>
               </div>
@@ -121,12 +120,11 @@ export default function Navbar({ transparent }) {
           <Link href="/" onClick={() => setIsOpen(false)}>Inicio</Link>
           <Link href="/nosotros" onClick={() => setIsOpen(false)}>Nosotros</Link>
           
-          {/* DERECHO ADMINISTRATIVO MÓVIL */}
           <div className="flex flex-col gap-4">
             <Link href="/administrativo" onClick={() => setIsOpen(false)}>Derecho administrativo</Link>
-            <div className="flex flex-col gap-3 pl-4 border-l-2 border-[#ffbd4a]/50 text-xs opacity-90">
-                <Link href="/defensa-losep" onClick={() => setIsOpen(false)}>• Defensa LOSEP</Link>
-                <Link href="/SancionesAdministrativas-DefensaSancionatoria" onClick={() => setIsOpen(false)}>• Sanciones Administrativas</Link>
+            <div className="flex flex-col gap-4 pl-4 border-l border-[#ffbd4a]/40 text-[11px] font-medium tracking-normal normal-case">
+                <Link href="/defensa-losep" onClick={() => setIsOpen(false)} className="text-[#ffbd4a]">Defensa LOSEP</Link>
+                <Link href="/SancionesAdministrativas-DefensaSancionatoria" onClick={() => setIsOpen(false)}>Sanciones Administrativas</Link>
             </div>
           </div>
 

@@ -26,17 +26,17 @@ function MyApp({ Component, pageProps }) {
           gtag('js', new Date());
           gtag('config', 'AW-17896545955');
 
-          // Función robusta para reportar la conversión
+          // Función robusta para reportar la conversión a Google Ads
           window.reportWhatsAppClick = function() {
             if (typeof gtag === 'function') {
               gtag('event', 'conversion', {
-                'send_to': 'AW-17896545955/TU_LABEL_AQUÍ',
+                'send_to': 'AW-17896545955/1GDSCI2Xg-4bEK093tVc',
                 'event_category': 'WhatsApp',
-                'event_label': window.location.pathname, // Nos dice la página: /losep, /administrativo, etc.
+                'event_label': window.location.pathname, // Registra desde qué página escriben
                 'value': 1.0,
                 'currency': 'USD'
               });
-              console.log("Conversión enviada desde: " + window.location.pathname);
+              console.log("Evento enviado a Google Ads desde: " + window.location.pathname);
             }
           };
         `}

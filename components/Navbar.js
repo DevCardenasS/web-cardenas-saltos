@@ -12,15 +12,6 @@ export default function Navbar({ transparent }) {
 
   const whatsappMessage = encodeURIComponent("Hola Cárdenas Saltos Abogados, tengo una consulta sobre...");
 
-  // --- FUNCIÓN DE CONVERSIÓN MEJORADA ---
-  // Ahora acepta una "ubicacion" para que Google Ads te lo detalle
-  const handleConversion = (ubicacion) => {
-    if (typeof window !== 'undefined' && window.reportWhatsAppClick) {
-      // Enviamos la etiqueta personalizada: "Navbar Desktop" o "Navbar Mobile"
-      window.reportWhatsAppClick(ubicacion);
-    }
-  };
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -41,60 +32,80 @@ export default function Navbar({ transparent }) {
 
   const textColor = isWhiteMenu ? "text-[#051d40]" : "text-white/90";
   const borderColor = isWhiteMenu ? "border-[#051d40]/20" : "border-white/10";
+  
+  const bgColor = isWhiteMenu 
+    ? "bg-white" 
+    : (isTransparentActive ? "bg-transparent" : "bg-[#051d40]");
 
   return (
-    <nav className={`fixed top-0 w-full z-[100] transition-all duration-300 ${
-      isScrolled ? 'bg-[#051d40] py-4 shadow-xl' : 'py-6'
-    } ${isTransparentActive ? 'bg-transparent' : isWhiteMenu ? 'bg-white' : 'bg-[#051d40]'}`}>
-      
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+    <nav 
+      className={`w-full z-[100] font-['Gantari'] transition-all duration-500 border-b ${bgColor} ${borderColor} ${
+        isTransparentActive ? 'fixed top-0 left-0 border-transparent' : 'sticky top-0 shadow-sm'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
         {/* LOGO */}
-        <Link href="/" className="relative z-50">
-          <img src={logoPath} alt="Cárdenas Saltos Abogados" className="h-10 md:h-12 w-auto transition-all" />
+        <Link href="/" className="flex items-center">
+          <img 
+            src={logoPath} 
+            alt="Cárdenas Saltos" 
+            className="h-9 md:h-12 object-contain cursor-pointer" 
+          />
         </Link>
 
-        {/* MENÚ DESKTOP */}
-        <div className={`hidden lg:flex items-center gap-10 text-[11px] font-bold uppercase tracking-[0.15em] ${textColor}`}>
-          <Link href="/" className="hover:text-[#ffbd4a] transition-colors">Inicio</Link>
-          <Link href="/nosotros" className="hover:text-[#ffbd4a] transition-colors">Nosotros</Link>
+        {/* NAVEGACIÓN DESKTOP */}
+        <div className="hidden lg:flex gap-8 text-[11px] uppercase tracking-[0.15em] items-center font-bold">
+          <Link href="/" className={`${textColor} hover:text-[#ffbd4a] transition`}>Inicio</Link>
+          <Link href="/nosotros" className={`${textColor} hover:text-[#ffbd4a] transition`}>Nosotros</Link>
           
-          {/* DROPDOWN SERVICIOS */}
-          <div className="relative group" 
-               onMouseEnter={() => setShowSubMenu(true)} 
-               onMouseLeave={() => setShowSubMenu(false)}>
-            <button className="flex items-center gap-1 hover:text-[#ffbd4a] transition-colors uppercase">
-              Servicios <ChevronDown size={14} />
-            </button>
+          {/* ITEM CON SUBMENÚ */}
+          <div 
+            className="relative h-full flex items-center"
+            onMouseEnter={() => setShowSubMenu(true)}
+            onMouseLeave={() => setShowSubMenu(false)}
+          >
+            <div className={`flex items-center gap-1 cursor-pointer ${textColor} hover:text-[#ffbd4a] transition py-2`}>
+              <Link href="/administrativo">Derecho administrativo</Link>
+              <ChevronDown size={14} className={`transition-transform duration-300 ${showSubMenu ? 'rotate-180 text-[#ffbd4a]' : ''}`} />
+            </div>
             
+            {/* SUBMENÚ DESKTOP - Sin espacios vacíos que corten el hover */}
             {showSubMenu && (
-              <div className="absolute top-full left-0 w-64 bg-white shadow-2xl rounded-xl py-4 mt-2 border border-slate-100 flex flex-col z-50">
-                <Link href="/administrativo" className="px-6 py-3 text-[#051d40] hover:bg-slate-50 transition-colors normal-case text-sm font-medium">Derecho administrativo</Link>
-                <Link href="/constitucional" className="px-6 py-3 text-[#051d40] hover:bg-slate-50 transition-colors normal-case text-sm font-medium">Derecho constitucional</Link>
-                <Link href="/notarial" className="px-6 py-3 text-[#051d40] hover:bg-slate-50 transition-colors normal-case text-sm font-medium">Notarial</Link>
-                <Link href="/mediacion" className="px-6 py-3 text-[#051d40] hover:bg-slate-50 transition-colors normal-case text-sm font-medium border-t border-slate-50">Centro de Mediación</Link>
+              <div className="absolute top-[100%] left-0 w-64 bg-[#051d40] border border-white/10 shadow-2xl flex flex-col overflow-hidden animate-in fade-in slide-in-from-top-1 duration-200">
+                <Link href="/defensa-losep" className="px-6 py-4 text-white text-[10px] hover:text-[#ffbd4a] hover:bg-white/5 transition border-b border-white/5">
+                  Defensa LOSEP
+                </Link>
+                <Link href="/SancionesAdministrativas-DefensaSancionatoria" className="px-6 py-4 text-white text-[10px] hover:text-[#ffbd4a] hover:bg-white/5 transition">
+                  Sanciones Administrativas
+                </Link>
               </div>
             )}
           </div>
 
-          <Link href="/blog" className="hover:text-[#ffbd4a] transition-colors">Blog</Link>
+          <Link href="/constitucional" className={`${textColor} hover:text-[#ffbd4a] transition`}>Derecho constitucional</Link>
+          <Link href="/notarial" className={`${textColor} hover:text-[#ffbd4a] transition`}>Notarial</Link>
+          <Link href="/mediacion" className={`${textColor} hover:text-[#ffbd4a] transition`}>Mediación</Link>
           
-          {/* BOTÓN WHATSAPP DESKTOP CON RASTREO ESPECÍFICO */}
           <a 
-            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
-            onClick={() => handleConversion("Navbar Desktop")} // <--- SABRÁS QUE FUE DESDE PC
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`border-2 ${isWhiteMenu ? 'border-[#051d40] text-[#051d40]' : 'border-[#ffbd4a] text-white'} px-6 py-2.5 rounded-full hover:bg-[#ffbd4a] hover:text-[#051d40] hover:border-[#ffbd4a] transition-all`}
+            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
+            className="bg-[#ffbd4a] text-[#051d40] px-6 py-2.5 rounded-full hover:scale-105 transition-all font-black ml-4 text-center uppercase tracking-wider shadow-md"
           >
-            Contacto
+            Consulta gratis
           </a>
         </div>
 
-        {/* BOTÓN MÓVIL */}
-        <div className="lg:hidden flex items-center">
+        {/* CONTROLES MÓVIL */}
+        <div className="flex lg:hidden items-center gap-3">
+          <a 
+            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
+            className="bg-[#ffbd4a] text-[#051d40] px-4 py-2 rounded-full font-black text-[10px] uppercase tracking-wider shadow-sm"
+          >
+            Consulta gratis
+          </a>
+          
           <button 
             onClick={() => setIsOpen(!isOpen)} 
-            className={isWhiteMenu && !isOpen ? "text-[#051d40]" : "text-white"}
+            className={isWhiteMenu ? "text-[#051d40]" : "text-white"}
           >
             {isOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
@@ -111,26 +122,15 @@ export default function Navbar({ transparent }) {
           
           <div className="flex flex-col gap-4">
             <Link href="/administrativo" onClick={() => setIsOpen(false)}>Derecho administrativo</Link>
-            <Link href="/constitucional" onClick={() => setIsOpen(false)}>Derecho constitucional</Link>
-            <Link href="/notarial" onClick={() => setIsOpen(false)}>Notarial</Link>
-            <Link href="/mediacion" onClick={() => setIsOpen(false)}>Centro de Mediación</Link>
+            <div className="flex flex-col gap-4 pl-4 border-l border-[#ffbd4a]/40 text-[11px] font-medium tracking-normal normal-case">
+                <Link href="/defensa-losep" onClick={() => setIsOpen(false)} className="text-[#ffbd4a]">Defensa LOSEP</Link>
+                <Link href="/SancionesAdministrativas-DefensaSancionatoria" onClick={() => setIsOpen(false)}>Sanciones Administrativas</Link>
+            </div>
           </div>
 
-          <Link href="/blog" onClick={() => setIsOpen(false)}>Blog</Link>
-
-          {/* BOTÓN WHATSAPP MÓVIL CON RASTREO ESPECÍFICO */}
-          <a 
-            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
-            onClick={() => {
-              handleConversion("Navbar Mobile"); // <--- SABRÁS QUE FUE DESDE MÓVIL
-              setIsOpen(false);
-            }}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-[#ffbd4a] text-[#051d40] text-center py-4 rounded-full"
-          >
-            WhatsApp Urgente
-          </a>
+          <Link href="/constitucional" onClick={() => setIsOpen(false)}>Derecho constitucional</Link>
+          <Link href="/notarial" onClick={() => setIsOpen(false)}>Notarial</Link>
+          <Link href="/mediacion" onClick={() => setIsOpen(false)}>Mediación</Link>
         </div>
       )}
     </nav>

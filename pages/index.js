@@ -1,10 +1,16 @@
 import React from 'react';
 import Head from 'next/head';
-import { WHATSAPP_NUMBER } from '../constants'; // Importamos la constante centralizada
+import { WHATSAPP_NUMBER } from '../constants';
 
 export default function Home() {
-  // Definimos el mensaje predeterminado para WhatsApp codificado para URL
   const whatsappMessage = encodeURIComponent("Hola Cárdenas Saltos Abogados, tengo una consulta sobre...");
+
+  // --- FUNCIÓN DE CONVERSIÓN GOOGLE ADS ---
+  const handleConversion = () => {
+    if (typeof window !== 'undefined' && window.reportWhatsAppClick) {
+      window.reportWhatsAppClick();
+    }
+  };
 
   return (
     <div className="w-full bg-white font-['Gantari']">
@@ -35,8 +41,13 @@ export default function Home() {
               </span>
             </h1>
             <div className="mt-10">
-              <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
-                 className="inline-block bg-[#ffbd4a] text-[#051d40] px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-transform shadow-2xl">
+              <a 
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
+                onClick={handleConversion} // <--- RASTREO ACTIVADO
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-[#ffbd4a] text-[#051d40] px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-transform shadow-2xl"
+              >
                 Consulta gratis
               </a>
             </div>
@@ -80,6 +91,7 @@ export default function Home() {
             img="/home/home-ayudar-Cardenas-saltos-Abogados-derecho-administrativo.png"
             phoneNumber={WHATSAPP_NUMBER}
             whatsappMessage={whatsappMessage}
+            onConvert={handleConversion} // <--- PASAMOS LA FUNCIÓN
           />
           <ServiceCard 
             title="Derecho constitucional" 
@@ -87,6 +99,7 @@ export default function Home() {
             img="/home/home-ayudar-Cardenas-saltos-Abogados-derecho-constitucional.png"
             phoneNumber={WHATSAPP_NUMBER}
             whatsappMessage={whatsappMessage}
+            onConvert={handleConversion} // <--- PASAMOS LA FUNCIÓN
           />
           <ServiceCard 
             title="Notarías" 
@@ -94,6 +107,7 @@ export default function Home() {
             img="/home/home-ayudar-Cardenas-saltos-Abogados-derecho-notarial-notarias.png"
             phoneNumber={WHATSAPP_NUMBER}
             whatsappMessage={whatsappMessage}
+            onConvert={handleConversion} // <--- PASAMOS LA FUNCIÓN
           />
           <ServiceCard 
             title="Mediación" 
@@ -101,6 +115,7 @@ export default function Home() {
             img="/home/home-ayudar-Cardenas-saltos-Abogados-mediacion-pension-alimenticia.png"
             phoneNumber={WHATSAPP_NUMBER}
             whatsappMessage={whatsappMessage}
+            onConvert={handleConversion} // <--- PASAMOS LA FUNCIÓN
           />
         </div>
       </section>
@@ -115,8 +130,13 @@ export default function Home() {
             <span className="block font-black">Estrategia legal</span>
             <span className="block font-normal">que genera resultados</span>
           </h2>
-          <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
-             className="inline-block bg-[#051d40] text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+          <a 
+            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
+            onClick={handleConversion} // <--- RASTREO ACTIVADO
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-[#051d40] text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl"
+          >
             Consulta gratis
           </a>
         </div>
@@ -125,7 +145,7 @@ export default function Home() {
   );
 }
 
-function ServiceCard({ title, desc, img, phoneNumber, whatsappMessage }) {
+function ServiceCard({ title, desc, img, phoneNumber, whatsappMessage, onConvert }) {
   return (
     <div className="bg-[#051d40] rounded-3xl overflow-hidden flex flex-col lg:flex-row min-h-[380px] shadow-2xl group border border-white/5">
       <div className="lg:w-1/2 h-64 lg:h-auto overflow-hidden bg-[#051d40] order-first lg:order-last">
@@ -137,11 +157,18 @@ function ServiceCard({ title, desc, img, phoneNumber, whatsappMessage }) {
           <p className="text-[13px] text-gray-300 leading-relaxed mb-8 font-normal">{desc}</p>
         </div>
         <div className="flex flex-col sm:flex-row gap-3">
+          {/* BOTÓN NAVEGACIÓN: SIN RASTREO */}
           <button className="border border-white/50 text-white px-6 py-3 text-[11px] rounded-full font-normal hover:bg-white hover:text-[#051d40] transition w-full sm:w-auto uppercase tracking-wider">
             Ver más
           </button>
-          <a href={`https://wa.me/${phoneNumber}?text=${whatsappMessage}`} 
-             className="bg-[#ffbd4a] text-[#051d40] px-6 py-3 text-[11px] rounded-full font-bold hover:bg-white transition text-center w-full sm:w-auto uppercase tracking-wider">
+          {/* BOTÓN WHATSAPP: CON RASTREO ACTIVADO */}
+          <a 
+            href={`https://wa.me/${phoneNumber}?text=${whatsappMessage}`} 
+            onClick={onConvert} // <--- RASTREO ACTIVADO
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#ffbd4a] text-[#051d40] px-6 py-3 text-[11px] rounded-full font-bold hover:bg-white transition text-center w-full sm:w-auto uppercase tracking-wider"
+          >
             Escríbenos
           </a>
         </div>

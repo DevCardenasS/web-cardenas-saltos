@@ -1,11 +1,18 @@
 import React from 'react';
 import Head from 'next/head';
-import Link from 'next/link'; // Se añade esta importación necesaria para navegar
-import { WHATSAPP_NUMBER } from '../constants'; // Importamos la constante centralizada
+import Link from 'next/link'; 
+import { WHATSAPP_NUMBER } from '../constants'; 
 
 export default function Home() {
   // Definimos el mensaje predeterminado para WhatsApp codificado para URL
   const whatsappMessage = encodeURIComponent("Hola Cárdenas Saltos Abogados, tengo una consulta sobre...");
+
+  // --- PILLAR 1: LA MECHA (Función de conversión) ---
+  const handleConversion = () => {
+    if (typeof window !== 'undefined' && window.reportWhatsAppClick) {
+      window.reportWhatsAppClick();
+    }
+  };
 
   return (
     <div className="w-full bg-white font-['Gantari']">
@@ -27,102 +34,93 @@ export default function Home() {
                 Nos importas,
               </span>
               <span 
-                className="block font-medium text-white/90 text-[1.75rem] md:text-[3rem]"
-                style={{ lineHeight: '1.2' }} 
+                className="block font-medium text-white/90 text-[1.7rem] md:text-[2.2rem] mt-0"
+                style={{ lineHeight: '1' }}
               >
-                por eso te ofrecemos <br className="hidden md:block" />
-                las mejores soluciones <br className="hidden md:block" />
-                legales
+                tu estabilidad también.
               </span>
             </h1>
-            <div className="mt-10">
-              <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
-                 className="inline-block bg-[#ffbd4a] text-[#051d40] px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-transform shadow-2xl">
-                Consulta gratis
+            
+            <p className="text-gray-300 mt-6 md:mt-8 text-sm md:text-base font-normal leading-relaxed max-w-[450px]">
+              Más de 19 años defendiendo los derechos de ciudadanos, funcionarios públicos y empresas frente a las injusticias del Estado. Estrategia legal de alto nivel para tu tranquilidad.
+            </p>
+
+            <div className="mt-8 md:mt-10 flex flex-wrap gap-4">
+              {/* --- PILLAR 2: DISPARADOR EN BOTÓN DIRECTO HERO --- */}
+              <a 
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
+                onClick={handleConversion}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#ffbd4a] text-[#051d40] px-8 py-4 rounded-full font-bold text-[11px] uppercase tracking-widest hover:bg-white transition-colors shadow-lg"
+              >
+                Consulta gratuita
               </a>
+              <Link href="/nosotros" className="border border-white/30 text-white px-8 py-4 rounded-full font-bold text-[11px] uppercase tracking-widest hover:bg-white/10 transition-colors">
+                Conoce al equipo
+              </Link>
             </div>
           </div>
         </div>
 
         {/* IMAGEN HERO */}
-        <div className="w-full md:w-1/2 h-[450px] md:h-auto overflow-hidden">
+        <div className="w-full md:w-1/2 relative h-[400px] md:h-auto">
           <img 
-              src="/home/Cardenas-Saltos-Hero.jpg" 
-              alt="Abogada Cárdenas Saltos" 
-              className="w-full h-full object-cover object-center md:object-right-bottom" 
+            src="/cardenas-saltos-abogados-ecuador.jpg" 
+            alt="Cárdenas Saltos Abogados" 
+            className="w-full h-full object-cover"
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#051d40] via-transparent to-transparent md:hidden"></div>
         </div>
       </section>
 
-      {/* SECCIÓN EXPERIENCIA */}
-      <section className="w-full py-24 px-6 bg-white text-center border-t border-gray-100">
-        <h2 
-          className="font-medium text-[#051d40] mb-20 leading-tight"
-          style={{ fontSize: '2.25rem' }}
-        >
-          Nuestra experiencia nos avala
-        </h2>
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-center items-center gap-20 md:gap-32 grayscale opacity-80">
-          <img src="/home/asociacion-de-profesionales-de-gestion-de-riesgos-Cardenas-Saltos-Abogados-Ecuador.jpg" className="h-28 md:h-36 object-contain" alt="Asociación" />
-          <img src="/home/leal-importaciones-Cardenas-Saltos-Abogados-Ecuador.jpg" className="h-24 md:h-32 object-contain" alt="Leal" />
-          <img src="/home/kunnaxport-Cardenas-Saltos-Abogados-ecuador.jpg" className="h-20 md:h-28 object-contain" alt="Kunnaxport" />
+      {/* SECCIÓN DE SERVICIOS */}
+      <section className="max-w-7xl mx-auto px-6 py-20 md:py-32">
+        <div className="mb-16 md:mb-24 text-left">
+          <h2 className="text-[#051d40] text-sm font-black uppercase tracking-[0.3em] mb-4">Áreas de Especialidad</h2>
+          <div className="h-1 w-20 bg-[#ffbd4a]"></div>
         </div>
-      </section>
 
-      {/* SECCIÓN SERVICIOS */}
-      <section className="w-full py-20 px-6 bg-[#f2f2f2]">
-        <h2 className="text-center text-3xl md:text-4xl font-medium text-[#051d40] mb-16 leading-tight">
-          ¿En qué te podemos ayudar?
-        </h2>
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 gap-12 md:gap-20">
+          {/* --- PILLAR 3: PASAMOS LA FUNCIÓN AL COMPONENTE --- */}
           <ServiceCard 
-            title="Derecho administrativo" 
-            desc="¿Problemas con el Estado? Te ayudamos a recuperar tu empleo, anular glosas de Contraloría, impugnar multas injustas y cobrar planillas del SERCOP. Somos especialistas en recursos administrativos para revocar sanciones, frenar abusos de autoridad y proteger tu patrimonio con total seguridad legal."
-            img="/home/home-ayudar-Cardenas-saltos-Abogados-derecho-administrativo.png"
-            link="/administrativo" // <-- Conectado
-            phoneNumber={WHATSAPP_NUMBER}
+            img="/Home/abogado-administrativo-ecuador.jpg"
+            title="Derecho Administrativo"
+            link="/administrativo"
+            desc="Defensa contra glosas de Contraloría, sumarios administrativos LOSEP, multas de GADS y procesos ante el SERCOP. Protegemos tu carrera y tu patrimonio frente al poder estatal."
+            whatsappNumber={WHATSAPP_NUMBER}
             whatsappMessage={whatsappMessage}
+            onConvert={handleConversion}
           />
+          
           <ServiceCard 
-            title="Derecho constitucional" 
-            desc="Protegemos tus derechos con resultados reales. Recupera tu puesto de trabajo, limpia tu historial crediticio con Habeas Data o borra datos que dañan tu reputación (Derecho al Olvido). Defensa urgente con medidas cautelares en menos de 48 horas para evitar daños inminentes a tu vida y bienes."
-            img="/home/home-ayudar-Cardenas-saltos-Abogados-derecho-constitucional.png"
-            link="/constitucional" // <-- Conectado
-            phoneNumber={WHATSAPP_NUMBER}
+            img="/Home/abogado-constitucional-ecuador.jpg"
+            title="Derecho Constitucional"
+            link="/constitucional"
+            desc="Acciones de Protección, Habeas Data y Medidas Cautelares. Somos expertos en frenar vulneraciones de derechos fundamentales de forma inmediata y efectiva."
+            whatsappNumber={WHATSAPP_NUMBER}
             whatsappMessage={whatsappMessage}
-          />
-          <ServiceCard 
-            title="Notarías" 
-            desc="Trámites legales rápidos sin ir a juicio. Resolvemos herencias (posesión efectiva), divorcios inmediatos y creación de empresas SAS en tiempo récord. Garantizamos seguridad jurídica en tus escrituras y promesas de compraventa de casas o carros, con total respaldo legal y agilidad en cada proceso."
-            img="/home/home-ayudar-Cardenas-saltos-Abogados-derecho-notarial-notarias.png"
-            link="/notarial" // <-- Conectado
-            phoneNumber={WHATSAPP_NUMBER}
-            whatsappMessage={whatsappMessage}
-          />
-          <ServiceCard 
-            title="Mediación" 
-            desc="Resuelve tus conflictos hoy mismo de forma económica y sin peleas. Acuerdos legales sobre pensiones de alimentos, visitas, tenencia, deudas bancarias y liquidaciones laborales. Evita juicios de años con un acta de mediación que tiene la misma fuerza de una sentencia y garantiza tu paz mental."
-            img="/home/home-ayudar-Cardenas-saltos-Abogados-mediacion-pension-alimenticia.png"
-            link="/mediacion" // <-- Conectado
-            phoneNumber={WHATSAPP_NUMBER}
-            whatsappMessage={whatsappMessage}
+            onConvert={handleConversion}
           />
         </div>
       </section>
 
       {/* BANNER FINAL */}
-      <section className="w-full bg-[#ffbd4a] py-24">
-        <div className="max-w-7xl mx-auto px-6 text-left">
-          <h2 
-            className="text-[#051d40] text-4xl md:text-6xl mb-10" 
-            style={{ lineHeight: '1' }} 
-          >
-            <span className="block font-black">Estrategia legal</span>
-            <span className="block font-normal">que genera resultados</span>
+      <section className="w-full bg-[#ffbd4a] py-20 md:py-28">
+        <div className="max-w-7xl mx-auto px-6 text-center md:text-left">
+          <h2 className="text-[#051d40] text-3xl md:text-6xl mb-10 leading-[1.1]">
+            <span className="block font-black uppercase tracking-tighter">¿Listo para resolver</span>
+            <span className="block font-normal">tu situación legal?</span>
           </h2>
-          <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
-             className="inline-block bg-[#051d40] text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
-            Consulta gratis
+          {/* --- PILLAR 2: DISPARADOR EN BOTÓN DIRECTO BANNER --- */}
+          <a 
+            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
+            onClick={handleConversion}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-[#051d40] text-white px-10 py-5 rounded-full font-bold text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-2xl"
+          >
+            Escríbenos ahora
           </a>
         </div>
       </section>
@@ -130,7 +128,8 @@ export default function Home() {
   );
 }
 
-function ServiceCard({ title, desc, img, link, phoneNumber, whatsappMessage }) {
+// COMPONENTE SERVICE CARD INTERNO
+function ServiceCard({ img, title, desc, link, whatsappNumber, whatsappMessage, onConvert }) {
   return (
     <div className="bg-[#051d40] rounded-3xl overflow-hidden flex flex-col lg:flex-row min-h-[380px] shadow-2xl group border border-white/5">
       <div className="lg:w-1/2 h-64 lg:h-auto overflow-hidden bg-[#051d40] order-first lg:order-last">
@@ -142,13 +141,19 @@ function ServiceCard({ title, desc, img, link, phoneNumber, whatsappMessage }) {
           <p className="text-[13px] text-gray-300 leading-relaxed mb-8 font-normal">{desc}</p>
         </div>
         <div className="flex flex-col sm:flex-row gap-3">
-          {/* El botón ahora es un Link que usa la prop 'link' */}
+          {/* BOTÓN "Ver más": SE MANTIENE SIN TRACKING (Solo navegación) */}
           <Link href={link} className="border border-white/50 text-white px-6 py-3 text-[11px] rounded-full font-normal hover:bg-white hover:text-[#051d40] transition w-full sm:w-auto uppercase tracking-wider text-center">
             Ver más
           </Link>
-          <a href={`https://wa.me/${phoneNumber}?text=${whatsappMessage}`} 
-             className="bg-[#ffbd4a] text-[#051d40] px-6 py-3 text-[11px] rounded-full font-bold hover:bg-white transition text-center w-full sm:w-auto uppercase tracking-wider">
-            Escríbenos
+          {/* BOTÓN "Consultar": SE AÑADE EL TRACKING (Conversión directa) */}
+          <a 
+            href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
+            onClick={onConvert}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#ffbd4a] text-[#051d40] px-6 py-3 text-[11px] rounded-full font-bold hover:bg-white transition w-full sm:w-auto uppercase tracking-wider text-center"
+          >
+            Consultar
           </a>
         </div>
       </div>

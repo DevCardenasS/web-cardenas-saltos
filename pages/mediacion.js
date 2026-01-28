@@ -1,8 +1,18 @@
 import React from 'react';
 import Head from 'next/head';
+import { WHATSAPP_NUMBER } from '../constants'; // Importamos la constante para mantener el estándar
 
 export default function Mediacion() {
-  const phoneNumber = "5939984851296";
+  // Usamos la constante global para el número
+  const phoneNumber = WHATSAPP_NUMBER;
+  const whatsappMessage = encodeURIComponent("Hola Cárdenas Saltos Abogados, necesito información sobre un proceso de Mediación...");
+
+  // FUNCIÓN DE CONVERSIÓN: Avisa a Google antes de abrir WhatsApp
+  const handleConversion = () => {
+    if (typeof window !== 'undefined' && window.reportWhatsAppClick) {
+      window.reportWhatsAppClick();
+    }
+  };
 
   const servicios = [
     {
@@ -23,71 +33,60 @@ export default function Mediacion() {
         "Cobro Inmediato: El trabajador recibe su dinero sin esperar años de juicio laboral.",
         "Cero Multas para la Empresa: Evitar la sanción del Ministerio del Trabajo por falta de pago a tiempo.",
         "Cálculos Legales Correctos: Revisión profesional de décimos, vacaciones y desahucios.",
-        "Seguridad Total: El acta impide que el empleado pueda volver a demandar por el mismo tema.",
-        "Planes de Pago: Posibilidad de pactar cuotas si la empresa no tiene liquidez total inmediata."
-      ]
-    },
-    {
-      titulo: "Reestructuración de deudas (Bancos y Cooperativas)",
-      descripcion: "Negociación directa con acreedores para conseguir nuevas cuotas que el cliente sí pueda pagar.",
-      beneficios: [
-        "Frenar el Acoso de Cobranza: Detener las llamadas insistentes y las amenazas de juicio.",
-        "Nuevos Plazos y Cuotas: Lograr que el banco extienda el tiempo y baje el valor de la cuota mensual.",
-        "Bajar Intereses de Mora: Negociar la reducción de recargos por atrasos.",
-        "Evitar Embargos: Detener el proceso de quitarte el sueldo, el carro o la casa.",
-        "Certificado de Acuerdo: Un documento legal que demuestra que estás cumpliendo con tus pagos."
-      ]
-    },
-    {
-      titulo: "Conflictos de Inquilinato (Arriendos)",
-      descripcion: "Solución de problemas por falta de pago de renta, daños al inmueble o entrega de locales.",
-      beneficios: [
-        "Desalojo Pactado: Acordar una fecha fija para desocupar sin necesidad de usar la fuerza pública.",
-        "Plan para Pagar Arriendos: Reconocer la deuda y pactar cómo se va a cancelar lo adeudado.",
-        "Devolución de Garantía: Liquidación justa descontando daños reales y servicios pendientes.",
-        "Evitar Juicios de Inquilinato: Ahorrar miles de dólares en abogados y trámites judiciales eternos.",
-        "Paz entre las Partes: Terminar la relación arrendaticia sin violencia ni rencores."
+        "Finalización de Conflictos: Se firma un acta de finiquito que impide demandas futuras por el mismo tema.",
+        "Tranquilidad Empresarial: Cerrar ciclos con ex-empleados sin resentimientos ni procesos judiciales."
       ]
     }
   ];
 
   return (
-    <div className="w-full bg-white font-['Gantari']">
+    <div className=\"w-full bg-white font-['Gantari']\">
       <Head>
-        <title>Cárdenas Saltos | Mediación</title>
+        <title>Cárdenas Saltos | Centro de Mediación</title>
       </Head>
 
       {/* HERO SECTION */}
       <section className="pt-24 pb-16 px-6">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start gap-12">
+          
           <div className="lg:w-1/2 order-1">
-            <p className="text-[#051d40] text-lg md:text-xl leading-relaxed mb-8 font-normal pt-2">
-              Resuelve tus conflictos de forma rápida y económica sin juicios. Logra acuerdos legales en pensión alimenticia, visitas, tenencia, deudas y liquidaciones laborales. Total validez ante la ley, menos estrés y resultados rápidos.
+            <p className="text-[#051d40] text-lg md:text-xl leading-relaxed mb-8 font-normal pt-2 text-justify">
+              Resuelve tus conflictos de forma rápida, económica y con validez legal. 
+              En nuestro centro de mediación te ayudamos a llegar a acuerdos definitivos en pensiones alimenticias, 
+              visitas, tenencia y liquidaciones laborales, evitando juicios largos y costosos.
             </p>
+            
             <p className="text-[#051d40] text-xl md:text-2xl font-bold mb-8">
-              ¡Escríbenos y recibe una consulta gratis! 
+              ¡Escríbenos y recibe una consulta gratis!
             </p>
+
             <a 
-              href={`https://wa.me/${phoneNumber}`} 
+              href={`https://wa.me/${phoneNumber}?text=${whatsappMessage}`} 
+              onClick={handleConversion}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-[#ffbd4a] text-[#051d40] px-10 py-4 rounded-full font-medium text-sm uppercase tracking-widest hover:bg-[#051d40] hover:text-white transition-all shadow-lg"
             >
-              Escribenos ahora
+              Iniciar mediación ahora
             </a>
           </div>
+
           <div className="lg:w-1/2 order-2">
-            <h1 className="text-[#051d40] text-5xl md:text-[5rem] uppercase tracking-tighter leading-[0.85] lg:text-right">
-              <span className="block font-black">Mediación</span>
+            <h1 className="text-[#051d40] text-4xl md:text-[5rem] uppercase tracking-tighter leading-[0.85] lg:text-right">
+              <span className="block font-black">Centro de</span>
+              <span className="block font-medium">Mediación</span>
             </h1>
           </div>
+          
         </div>
       </section>
 
       {/* IMAGEN FULL WIDE */}
       <section className="w-full h-[40vh] md:h-[70vh]">
         <img 
-          src="/mediacion/mediacion-cardenas-saltos.jpg" 
+          src="/mediacion/centro-de-mediacion-quito-ecuador.jpg" 
           className="w-full h-full object-cover"
-          alt="Mediación Cárdenas Saltos"
+          alt="Centro de Mediación Cárdenas Saltos"
         />
       </section>
 
@@ -109,10 +108,13 @@ export default function Mediacion() {
               </div>
               <div className="mt-10">
                 <a 
-                  href={`https://wa.me/${phoneNumber}`} 
+                  href={`https://wa.me/${phoneNumber}?text=${whatsappMessage}`} 
+                  onClick={handleConversion}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-block bg-[#ffbd4a] text-[#051d40] px-8 py-3 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-white transition-colors"
                 >
-                  Escríbenos ahora
+                  Agendar cita
                 </a>
               </div>
             </div>
@@ -141,9 +143,14 @@ export default function Mediacion() {
             <span className="block font-black">Estrategia legal</span>
             <span className="block font-normal">que genera resultados</span>
           </h2>
-          <a href={`https://wa.me/${phoneNumber}`} 
-             className="inline-block bg-[#051d40] text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
-            Consulta gratis 
+          <a 
+            href={`https://wa.me/${phoneNumber}?text=${whatsappMessage}`} 
+            onClick={handleConversion}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-[#051d40] text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl"
+          >
+            Consulta gratis
           </a>
         </div>
       </section>

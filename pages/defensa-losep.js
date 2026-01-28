@@ -5,6 +5,13 @@ import { WHATSAPP_NUMBER } from '../constants';
 export default function DefensaLosep() {
   const whatsappMessage = encodeURIComponent("Hola Cárdenas Saltos Abogados, necesito ayuda urgente con un tema de LOSEP / Sumario...");
 
+  // Función de disparo para Google Ads
+  const handleConversion = () => {
+    if (typeof window !== 'undefined' && window.reportWhatsAppClick) {
+      window.reportWhatsAppClick();
+    }
+  };
+
   return (
     <div className="w-full bg-white font-['Gantari']">
       <Head>
@@ -26,6 +33,9 @@ export default function DefensaLosep() {
 
           <a 
             href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
+            onClick={handleConversion}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-[#ffbd4a] text-[#051d40] px-10 py-4 md:px-12 md:py-5 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-[#051d40] hover:text-white transition-all shadow-xl"
           >
             Consulta gratis
@@ -94,6 +104,9 @@ export default function DefensaLosep() {
             </ul>
             <a 
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
+              onClick={handleConversion}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-fit bg-[#ffbd4a] text-[#051d40] px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-white transition-all shadow-lg block"
             >
               Consulta gratis
@@ -102,7 +115,7 @@ export default function DefensaLosep() {
         </div>
       </section>
 
-      {/* --- SECCIÓN: AUTORIDAD Y RESULTADOS (SOMOS TU MEJOR OPCIÓN) --- */}
+      {/* --- SECCIÓN: AUTORIDAD Y RESULTADOS --- */}
       <section className="bg-[#f8f9fa] py-16 md:py-20 border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-[#051d40] text-3xl md:text-4xl font-black mb-12 text-center uppercase tracking-tight">
@@ -128,7 +141,7 @@ export default function DefensaLosep() {
         </div>
       </section>
 
-      {/* --- SECCIÓN MINIMALISTA: ENTENDEMOS LO QUE ESTÁS PASANDO --- */}
+      {/* --- SECCIÓN MINIMALISTA --- */}
       <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
         <div className="flex flex-col md:flex-row gap-10 md:gap-16">
           <div className="md:w-1/3">
@@ -164,6 +177,9 @@ export default function DefensaLosep() {
             </h2>
             <a 
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
+              onClick={handleConversion}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-[#ffbd4a] text-[#051d40] px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-[#051d40] hover:text-white transition-all shadow-lg"
             >
               Consulta gratis
@@ -187,6 +203,9 @@ export default function DefensaLosep() {
             <span className="block font-normal">que genera resultados</span>
           </h2>
           <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
+             onClick={handleConversion}
+             target="_blank"
+             rel="noopener noreferrer"
              className="inline-block bg-[#051d40] text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
             Consulta gratis 
           </a>

@@ -1,13 +1,13 @@
 import React from 'react';
 import Head from 'next/head';
-import Link from 'next/link'; // Se añade esta importación necesaria para navegar
-import { WHATSAPP_NUMBER } from '../constants'; // Importamos la constante centralizada
+import Link from 'next/link'; 
+import { WHATSAPP_NUMBER } from '../constants'; 
 
 export default function Home() {
   // Definimos el mensaje predeterminado para WhatsApp codificado para URL
   const whatsappMessage = encodeURIComponent("Hola Cárdenas Saltos Abogados, tengo una consulta sobre...");
 
-  // FUNCIÓN DE CONVERSIÓN: Avisa a Google antes de abrir WhatsApp
+  // --- PILLAR 1: LA MECHA (Función de conversión) ---
   const handleConversion = () => {
     if (typeof window !== 'undefined' && window.reportWhatsAppClick) {
       window.reportWhatsAppClick();
@@ -46,6 +46,7 @@ export default function Home() {
             </p>
 
             <div className="mt-8 md:mt-10 flex flex-wrap gap-4">
+              {/* --- PILLAR 2: DISPARADOR EN BOTÓN DIRECTO HERO --- */}
               <a 
                 href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
                 onClick={handleConversion}
@@ -69,7 +70,6 @@ export default function Home() {
             alt="Cárdenas Saltos Abogados" 
             className="w-full h-full object-cover"
           />
-          {/* Overlay degradado para suavizar la transición en móvil */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#051d40] via-transparent to-transparent md:hidden"></div>
         </div>
       </section>
@@ -82,6 +82,7 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-1 gap-12 md:gap-20">
+          {/* --- PILLAR 3: PASAMOS LA FUNCIÓN AL COMPONENTE --- */}
           <ServiceCard 
             img="/Home/abogado-administrativo-ecuador.jpg"
             title="Derecho Administrativo"
@@ -111,6 +112,7 @@ export default function Home() {
             <span className="block font-black uppercase tracking-tighter">¿Listo para resolver</span>
             <span className="block font-normal">tu situación legal?</span>
           </h2>
+          {/* --- PILLAR 2: DISPARADOR EN BOTÓN DIRECTO BANNER --- */}
           <a 
             href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
             onClick={handleConversion}
@@ -139,9 +141,11 @@ function ServiceCard({ img, title, desc, link, whatsappNumber, whatsappMessage, 
           <p className="text-[13px] text-gray-300 leading-relaxed mb-8 font-normal">{desc}</p>
         </div>
         <div className="flex flex-col sm:flex-row gap-3">
+          {/* BOTÓN "Ver más": SE MANTIENE SIN TRACKING (Solo navegación) */}
           <Link href={link} className="border border-white/50 text-white px-6 py-3 text-[11px] rounded-full font-normal hover:bg-white hover:text-[#051d40] transition w-full sm:w-auto uppercase tracking-wider text-center">
             Ver más
           </Link>
+          {/* BOTÓN "Consultar": SE AÑADE EL TRACKING (Conversión directa) */}
           <a 
             href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
             onClick={onConvert}

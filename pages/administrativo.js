@@ -4,7 +4,14 @@ import { WHATSAPP_NUMBER } from '../constants'; // Importación de la constante 
 
 export default function Administrativo() {
   // Definimos el mensaje predeterminado para WhatsApp codificado para URL
-  const whatsappMessage = encodeURIComponent("Hola Cárdenas Saltos Abogados, tengo una consulta sobre...");
+  const whatsappMessage = encodeURIComponent("Hola Cárdenas Saltos Abogados, tengo una consulta sobre derecho administrativo...");
+
+  // --- FUNCIÓN DE CONVERSIÓN GOOGLE ADS MEJORADA ---
+  const handleConversion = (etiqueta) => {
+    if (typeof window !== 'undefined' && window.reportWhatsAppClick) {
+      window.reportWhatsAppClick(etiqueta);
+    }
+  };
 
   const servicios = [
     {
@@ -98,6 +105,9 @@ export default function Administrativo() {
 
             <a 
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
+              onClick={() => handleConversion("Servicio Administrativo - Hero")}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-[#ffbd4a] text-[#051d40] px-10 py-4 rounded-full font-medium text-sm uppercase tracking-widest hover:bg-[#051d40] hover:text-white transition-all shadow-lg"
             >
               Escríbenos ahora
@@ -105,7 +115,6 @@ export default function Administrativo() {
           </div>
 
           <div className="lg:w-1/2 order-2">
-            {/* Título ajustado a text-4xl en móvil para evitar desbordamiento */}
             <h1 className="text-[#051d40] text-4xl md:text-[5rem] uppercase tracking-tighter leading-[0.85] lg:text-right">
               <span className="block font-black">Derecho</span>
               <span className="block font-medium">administrativo</span>
@@ -143,6 +152,9 @@ export default function Administrativo() {
               <div className="mt-10">
                 <a 
                   href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
+                  onClick={() => handleConversion(`Servicio Administrativo - ${servicio.titulo}`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-block bg-[#ffbd4a] text-[#051d40] px-8 py-3 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-white transition-colors"
                 >
                   Escríbenos ahora
@@ -174,8 +186,13 @@ export default function Administrativo() {
             <span className="block font-black">Estrategia legal</span>
             <span className="block font-normal">que genera resultados</span>
           </h2>
-          <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
-             className="inline-block bg-[#051d40] text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+          <a 
+            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
+            onClick={() => handleConversion("Servicio Administrativo - Banner Final")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-[#051d40] text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl"
+          >
             Consulta gratis
           </a>
         </div>

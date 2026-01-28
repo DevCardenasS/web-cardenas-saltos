@@ -12,9 +12,11 @@ export default function Navbar({ transparent }) {
 
   const whatsappMessage = encodeURIComponent("Hola Cárdenas Saltos Abogados, tengo una consulta sobre...");
 
-  // --- ÚNICA ADICIÓN: FUNCIÓN DE CONVERSIÓN ---
+  // --- FUNCIÓN DE CONVERSIÓN MEJORADA ---
+  // Ahora acepta una "ubicacion" para que Google Ads te lo detalle
   const handleConversion = (ubicacion) => {
     if (typeof window !== 'undefined' && window.reportWhatsAppClick) {
+      // Enviamos la etiqueta personalizada: "Navbar Desktop" o "Navbar Mobile"
       window.reportWhatsAppClick(ubicacion);
     }
   };
@@ -76,10 +78,10 @@ export default function Navbar({ transparent }) {
 
           <Link href="/blog" className="hover:text-[#ffbd4a] transition-colors">Blog</Link>
           
-          {/* BOTÓN WHATSAPP DESKTOP CON ETIQUETA */}
+          {/* BOTÓN WHATSAPP DESKTOP CON RASTREO ESPECÍFICO */}
           <a 
             href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
-            onClick={() => handleConversion("Navbar Desktop")} // <--- ÚNICO CAMBIO AQUÍ
+            onClick={() => handleConversion("Navbar Desktop")} // <--- SABRÁS QUE FUE DESDE PC
             target="_blank"
             rel="noopener noreferrer"
             className={`border-2 ${isWhiteMenu ? 'border-[#051d40] text-[#051d40]' : 'border-[#ffbd4a] text-white'} px-6 py-2.5 rounded-full hover:bg-[#ffbd4a] hover:text-[#051d40] hover:border-[#ffbd4a] transition-all`}
@@ -116,11 +118,11 @@ export default function Navbar({ transparent }) {
 
           <Link href="/blog" onClick={() => setIsOpen(false)}>Blog</Link>
 
-          {/* BOTÓN WHATSAPP MÓVIL CON ETIQUETA */}
+          {/* BOTÓN WHATSAPP MÓVIL CON RASTREO ESPECÍFICO */}
           <a 
             href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
             onClick={() => {
-              handleConversion("Navbar Mobile"); // <--- ÚNICO CAMBIO AQUÍ
+              handleConversion("Navbar Mobile"); // <--- SABRÁS QUE FUE DESDE MÓVIL
               setIsOpen(false);
             }}
             target="_blank"

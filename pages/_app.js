@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      {/* Cargamos el script de Google de forma eficiente */}
+      {/* Cargamos el script de Google Ads (Global Site Tag) */}
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=AW-17896545955"
         strategy="afterInteractive"
@@ -26,26 +26,28 @@ function MyApp({ Component, pageProps }) {
           gtag('js', new Date());
           gtag('config', 'AW-17896545955');
 
-          // Función robusta para reportar la conversión a Google Ads
+          // Función para reportar el clic específico de WhatsApp a Google Ads
+          // Datos extraídos de tu PDF: AW-17896545955/1GDSCI2Xg-4bEK093tVc
           window.reportWhatsAppClick = function() {
             if (typeof gtag === 'function') {
               gtag('event', 'conversion', {
                 'send_to': 'AW-17896545955/1GDSCI2Xg-4bEK093tVc',
-                'event_category': 'WhatsApp',
-                'event_label': window.location.pathname, // Registra desde qué página escriben
                 'value': 1.0,
-                'currency': 'USD'
+                'currency': 'USD',
+                'event_callback': function() {
+                  console.log("Conversión reportada con éxito a Google Ads");
+                }
               });
-              console.log("Evento enviado a Google Ads desde: " + window.location.pathname);
             }
           };
         `}
       </Script>
 
       <Layout>
-        <Component {...pageProps} transparentNavbar={Component.transparentNavbar} />
+        <Component {...pageProps} />
       </Layout>
-
+      
+      {/* Botón flotante que aparece en todas las páginas */}
       <WhatsAppButton />
     </>
   );

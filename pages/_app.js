@@ -27,22 +27,26 @@ function MyApp({ Component, pageProps }) {
           gtag('js', new Date());
           gtag('config', 'AW-17896545955');
 
-          // Función robusta para reportar la conversión a Google Ads
-          window.reportWhatsAppClick = function() {
+          // Función mejorada para reportar la conversión a Google Ads
+          // Ahora acepta "ubicacion" para saber si fue el Navbar Desktop, Mobile, etc.
+          window.reportWhatsAppClick = function(ubicacion) {
             if (typeof gtag === 'function') {
+              const label = ubicacion 
+                ? ubicacion + " - " + window.location.pathname 
+                : window.location.pathname;
+
               gtag('event', 'conversion', {
                 'send_to': 'AW-17896545955/1GDSCI2Xg-4bEK093tVc',
                 'event_category': 'WhatsApp',
-                'event_label': window.location.pathname, // Registra desde qué página escriben
+                'event_label': label,
                 'value': 1.0,
                 'currency': 'USD'
               });
-              console.log("Evento enviado a Google Ads desde: " + window.location.pathname);
+              console.log("Evento enviado a Google Ads. Origen: " + label);
             }
           };
         `}
       </Script>
-      {/* --- END GOOGLE ADS CONFIGURATION --- */}
 
       <Layout>
         <Component {...pageProps} />

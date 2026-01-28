@@ -12,7 +12,7 @@ export default function Navbar({ transparent }) {
 
   const whatsappMessage = encodeURIComponent("Hola Cárdenas Saltos Abogados, tengo una consulta sobre...");
 
-  // --- FUNCIÓN DE CONVERSIÓN MEJORADA (Mantiene tu lógica, añade etiqueta) ---
+  // --- ÚNICA ADICIÓN: FUNCIÓN DE CONVERSIÓN ---
   const handleConversion = (ubicacion) => {
     if (typeof window !== 'undefined' && window.reportWhatsAppClick) {
       window.reportWhatsAppClick(ubicacion);
@@ -79,7 +79,7 @@ export default function Navbar({ transparent }) {
           {/* BOTÓN WHATSAPP DESKTOP CON ETIQUETA */}
           <a 
             href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
-            onClick={() => handleConversion("Navbar Desktop")}
+            onClick={() => handleConversion("Navbar Desktop")} // <--- ÚNICO CAMBIO AQUÍ
             target="_blank"
             rel="noopener noreferrer"
             className={`border-2 ${isWhiteMenu ? 'border-[#051d40] text-[#051d40]' : 'border-[#ffbd4a] text-white'} px-6 py-2.5 rounded-full hover:bg-[#ffbd4a] hover:text-[#051d40] hover:border-[#ffbd4a] transition-all`}
@@ -120,7 +120,7 @@ export default function Navbar({ transparent }) {
           <a 
             href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
             onClick={() => {
-              handleConversion("Navbar Mobile");
+              handleConversion("Navbar Mobile"); // <--- ÚNICO CAMBIO AQUÍ
               setIsOpen(false);
             }}
             target="_blank"

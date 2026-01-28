@@ -19,7 +19,7 @@ export default function Home() {
         <title>Cárdenas Saltos | Inicio</title>
       </Head>
 
-      {/* HERO SECTION - INTERLINEADO CORREGIDO PARA MÓVIL */}
+      {/* HERO SECTION */}
       <section className="w-full bg-[#051d40] flex flex-col md:flex-row items-stretch overflow-hidden">
         
         {/* TEXTO HERO */}
@@ -68,8 +68,8 @@ export default function Home() {
             alt="Cárdenas Saltos Abogados" 
             className="absolute inset-0 w-full h-full object-cover"
           />
-          {/* Overlay gradiente para que el texto respire en desktop */}
-          <div className=\"absolute inset-0 bg-gradient-to-r from-[#051d40] via-transparent to-transparent md:block hidden\"></div>
+          {/* Overlay gradiente corregido (sin barras invertidas) */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#051d40] via-transparent to-transparent md:block hidden"></div>
         </div>
       </section>
 
@@ -106,7 +106,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECCIÓN DE SERVICIOS CON TARJETAS DETALLADAS */}
+      {/* SECCIÓN DE SERVICIOS */}
       <section className="max-w-7xl mx-auto px-6 py-24 border-t border-slate-100">
         <div className="text-center mb-20">
           <h2 className="text-[#051d40] text-3xl md:text-5xl font-black uppercase tracking-tighter mb-4">Especialidades</h2>
@@ -114,7 +114,6 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* SERVICIO 1: ADMINISTRATIVO */}
           <ServiceCard 
             title="Derecho Administrativo"
             img="/servicios/administrativo-home.jpg"
@@ -125,7 +124,6 @@ export default function Home() {
             onConvert={() => handleConversion("Home - Tarjeta Administrativo")}
           />
 
-          {/* SERVICIO 2: CONSTITUCIONAL */}
           <ServiceCard 
             title="Derecho Constitucional"
             img="/servicios/constitucional-home.jpg"
@@ -136,7 +134,6 @@ export default function Home() {
             onConvert={() => handleConversion("Home - Tarjeta Constitucional")}
           />
 
-          {/* SERVICIO 3: NOTARIAL */}
           <ServiceCard 
             title="Asesoría Notarial"
             img="/servicios/notarial-home.jpg"
@@ -147,7 +144,6 @@ export default function Home() {
             onConvert={() => handleConversion("Home - Tarjeta Notarial")}
           />
 
-          {/* SERVICIO 4: MEDIACIÓN */}
           <ServiceCard 
             title="Centro de Mediación"
             img="/servicios/mediacion-home.jpg"
@@ -213,12 +209,10 @@ export default function Home() {
           </a>
         </div>
       </section>
-
     </div>
   );
 }
 
-// COMPONENTE DE TARJETA MEJORADO PARA INDEX
 function ServiceCard({ title, img, desc, link, phoneNumber, whatsappMessage, onConvert }) {
   return (
     <div className="bg-[#051d40] rounded-3xl overflow-hidden flex flex-col lg:flex-row min-h-[380px] shadow-2xl group border border-white/5">

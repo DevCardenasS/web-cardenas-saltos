@@ -5,6 +5,13 @@ import { WHATSAPP_NUMBER } from '../constants';
 export default function DefensaSancionatoria() {
   const whatsappMessage = encodeURIComponent("Hola Cárdenas Saltos Abogados, mi negocio fue clausurado o recibí una multa y necesito ayuda urgente...");
 
+  // Función de disparo para Google Ads
+  const handleConversion = () => {
+    if (typeof window !== 'undefined' && window.reportWhatsAppClick) {
+      window.reportWhatsAppClick();
+    }
+  };
+
   return (
     <div className="w-full bg-white font-['Gantari']">
       <Head>
@@ -26,6 +33,9 @@ export default function DefensaSancionatoria() {
 
           <a 
             href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
+            onClick={handleConversion}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-[#ffbd4a] text-[#051d40] px-10 py-4 md:px-12 md:py-5 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-[#051d40] hover:text-white transition-all shadow-xl"
           >
             Consulta gratis 
@@ -100,6 +110,9 @@ export default function DefensaSancionatoria() {
             </ul>
             <a 
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
+              onClick={handleConversion}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-fit bg-[#ffbd4a] text-[#051d40] px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-white transition-all shadow-lg block"
             >
               Consulta gratis
@@ -134,7 +147,7 @@ export default function DefensaSancionatoria() {
         </div>
       </section>
 
-      {/* --- SECCIÓN MINIMALISTA: TU ESFUERZO NO PUEDE DETENERSE --- */}
+      {/* --- SECCIÓN MINIMALISTA --- */}
       <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
         <div className="flex flex-col md:flex-row gap-10 md:gap-16">
           <div className="md:w-1/3">
@@ -170,6 +183,9 @@ export default function DefensaSancionatoria() {
             </h2>
             <a 
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
+              onClick={handleConversion}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-[#ffbd4a] text-[#051d40] px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-[#051d40] hover:text-white transition-all shadow-lg"
             >
               Consulta gratis 
@@ -193,6 +209,9 @@ export default function DefensaSancionatoria() {
             <span className="block font-normal">que genera resultados</span> 
           </h2>
           <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
+             onClick={handleConversion}
+             target="_blank"
+             rel="noopener noreferrer"
              className="inline-block bg-[#051d40] text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
             Consulta gratis 
           </a>

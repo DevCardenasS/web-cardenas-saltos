@@ -1,16 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
-import { WHATSAPP_NUMBER } from '../constants';
 
 export default function Mediacion() {
-  const whatsappMessage = encodeURIComponent("Hola Cárdenas Saltos Abogados, necesito información sobre un proceso de mediación...");
-
-  // FUNCIÓN DE CONVERSIÓN: Llama a la configuración de _app.js
-  const handleConversion = () => {
-    if (typeof window !== 'undefined' && window.reportWhatsAppClick) {
-      window.reportWhatsAppClick();
-    }
-  };
+  const phoneNumber = "5939984851296";
 
   const servicios = [
     {
@@ -31,8 +23,30 @@ export default function Mediacion() {
         "Cobro Inmediato: El trabajador recibe su dinero sin esperar años de juicio laboral.",
         "Cero Multas para la Empresa: Evitar la sanción del Ministerio del Trabajo por falta de pago a tiempo.",
         "Cálculos Legales Correctos: Revisión profesional de décimos, vacaciones y desahucios.",
-        "Seguridad Jurídica: El acta de mediación impide que luego existan demandas por los mismos valores.",
-        "Confidencialidad: El acuerdo es privado y no mancha el récord de la empresa ni del empleado."
+        "Seguridad Total: El acta impide que el empleado pueda volver a demandar por el mismo tema.",
+        "Planes de Pago: Posibilidad de pactar cuotas si la empresa no tiene liquidez total inmediata."
+      ]
+    },
+    {
+      titulo: "Reestructuración de deudas (Bancos y Cooperativas)",
+      descripcion: "Negociación directa con acreedores para conseguir nuevas cuotas que el cliente sí pueda pagar.",
+      beneficios: [
+        "Frenar el Acoso de Cobranza: Detener las llamadas insistentes y las amenazas de juicio.",
+        "Nuevos Plazos y Cuotas: Lograr que el banco extienda el tiempo y baje el valor de la cuota mensual.",
+        "Bajar Intereses de Mora: Negociar la reducción de recargos por atrasos.",
+        "Evitar Embargos: Detener el proceso de quitarte el sueldo, el carro o la casa.",
+        "Certificado de Acuerdo: Un documento legal que demuestra que estás cumpliendo con tus pagos."
+      ]
+    },
+    {
+      titulo: "Conflictos de Inquilinato (Arriendos)",
+      descripcion: "Solución de problemas por falta de pago de renta, daños al inmueble o entrega de locales.",
+      beneficios: [
+        "Desalojo Pactado: Acordar una fecha fija para desocupar sin necesidad de usar la fuerza pública.",
+        "Plan para Pagar Arriendos: Reconocer la deuda y pactar cómo se va a cancelar lo adeudado.",
+        "Devolución de Garantía: Liquidación justa descontando daños reales y servicios pendientes.",
+        "Evitar Juicios de Inquilinato: Ahorrar miles de dólares en abogados y trámites judiciales eternos.",
+        "Paz entre las Partes: Terminar la relación arrendaticia sin violencia ni rencores."
       ]
     }
   ];
@@ -40,7 +54,7 @@ export default function Mediacion() {
   return (
     <div className="w-full bg-white font-['Gantari']">
       <Head>
-        <title>Cárdenas Saltos | Centro de Mediación</title>
+        <title>Cárdenas Saltos | Mediación</title>
       </Head>
 
       {/* HERO SECTION */}
@@ -48,43 +62,36 @@ export default function Mediacion() {
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start gap-12">
           <div className="lg:w-1/2 order-1">
             <p className="text-[#051d40] text-lg md:text-xl leading-relaxed mb-8 font-normal pt-2">
-              Resuelve tus conflictos de forma rápida, económica y con total validez legal. 
-              El acta de mediación tiene la misma fuerza que una sentencia dictada por un juez, 
-              pero sin el desgaste de un juicio largo.
+              Resuelve tus conflictos de forma rápida y económica sin juicios. Logra acuerdos legales en pensión alimenticia, visitas, tenencia, deudas y liquidaciones laborales. Total validez ante la ley, menos estrés y resultados rápidos.
             </p>
             <p className="text-[#051d40] text-xl md:text-2xl font-bold mb-8">
-              ¡Agenda tu audiencia hoy mismo!
+              ¡Escríbenos y recibe una consulta gratis! 
             </p>
-            {/* BOTÓN HERO CON TRACKING */}
             <a 
-              href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
-              onClick={handleConversion}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`https://wa.me/${phoneNumber}`} 
               className="inline-block bg-[#ffbd4a] text-[#051d40] px-10 py-4 rounded-full font-medium text-sm uppercase tracking-widest hover:bg-[#051d40] hover:text-white transition-all shadow-lg"
             >
-              Iniciar mediación
+              Escribenos ahora
             </a>
           </div>
           <div className="lg:w-1/2 order-2">
-            <h1 className="text-[#051d40] text-4xl md:text-[5rem] uppercase tracking-tighter leading-[0.85] lg:text-right">
-              <span className="block font-black">Centro de</span>
-              <span className="block font-medium">mediación</span>
+            <h1 className="text-[#051d40] text-5xl md:text-[5rem] uppercase tracking-tighter leading-[0.85] lg:text-right">
+              <span className="block font-black">Mediación</span>
             </h1>
           </div>
         </div>
       </section>
 
-      {/* IMAGEN CENTRAL */}
+      {/* IMAGEN FULL WIDE */}
       <section className="w-full h-[40vh] md:h-[70vh]">
         <img 
-          src="/mediacion/mediacion-familiar-laboral-ecuador.jpg" 
+          src="/mediacion/mediacion-cardenas-saltos.jpg" 
           className="w-full h-full object-cover"
-          alt="Centro de Mediación Cárdenas Saltos"
+          alt="Mediación Cárdenas Saltos"
         />
       </section>
 
-      {/* SERVICIOS */}
+      {/* CARDS HORIZONTALES */}
       <section className="max-w-7xl mx-auto px-6 py-24 space-y-16">
         {servicios.map((servicio, index) => (
           <div 
@@ -101,22 +108,18 @@ export default function Mediacion() {
                 </p>
               </div>
               <div className="mt-10">
-                {/* BOTÓN SERVICIO CON TRACKING */}
                 <a 
-                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
-                  onClick={handleConversion}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={`https://wa.me/${phoneNumber}`} 
                   className="inline-block bg-[#ffbd4a] text-[#051d40] px-8 py-3 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-white transition-colors"
                 >
-                  Agendar audiencia
+                  Escríbenos ahora
                 </a>
               </div>
             </div>
 
             <div className="lg:w-3/5 p-10 md:p-14 flex flex-col justify-center bg-white border-l border-[#051d40]">
               <h4 className="text-[#ffbd4a] font-black uppercase text-sm tracking-[0.2em] mb-8">
-                Posibles beneficios
+                Posibles beneficios 
               </h4>
               <ul className="grid grid-cols-1 gap-5">
                 {servicio.beneficios.map((beneficio, bIndex) => (
@@ -138,15 +141,9 @@ export default function Mediacion() {
             <span className="block font-black">Estrategia legal</span>
             <span className="block font-normal">que genera resultados</span>
           </h2>
-          {/* BOTÓN FINAL CON TRACKING */}
-          <a 
-            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
-            onClick={handleConversion}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-[#051d40] text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl"
-          >
-            Consulta gratis
+          <a href={`https://wa.me/${phoneNumber}`} 
+             className="inline-block bg-[#051d40] text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+            Consulta gratis 
           </a>
         </div>
       </section>

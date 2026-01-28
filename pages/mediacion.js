@@ -1,13 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
-import { WHATSAPP_NUMBER } from '../constants'; // Importamos la constante para mantener el estándar
+import { WHATSAPP_NUMBER } from '../constants';
 
 export default function Mediacion() {
-  // Usamos la constante global para el número
-  const phoneNumber = WHATSAPP_NUMBER;
-  const whatsappMessage = encodeURIComponent("Hola Cárdenas Saltos Abogados, necesito información sobre un proceso de Mediación...");
+  const whatsappMessage = encodeURIComponent("Hola Cárdenas Saltos Abogados, necesito información sobre un proceso de mediación...");
 
-  // FUNCIÓN DE CONVERSIÓN: Avisa a Google antes de abrir WhatsApp
+  // FUNCIÓN DE CONVERSIÓN: Llama a la configuración de _app.js
   const handleConversion = () => {
     if (typeof window !== 'undefined' && window.reportWhatsAppClick) {
       window.reportWhatsAppClick();
@@ -33,14 +31,14 @@ export default function Mediacion() {
         "Cobro Inmediato: El trabajador recibe su dinero sin esperar años de juicio laboral.",
         "Cero Multas para la Empresa: Evitar la sanción del Ministerio del Trabajo por falta de pago a tiempo.",
         "Cálculos Legales Correctos: Revisión profesional de décimos, vacaciones y desahucios.",
-        "Finalización de Conflictos: Se firma un acta de finiquito que impide demandas futuras por el mismo tema.",
-        "Tranquilidad Empresarial: Cerrar ciclos con ex-empleados sin resentimientos ni procesos judiciales."
+        "Seguridad Jurídica: El acta de mediación impide que luego existan demandas por los mismos valores.",
+        "Confidencialidad: El acuerdo es privado y no mancha el récord de la empresa ni del empleado."
       ]
     }
   ];
 
   return (
-    <div className=\"w-full bg-white font-['Gantari']\">
+    <div className="w-full bg-white font-['Gantari']">
       <Head>
         <title>Cárdenas Saltos | Centro de Mediación</title>
       </Head>
@@ -48,49 +46,45 @@ export default function Mediacion() {
       {/* HERO SECTION */}
       <section className="pt-24 pb-16 px-6">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start gap-12">
-          
           <div className="lg:w-1/2 order-1">
-            <p className="text-[#051d40] text-lg md:text-xl leading-relaxed mb-8 font-normal pt-2 text-justify">
-              Resuelve tus conflictos de forma rápida, económica y con validez legal. 
-              En nuestro centro de mediación te ayudamos a llegar a acuerdos definitivos en pensiones alimenticias, 
-              visitas, tenencia y liquidaciones laborales, evitando juicios largos y costosos.
+            <p className="text-[#051d40] text-lg md:text-xl leading-relaxed mb-8 font-normal pt-2">
+              Resuelve tus conflictos de forma rápida, económica y con total validez legal. 
+              El acta de mediación tiene la misma fuerza que una sentencia dictada por un juez, 
+              pero sin el desgaste de un juicio largo.
             </p>
-            
             <p className="text-[#051d40] text-xl md:text-2xl font-bold mb-8">
-              ¡Escríbenos y recibe una consulta gratis!
+              ¡Agenda tu audiencia hoy mismo!
             </p>
-
+            {/* BOTÓN HERO CON TRACKING */}
             <a 
-              href={`https://wa.me/${phoneNumber}?text=${whatsappMessage}`} 
+              href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
               onClick={handleConversion}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-[#ffbd4a] text-[#051d40] px-10 py-4 rounded-full font-medium text-sm uppercase tracking-widest hover:bg-[#051d40] hover:text-white transition-all shadow-lg"
             >
-              Iniciar mediación ahora
+              Iniciar mediación
             </a>
           </div>
-
           <div className="lg:w-1/2 order-2">
             <h1 className="text-[#051d40] text-4xl md:text-[5rem] uppercase tracking-tighter leading-[0.85] lg:text-right">
               <span className="block font-black">Centro de</span>
-              <span className="block font-medium">Mediación</span>
+              <span className="block font-medium">mediación</span>
             </h1>
           </div>
-          
         </div>
       </section>
 
-      {/* IMAGEN FULL WIDE */}
+      {/* IMAGEN CENTRAL */}
       <section className="w-full h-[40vh] md:h-[70vh]">
         <img 
-          src="/mediacion/centro-de-mediacion-quito-ecuador.jpg" 
+          src="/mediacion/mediacion-familiar-laboral-ecuador.jpg" 
           className="w-full h-full object-cover"
           alt="Centro de Mediación Cárdenas Saltos"
         />
       </section>
 
-      {/* CARDS HORIZONTALES */}
+      {/* SERVICIOS */}
       <section className="max-w-7xl mx-auto px-6 py-24 space-y-16">
         {servicios.map((servicio, index) => (
           <div 
@@ -107,21 +101,22 @@ export default function Mediacion() {
                 </p>
               </div>
               <div className="mt-10">
+                {/* BOTÓN SERVICIO CON TRACKING */}
                 <a 
-                  href={`https://wa.me/${phoneNumber}?text=${whatsappMessage}`} 
+                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
                   onClick={handleConversion}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block bg-[#ffbd4a] text-[#051d40] px-8 py-3 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-white transition-colors"
                 >
-                  Agendar cita
+                  Agendar audiencia
                 </a>
               </div>
             </div>
 
             <div className="lg:w-3/5 p-10 md:p-14 flex flex-col justify-center bg-white border-l border-[#051d40]">
               <h4 className="text-[#ffbd4a] font-black uppercase text-sm tracking-[0.2em] mb-8">
-                Posibles beneficios 
+                Posibles beneficios
               </h4>
               <ul className="grid grid-cols-1 gap-5">
                 {servicio.beneficios.map((beneficio, bIndex) => (
@@ -143,8 +138,9 @@ export default function Mediacion() {
             <span className="block font-black">Estrategia legal</span>
             <span className="block font-normal">que genera resultados</span>
           </h2>
+          {/* BOTÓN FINAL CON TRACKING */}
           <a 
-            href={`https://wa.me/${phoneNumber}?text=${whatsappMessage}`} 
+            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
             onClick={handleConversion}
             target="_blank"
             rel="noopener noreferrer"

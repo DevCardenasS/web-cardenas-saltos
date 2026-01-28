@@ -5,10 +5,10 @@ import { WHATSAPP_NUMBER } from '../constants';
 export default function DefensaSancionatoria() {
   const whatsappMessage = encodeURIComponent("Hola Cárdenas Saltos Abogados, mi negocio fue clausurado o recibí una multa y necesito ayuda urgente...");
 
-  // Función de disparo para Google Ads
-  const handleConversion = () => {
+  // Función de disparo para Google Ads - Mejorada para recibir etiquetas
+  const handleConversion = (etiqueta) => {
     if (typeof window !== 'undefined' && window.reportWhatsAppClick) {
-      window.reportWhatsAppClick();
+      window.reportWhatsAppClick(etiqueta);
     }
   };
 
@@ -33,7 +33,7 @@ export default function DefensaSancionatoria() {
 
           <a 
             href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
-            onClick={handleConversion}
+            onClick={() => handleConversion("Landing Sanciones - Hero")}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-[#ffbd4a] text-[#051d40] px-10 py-4 md:px-12 md:py-5 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-[#051d40] hover:text-white transition-all shadow-xl"
@@ -110,7 +110,7 @@ export default function DefensaSancionatoria() {
             </ul>
             <a 
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
-              onClick={handleConversion}
+              onClick={() => handleConversion("Landing Sanciones - Seccion Te Ayudamos")}
               target="_blank"
               rel="noopener noreferrer"
               className="w-fit bg-[#ffbd4a] text-[#051d40] px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-white transition-all shadow-lg block"
@@ -183,7 +183,7 @@ export default function DefensaSancionatoria() {
             </h2>
             <a 
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
-              onClick={handleConversion}
+              onClick={() => handleConversion("Landing Sanciones - Seccion Tranquilo")}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-[#ffbd4a] text-[#051d40] px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-[#051d40] hover:text-white transition-all shadow-lg"
@@ -209,7 +209,7 @@ export default function DefensaSancionatoria() {
             <span className="block font-normal">que genera resultados</span> 
           </h2>
           <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
-             onClick={handleConversion}
+             onClick={() => handleConversion("Landing Sanciones - Banner Final")}
              target="_blank"
              rel="noopener noreferrer"
              className="inline-block bg-[#051d40] text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl">

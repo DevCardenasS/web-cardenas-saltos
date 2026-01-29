@@ -4,7 +4,14 @@ import { WHATSAPP_NUMBER } from '../constants'; // Importamos la constante centr
 
 export default function Nosotros() {
   // Definimos el mensaje predeterminado para WhatsApp codificado para URL
-  const whatsappMessage = encodeURIComponent("Hola Cárdenas Saltos Abogados, tengo una consulta sobre...");
+  const whatsappMessage = encodeURIComponent("Hola Cárdenas Saltos Abogados, me gustaría conocer más sobre su firma y servicios...");
+
+  // --- FUNCIÓN DE CONVERSIÓN GOOGLE ADS ---
+  const handleConversion = (etiqueta) => {
+    if (typeof window !== 'undefined' && window.reportWhatsAppClick) {
+      window.reportWhatsAppClick(etiqueta);
+    }
+  };
 
   return (
     <div className="w-full bg-white font-['Gantari']">
@@ -77,7 +84,13 @@ export default function Nosotros() {
             <span className="block font-black">Estrategia legal</span>
             <span className="block font-normal">que genera resultados</span>
           </h2>
-          <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} className="inline-block bg-[#051d40] text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+          <a 
+            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
+            onClick={() => handleConversion("Pagina Nosotros - Banner Final")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-[#051d40] text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl"
+          >
             Consulta gratis
           </a>
         </div>

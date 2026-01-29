@@ -1,8 +1,17 @@
 import React from 'react';
 import Head from 'next/head';
+import { WHATSAPP_NUMBER } from '../constants'; // Importación centralizada del número
 
 export default function Notarial() {
-  const phoneNumber = "5939984851296";
+  // Mensaje predeterminado para WhatsApp codificado para URL
+  const whatsappMessage = encodeURIComponent("Hola Cárdenas Saltos Abogados, tengo una consulta sobre trámites notariales...");
+
+  // --- FUNCIÓN DE CONVERSIÓN GOOGLE ADS ---
+  const handleConversion = (etiqueta) => {
+    if (typeof window !== 'undefined' && window.reportWhatsAppClick) {
+      window.reportWhatsAppClick(etiqueta);
+    }
+  };
 
   const servicios = [
     {
@@ -78,7 +87,10 @@ export default function Notarial() {
             </p>
 
             <a 
-              href={`https://wa.me/${phoneNumber}`} 
+              href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
+              onClick={() => handleConversion("Notarial - Hero")}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-[#ffbd4a] text-[#051d40] px-10 py-4 rounded-full font-medium text-sm uppercase tracking-widest hover:bg-[#051d40] hover:text-white transition-all shadow-lg"
             >
               Escríbenos ahora
@@ -123,7 +135,10 @@ export default function Notarial() {
               </div>
               <div className="mt-10">
                 <a 
-                  href={`https://wa.me/${phoneNumber}`} 
+                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
+                  onClick={() => handleConversion(`Notarial - ${servicio.titulo}`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-block bg-[#ffbd4a] text-[#051d40] px-8 py-3 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-white transition-colors"
                 >
                   Escríbenos ahora
@@ -156,8 +171,13 @@ export default function Notarial() {
             <span className="block font-black">Estrategia legal</span>
             <span className="block font-normal">que genera resultados</span>
           </h2>
-          <a href={`https://wa.me/${phoneNumber}`} 
-             className="inline-block bg-[#051d40] text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+          <a 
+            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`} 
+            onClick={() => handleConversion("Notarial - Banner Final")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-[#051d40] text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl"
+          >
             Consulta gratis
           </a>
         </div>

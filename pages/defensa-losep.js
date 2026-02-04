@@ -22,12 +22,12 @@ export default function DefensaLosep() {
       <section className="pt-24 md:pt-32 pb-16 px-6 md:px-20">
         <div className="max-w-7xl mx-auto text-left">
           <h1 className="text-[#051d40] text-3xl md:text-6xl leading-tight mb-6">
-            <span className="block font-black">¿Te abrieron un sumario administrativo</span>
-            <span className="block font-medium mt-1">o fuiste destituido injustamente?</span>
+            <span className="block font-black">¿Te iniciaron un procedimiento disciplinario o sumario administrativo?</span>
+            <span className="block font-medium mt-1">¿Fuiste destituido injustamente?</span>
           </h1>
           
           <p className="text-[#051d40] text-lg md:text-2xl mb-10 max-w-3xl leading-relaxed font-normal">
-            Protege tu cargo y tu hoja de vida. Tienes poco tiempo para defenderte, 
+            Protege tu cargo y tu hoja de vida. Tienes poco tiempo para defenderte y debes hacerlo bien, 
             no dejes que el Estado vulnere tus derechos.
           </p>
 
@@ -65,7 +65,7 @@ export default function DefensaLosep() {
               <div className="flex gap-4">
                 <span className="text-[#ffbd4a] font-black text-2xl">•</span>
                 <p className="text-lg md:text-xl text-gray-700 italic font-medium leading-relaxed">
-                  "¿Te notificaron el inicio de un sumario administrativo y temes la destitución?"
+                  "¿Te notificaron el inicio de un régimen disciplinario o sumario administrativo y temes la destitución?"
                 </p>
               </div>
               <div className="flex gap-4 border-t border-gray-100 pt-6 md:pt-8">
@@ -77,7 +77,7 @@ export default function DefensaLosep() {
               <div className="flex gap-4 border-t border-gray-100 pt-6 md:pt-8">
                 <span className="text-[#ffbd4a] font-black text-2xl">•</span>
                 <p className="text-lg md:text-xl text-gray-700 italic font-medium leading-relaxed">
-                  "¿Te notificaron una resolución de destitución sin seguir el debido proceso?"
+                  "¿Te notificaron una resolución de sanción sin seguir el debido proceso?"
                 </p>
               </div>
             </div>
@@ -91,11 +91,11 @@ export default function DefensaLosep() {
             <ul className="space-y-6 md:space-y-8 mb-12">
               <li className="flex gap-4 items-start">
                 <span className="text-[#ffbd4a] font-bold text-xl">✓</span>
-                <p className="text-base md:text-lg leading-snug"><span className="font-bold text-[#ffbd4a]">Frenamos la destitución:</span> Analizamos el expediente para encontrar errores técnicos que anulen el proceso.</p>
+                <p className="text-base md:text-lg leading-snug"><span className="font-bold text-[#ffbd4a]">Frenamos la sanción:</span> Analizamos el expediente para encontrar errores técnicos que anulen el proceso.</p>
               </li>
               <li className="flex gap-4 items-start border-t border-white/10 pt-6">
                 <span className="text-[#ffbd4a] font-bold text-xl">✓</span>
-                <p className="text-base md:text-lg leading-snug"><span className="font-bold text-[#ffbd4a]">Limpiamos tu historial:</span> Evitamos que la sanción aparezca en el sistema del Ministerio de Trabajo (historial limpio).</p>
+                <p className="text-base md:text-lg leading-snug"><span className="font-bold text-[#ffbd4a]">Limpiamos tu historial:</span> Dejamos sin efecto tu sanción y no constará en tu expediente personal.</p>
               </li>
               <li className="flex gap-4 items-start border-t border-white/10 pt-6">
                 <span className="text-[#ffbd4a] font-bold text-xl">✓</span>
@@ -173,7 +173,7 @@ export default function DefensaLosep() {
           <div className="md:w-1/2">
             <h2 className="text-[#051d40] text-2xl md:text-5xl leading-tight mb-10">
               <span className="font-black">Tranquilo, </span>
-              <span className="font-normal">somos expertos en normativa LOSEP, procesos ante la Contraloría General del Estado y Ministerio de Trabajo.</span>
+              <span className="font-normal">somos expertos en normativa LOSEP, procedimiento o régimen disciplinario, y sumarios administrativos.</span>
             </h2>
             <a 
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
